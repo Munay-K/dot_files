@@ -11,7 +11,7 @@
 # Ubuntu vanilla
 # -------------------------------------------------------
 
-cp -r Documents/MyFiles/Scripts/ general/
+cp -r ~/Documents/MyFiles/Scripts/ general/
 
 # -------------------------------------------------------
 # Vim files
