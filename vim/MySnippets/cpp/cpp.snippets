@@ -8,6 +8,12 @@ int main()
 }
 endsnippet
 
+snippet cblock
+/*
+${VISUAL}$0
+*/
+endsnippet
+
 snippet main
 int main()
 {
@@ -53,6 +59,17 @@ class ${1:Class name}
 #endif // CLASS_`!p snip.rv = t[1].upper()`
 endsnippet
 
+snippet bclass
+class $1
+{
+	public:
+		$1();
+		~$1();
+	private:
+
+};$0
+endsnippet
+
 snippet saver
 #ifndef `!p t[1] = snip.rv = t[1].upper()`
 #define $1
@@ -88,7 +105,7 @@ std::cin>>`!p snip.rv = match.group(1)`;
 endsnippet
 
 snippet "for (.+)(;)" "for  loop from 0 until a given number" r
-for(int i {0}; i< `!p snip.rv = match.group(1)`; i++)
+for(int i {0}; i < `!p snip.rv = match.group(1)`; i++)
 {
 	${VISUAL}$0
 }
