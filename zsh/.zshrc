@@ -120,17 +120,9 @@ source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
 # ///////////////////////////////////////////////////////
 # -------------------------------------------------------
 
-
-# ------------------------------------------------------------------
-# Setting: General
-# ------------------------------------------------------------------
-
-# Including aliases from .bash_aliases to zsh bash.
-# source $HOME/.bash_aliases
-
-# ------------------------------------------------------------------
-# Setting: Aliases
-# ------------------------------------------------------------------
+# -------------------------------------------------------
+# Settings: Aliases
+# -------------------------------------------------------
 
 alias ls='ls -1a'
 alias tkill='tmux kill-session -t'
@@ -138,18 +130,13 @@ alias tnew='tmux new-session -t'
 alias tattach='tmux attach-session -t'
 alias battery='upower -i /org/freedesktop/UPower/devices/battery_BAT1'
 
-# ------------------------------------------------------------------
-# Setting: Functions
-# ------------------------------------------------------------------
+# -------------------------------------------------------
+# Settings: Functions
+# -------------------------------------------------------
 
 function pushall()
 {
-	git add .
+	git add -A
 	git commit -m $1
 	git push origin master
-}
-
-function toclipboard()
-{
-	$1 | xclip -sel clip
 }
