@@ -1,5 +1,10 @@
 #!/bin/sh
 
+BASEDIR=$(dirname "$0")
+echo "$BASEDIR"
+
+cd $BASEDIR
+
 # -------------------------------------------------------
 # ///////////////////////////////////////////////////////
 # Copying files to current directory
