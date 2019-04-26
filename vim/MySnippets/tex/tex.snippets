@@ -1,0 +1,63 @@
+snippet gw
+\documentclass{article}
+
+\begin{document}
+	Goodbye World!
+\end{document}
+endsnippet
+
+snippet "(\w+):" "Backslash putter and scope generator" r
+\\`!p snip.rv = match.group(1)`{$1}$0
+endsnippet
+
+snippet "(\w+);" "Backslash putter" r
+\\`!p snip.rv = match.group(1)` $0
+endsnippet
+
+snippet begin
+\begin{$1}
+	$2
+\end{$1}
+endsnippet
+
+snippet eq
+$$ $1 $$
+endsnippet
+
+snippet frac "fraction" iw
+\frac{$1}{$2}
+endsnippet
+
+snippet dfrac "fraction" iw
+\dfrac{$1}{$2}
+endsnippet
+
+snippet nl
+\\\\ 
+endsnippet
+
+snippet ttt "code in line" i
+\\texttt{$1}
+endsnippet
+
+snippet tab
+\begin{${1:t}${1/(t)$|(a)$|(.*)/(?1:abular)(?2:rray)/}}{${2:c}}
+$0${2/((?<=.)c|l|r)|./(?1: & )/g}
+\end{$1${1/(t)$|(a)$|(.*)/(?1:abular)(?2:rray)/}}
+endsnippet
+
+snippet s
+\\section{$1}
+endsnippet
+
+snippet ss
+\\subsection{$1}
+endsnippet
+
+snippet sss
+\\subsubsection{$1}
+endsnippet
+
+snippet _s "underscore string" i
+\string_
+endsnippet
