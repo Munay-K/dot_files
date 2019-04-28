@@ -39,7 +39,7 @@ set shiftwidth=4 		"Changes the number of spaces to use for each step of (auto)i
 set wrap				"Disables word wrapping
 set breakindent			"Enables indentation when wrapping
 set laststatus=2		"Displays status line always. It allows you to see the current mode, file name, file status, ruler, etc.
-colorscheme elflord		"Scheme for entire vim
+colorscheme industry		"Scheme for entire vim
 
 " -------------------------------------------------------
 " Settings: Cursor highlighting

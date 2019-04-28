@@ -30,8 +30,10 @@ cp -r ~/Documents/MyFiles/Scripts/ general/
 cp ~/.vimrc vim/
 #Snipptets
 cp -r ~/.vim/MySnippets vim/
-#Useful scripts for vim
+#Useful scripts to be used in vim
 cp -r ~/.vim/plugin vim/
+#Best color schemes
+cp -r ~/.vim/colors vim/
 
 # -------------------------------------------------------
 # zsh files
