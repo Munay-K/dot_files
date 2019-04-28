@@ -98,18 +98,19 @@ inoremap <Right> <Nop>
 " Keybindings: Compilation and processing of programming languages
 " -------------------------------------------------------
 
-autocmd filetype cpp nnoremap <F8> :w <bar> !clear && g++ -std=gnu++14 -O2 % -o %:p:h/%:t:r.exe && ./%:r.exe<CR>
-autocmd filetype tex nnoremap <F8> :w <bar> !pdflatex % && xdg-open %:t:r.pdf<CR>
+autocmd filetype cpp nnoremap <F7> :w <bar> !clear && g++ -std=gnu++14 -O2 % -o %:p:h/%:t:r.exe && ./%:r.exe<CR>
+autocmd filetype tex nnoremap <F7> :w <bar> !pdflatex % && xdg-open %:t:r.pdf<CR>
 
-autocmd filetype perl nnoremap <F8> :w <bar> !perl % <CR>
-autocmd filetype go nnoremap <F8> :w <bar> !go build % && ./%:p <CR>
-autocmd filetype js nnoremap <F8> :w <bar> !node % <CR>
-autocmd filetype c nnoremap <F8> :w <bar> !clear && gcc -std=c99 -Wall -Werror -Wextra -lm % -o %:p:h/%:t:r.out && ./%:r.out<CR>
-autocmd filetype java nnoremap <F8> :w <bar> !javac % && java -enableassertions %:p <CR>
-autocmd filetype python nnoremap <F8> :w <bar> !clear && python3.7 % <CR>
+autocmd filetype perl nnoremap <F7> :w <bar> !perl % <CR>
+autocmd filetype go nnoremap <F7> :w <bar> !go build % && ./%:p <CR>
+autocmd filetype js nnoremap <F7> :w <bar> !node % <CR>
+autocmd filetype c nnoremap <F7> :w <bar> !clear && gcc -std=c99 -Wall -Werror -Wextra -lm % -o %:p:h/%:t:r.out && ./%:r.out<CR>
+autocmd filetype java nnoremap <F7> :w <bar> !javac % && java -enableassertions %:p <CR>
+autocmd filetype python nnoremap <F7> :w <bar> !clear && python3.7 % <CR>
 " -------------------------------------------------------
 "  Keybindings: Plugin: NERDTree
 " -------------------------------------------------------
 
 " Paste the :NERDTree in the vim command line
 :map <C-n> :NERDTree
+

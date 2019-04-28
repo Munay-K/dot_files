@@ -26,8 +26,12 @@ cp -r ~/Documents/MyFiles/Scripts/ general/
 # Vim files
 # -------------------------------------------------------
 
-cp -r ~/.vim/MySnippets vim/
+#file with general settings with vim
 cp ~/.vimrc vim/
+#Snipptets
+cp -r ~/.vim/MySnippets vim/
+#Useful scripts for vim
+cp -r ~/.vim/plugin vim/
 
 # -------------------------------------------------------
 # zsh files
