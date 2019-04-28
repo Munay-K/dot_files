@@ -1,5 +1,6 @@
 " Change the color scheme from a list of color scheme names.
-" Version 2010-09-12 from http://vim.wikia.com/wiki/VimTip341
+" Version 2010-09-12 from http://vim.wikia.com/wiki/VimTip341, can be in the
+" following link: https://vim.fandom.com/wiki/Switch_color_schemes
 " Modified by: rma2000 - github
 " Press key:
 "   F8                next scheme
