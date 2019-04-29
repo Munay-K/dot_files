@@ -13,26 +13,28 @@ call vundle#begin()
 
 " let Vundle manage Vundle, required
 Plugin 'VundleVim/Vundle.vim'
-Plugin 'SirVer/ultisnips' "Snippets
-Plugin 'scrooloose/nerdtree' "File manager withiin Vim
-Plugin 'xuhdev/vim-latex-live-preview' "LaTeX previewer
-Plugin 'ap/vim-css-color' "Color previeww for CSS
-Plugin 'aperezdc/vim-template'
+Plugin 'SirVer/ultisnips' 				"Snippets
+Plugin 'scrooloose/nerdtree' 			"File manager withiin Vim
+Plugin 'xuhdev/vim-latex-live-preview' 	"LaTeX previewer
+Plugin 'ap/vim-css-color' 				"Color previeww for CSS
+Plugin 'aperezdc/vim-template'			"Templates for code inserting
+Plugin 'vim-scripts/loremipsum'			"Lorem ipsum generator
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin indent on    " required
 " To ignore plugin indent changes, instead use:
 filetype plugin on 
-" ///////////////////////////////////////////////////////
-" -------------------------------------------------------
-"  Settings:
-" -------------------------------------------------------
-" ///////////////////////////////////////////////////////
 
-" -------------------------------------------------------
+" ---------------------------------------------------------------------------------------------------------
+" /////////////////////////////////////////////////////////////////////////////////////////////////////////
+" Settings
+" /////////////////////////////////////////////////////////////////////////////////////////////////////////
+" ---------------------------------------------------------------------------------------------------------
+
+" ---------------------------------------------------------------------------------------------------------
 " Settings: General
-" -------------------------------------------------------
+" ---------------------------------------------------------------------------------------------------------
 
 set number				"Enables line numbers
 set tabstop=4			"Changes the number of visual space per tab
