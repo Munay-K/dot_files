@@ -14,8 +14,10 @@ call vundle#begin()
 " let Vundle manage Vundle, required
 Plugin 'VundleVim/Vundle.vim'
 Plugin 'SirVer/ultisnips' "Snippets
-Plugin 'scrooloose/nerdtree' "File manager 
-Plugin 'xuhdev/vim-latex-live-preview'
+Plugin 'scrooloose/nerdtree' "File manager withiin Vim
+Plugin 'xuhdev/vim-latex-live-preview' "LaTeX previewer
+Plugin 'ap/vim-css-color' "Color previeww for CSS
+Plugin 'aperezdc/vim-template'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -69,19 +71,25 @@ let g:tex_flavor="latex" 							"By default, Vim sets ft=plaintex for empty .tex
 " Settings: Plugin: NERDTree
 " -------------------------------------------------------
 
-let g:NERDTreeWinPos = "right" 		"Always open NERDTree on the right side
+let g:NERDTreeWinPos = "right" 		"Always open NERDTree on the right sidea
 
-" ///////////////////////////////////////////////////////
-" -------------------------------------------------------
-" Keybindings:
-" -------------------------------------------------------
-" ///////////////////////////////////////////////////////
+" ---------------------------------------------------------------------------------------------------------
+" Settings: Plugin: vim-template
+" ---------------------------------------------------------------------------------------------------------
 
-map <C-m> :call UltiSnips#RefreshSnippets()
+let g:templates_no_autocmd = 0  "Enable atuomatic insertion of templates when new buffers are created.
+let g:templates_directory = ["~/.vim/templates"] "Path of a directory containing additional global templates.
+let g:templates_no_builtin_templates = 1 "Disables usage of the built-in templates
 
-" -------------------------------------------------------
+" ---------------------------------------------------------------------------------------------------------
+" /////////////////////////////////////////////////////////////////////////////////////////////////////////
+" Keybindings
+" /////////////////////////////////////////////////////////////////////////////////////////////////////////
+" ---------------------------------------------------------------------------------------------------------
+
+" ---------------------------------------------------------------------------------------------------------
 " Keybindings: Deactivators
-" -------------------------------------------------------
+" ---------------------------------------------------------------------------------------------------------
 
 noremap <Up> <Nop>
 noremap <Down> <Nop>
@@ -113,3 +121,8 @@ autocmd filetype python nnoremap <F7> :w <bar> !clear && python3.7 % <CR>
 " Paste the :NERDTree in the vim command line
 :map <C-n> :NERDTree
 
+" ---------------------------------------------------------------------------------------------------------
+" Keybindings: Plugin: UltiSnips
+" ---------------------------------------------------------------------------------------------------------
+
+map <C-m> :call UltiSnips#RefreshSnippets()

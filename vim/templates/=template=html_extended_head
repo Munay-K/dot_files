@@ -1,0 +1,15 @@
+<head> 
+	<!-- General information -->
+	<title>Title</title> 																<!-- Title -->
+	<meta charset="UTF-8>																<!-- Character set used to display the content of the website-->
+	
+	<!-- Summarize of the content of the page -->
+	<meta name="description" content="General and brief description of the website."> 	<!-- Description of website for web browsers-->
+	<meta name="keywords" content="keywords"> 											<!-- Define keywords of our own page. -->
+	<meta name="author" content="Author name"> 											<!-- Define the author of a page. -->
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">				<!-- Instructions on how to control the page's dimension and scaling -->
+	
+	<!-- Dynammic styles -->
+	<link rel="stylesheet" type="text/css" href=""> 									<!-- CSS Styles -->
+	<script src=""></script> 															<!-- JS files -->
+</head>

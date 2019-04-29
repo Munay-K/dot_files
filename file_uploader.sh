@@ -32,8 +32,10 @@ cp ~/.vimrc vim/
 cp -r ~/.vim/MySnippets vim/
 #Useful scripts to be used in vim
 cp -r ~/.vim/plugin vim/
-#Best color schemes
+#Selected color schemes
 cp -r ~/.vim/colors vim/
+#Templates used with the vim/templates plugin
+cp -r ~/.vim/templates vim/
 
 # -------------------------------------------------------
 # zsh files
