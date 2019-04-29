@@ -4,32 +4,37 @@ snippet { "Scope generator" i
 }
 endsnippet
 
+# Length: 105
 snippet separator "." i
--------------------------------------------------------
+---------------------------------------------------------------------------------------------------------
 endsnippet
 
 snippet separator1 "Separator classifier with priority 1"
--------------------------------------------------------
-///////////////////////////////////////////////////////
+---------------------------------------------------------------------------------------------------------
+/////////////////////////////////////////////////////////////////////////////////////////////////////////
 $1
-///////////////////////////////////////////////////////
--------------------------------------------------------
+/////////////////////////////////////////////////////////////////////////////////////////////////////////
+---------------------------------------------------------------------------------------------------------
 endsnippet
 
 snippet separator2 "Separator classifier with priority 2"
--------------------------------------------------------
+---------------------------------------------------------------------------------------------------------
 $1
--------------------------------------------------------
-endsnippet
-
-snippet me "creating a meaningful comment when commenting overcrowded config files"
-MY CONFIG: $1
+---------------------------------------------------------------------------------------------------------
 endsnippet
 
 snippet dilemma
-wwwwwwwwwwwwwwwwwww  0000 888 0000 wwwwwwwwwwwwwwwwwwww
+wwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwww 0000 888 0000 wwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwww
 Dilemma: $1
-wwwwwwwwwwwwwwwwwww  0000 888 0000 wwwwwwwwwwwwwwwwwwww
+wwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwww 0000 888 0000 wwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwww
+endsnippet
+
+snippet me "creating a meaningful comment when commenting overcrowded files"
+MY CONFIG: $1
+endsnippet
+
+snippet ( "parentheses initializer" i
+( ${VISUAL}$1 )
 endsnippet
 
 snippet lorem1 "one paragraph of dummy text" i

@@ -1,15 +1,25 @@
-snippet action
-print("------------------------------------------------------- Action: $1")$0
-endsnippet
-
-snippet ; "hola" i
+snippet ; "." i
 ( ${VISUAL}$1 )
 endsnippet
 
-snippet : "hola" i
+snippet : "." i
 [ ${VISUAL}$1 ]
 endsnippet
 
-snippet p "hola" i
+snippet p "." i
 print( ${VISUAL}$1  )
 endsnippet
+
+snippet { "." i
+{${VISUAL}$1}
+endsnippet
+
+snippet cblock "comment block"
+"""
+${VISUAL}
+"""$0
+endsnippet
+
+snippet nl "newline" i
+print("\n")
+endsnippet 
