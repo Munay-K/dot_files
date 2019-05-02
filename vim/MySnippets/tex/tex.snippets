@@ -1,11 +1,3 @@
-snippet "(\w+):" "Backslash putter and scope generator" r
-\\`!p snip.rv = match.group(1)`{$1}$0
-endsnippet
-
-snippet "(\w+);" "Backslash putter" r
-\\`!p snip.rv = match.group(1)` $0
-endsnippet
-
 snippet begin
 \begin{$1}
 	$2
@@ -13,7 +5,7 @@ snippet begin
 endsnippet
 
 snippet eq
-$$ $1 $$
+$$ ${VISUAL}$1 $$
 endsnippet
 
 snippet frac "fraction" iw
@@ -22,6 +14,14 @@ endsnippet
 
 snippet dfrac "fraction" iw
 \dfrac{$1}{$2}
+endsnippet
+
+snippet bf "Bold" i
+\textbf{${VISUAL}$1}
+endsnippet
+
+snippet $
+\$${VISUAL}$1\$
 endsnippet
 
 snippet nl
@@ -46,4 +46,67 @@ endsnippet
 
 snippet _s "underscore string" i
 \string_
+endsnippet
+
+snippet fx "function" i
+f(x) 
+endsnippet
+
+snippet sub "." i
+{$1}_{$2}
+endsnippet
+
+snippet exp "." i
+{$1}^{$2}
+endsnippet
+
+snippet le "left" i
+\left
+endsnippet
+
+snippet ri "right" i
+\right
+endsnippet
+
+snippet lrp "left-right parentheses" i
+\left(${VISUAL}$1\right)
+endsnippet
+
+snippet lrc "left-right [braces]/[curly brackets]" i
+\left\\{${VISUAL}$1\right\\}
+endsnippet
+
+snippet lrs "left-right square brackets" i
+\left[${VISUAL}$1\right]
+endsnippet
+
+snippet lra "left-right angle brackets" i
+\left<${VISUAL}$1\right>
+endsnippet
+
+snippet sqrt "Square root" i
+\sqrt[$1]{$2}
+endsnippet
+
+# ---------------------------------------------------------------------------------------------------------
+# /////////////////////////////////////////////////////////////////////////////////////////////////////////
+# Regular expressions
+# /////////////////////////////////////////////////////////////////////////////////////////////////////////
+# ---------------------------------------------------------------------------------------------------------
+snippet "(\w+):" "Backslash putter and scope generator" r
+\\`!p snip.rv = match.group(1)`{$1}$0
+endsnippet
+
+snippet "(\w+);" "Backslash putter" r
+\\`!p snip.rv = match.group(1)` $0
+endsnippet
+
+# ---------------------------------------------------------------------------------------------------------
+# /////////////////////////////////////////////////////////////////////////////////////////////////////////
+# Temporal
+# /////////////////////////////////////////////////////////////////////////////////////////////////////////
+# ---------------------------------------------------------------------------------------------------------
+snippet / "temp"
+%Single Variable Calculus, 8th Edition - 9781305266636: Page: $1 Exercise: $2
+$0
 endsnippet

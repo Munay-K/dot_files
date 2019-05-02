@@ -82,6 +82,20 @@ snippet ( "parentheses" i
 ( $1 )
 endsnippet
 
+snippet constructor
+$1::$1()
+{
+	
+}
+endsnippet
+
+snippet ns
+namespace $1
+{
+	${VISUAL}
+} //namespace: $1
+endsnippet
+
 # -------------------------------------------------------
 # ///////////////////////////////////////////////////////
 # Regular expressions
@@ -106,3 +120,4 @@ for(int i {0}; i < `!p snip.rv = match.group(1)`; i++)
 	${VISUAL}$0
 }
 endsnippet
+
