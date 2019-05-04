@@ -18,7 +18,6 @@ Plugin 'scrooloose/nerdtree' 			"File manager withiin Vim
 Plugin 'xuhdev/vim-latex-live-preview' 	"LaTeX previewer
 Plugin 'ap/vim-css-color' 				"Color previeww for CSS
 Plugin 'aperezdc/vim-template'			"Templates for code inserting
-Plugin 'vim-scripts/loremipsum'			"Lorem ipsum generator
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -42,7 +41,11 @@ set shiftwidth=4 		"Changes the number of spaces to use for each step of (auto)i
 set wrap				"Disables word wrapping
 set breakindent			"Enables indentation when wrapping
 set laststatus=2		"Displays status line always. It allows you to see the current mode, file name, file status, ruler, etc.
-colorscheme industry		"Scheme for entire vim
+colorscheme PaperColor 	"Scheme within vim
+set background=dark	"Theme or dark color scheme
+set foldmethod=manual	"Determines what kind of folding applies in the current window
+
+set omnifunc=syntaxcomplete#Complete
 
 " -------------------------------------------------------
 " Settings: Cursor highlighting
@@ -121,10 +124,10 @@ autocmd filetype python nnoremap <F7> :w <bar> !clear && python3.7 % <CR>
 " -------------------------------------------------------
 
 " Paste the :NERDTree in the vim command line
-:map <C-n> :NERDTree
+:map <C-n> :NERDTree<CR>
 
 " ---------------------------------------------------------------------------------------------------------
 " Keybindings: Plugin: UltiSnips
 " ---------------------------------------------------------------------------------------------------------
 
-map <C-m> :call UltiSnips#RefreshSnippets()
+map <C-m> :call UltiSnips#RefreshSnippets()<CR>

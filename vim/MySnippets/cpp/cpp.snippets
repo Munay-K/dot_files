@@ -82,18 +82,16 @@ snippet ( "parentheses" i
 ( $1 )
 endsnippet
 
-snippet constructor
-$1::$1()
-{
-	
-}
+snippet bcsds "Basic constructor and destructor"
+$1::$1() {}
+$1::~$1() {}
 endsnippet
 
 snippet ns
 namespace $1
 {
-	${VISUAL}
-} //namespace: $1
+	${VISUAL}$0
+}
 endsnippet
 
 # -------------------------------------------------------
