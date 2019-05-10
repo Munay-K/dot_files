@@ -1,10 +1,26 @@
+# ------------------------------------------------------------
+# Regular expressions
+# ------------------------------------------------------------
+
+snippet "(\w+):" "Backslash putter and scope generator" r
+\\`!p snip.rv = match.group(1)`{$1}$0
+endsnippet
+
+snippet "(\w+);" "Backslash putter" r
+\\`!p snip.rv = match.group(1)` $0
+endsnippet
+
+# ------------------------------------------------------------
+# General
+# ------------------------------------------------------------
+
 snippet begin
 \begin{$1}
 	$2
 \end{$1}
 endsnippet
 
-snippet eq
+snippet eq "." i
 $$ ${VISUAL}$1 $$
 endsnippet
 
@@ -13,14 +29,14 @@ snippet frac "fraction" iw
 endsnippet
 
 snippet dfrac "fraction" iw
-\dfrac{$1}{$2}
+\dfrac{${VISUAL}$1}{$2}
 endsnippet
 
 snippet bf "Bold" i
 \textbf{${VISUAL}$1}
 endsnippet
 
-snippet $
+snippet $ "." i
 \$${VISUAL}$1\$
 endsnippet
 
@@ -30,18 +46,6 @@ endsnippet
 
 snippet ttt "code in line" i
 \\texttt{$1}
-endsnippet
-
-snippet s
-\\section{$1}
-endsnippet
-
-snippet ss
-\\subsection{$1}
-endsnippet
-
-snippet sss
-\\subsubsection{$1}
 endsnippet
 
 snippet _s "underscore string" i
@@ -59,6 +63,34 @@ endsnippet
 snippet exp "." i
 {$1}^{$2}
 endsnippet
+
+snippet sqrt "Square root" i
+\sqrt[$1]{$2}
+endsnippet
+
+# ------------------------------------------------------------
+# Sections and chapters
+# ------------------------------------------------------------
+
+snippet c
+\\chapter{$1}
+endsnippet
+
+snippet s
+\\section{$1}
+endsnippet
+
+snippet ss
+\\subsection{$1}
+endsnippet
+
+snippet sss
+\\subsubsection{$1}
+endsnippet
+
+# ------------------------------------------------------------
+# Pairs to group things together
+# ------------------------------------------------------------
 
 snippet le "left" i
 \left
@@ -82,32 +114,4 @@ endsnippet
 
 snippet lra "left-right angle brackets" i
 \left<${VISUAL}$1\right>
-endsnippet
-
-snippet sqrt "Square root" i
-\sqrt[$1]{$2}
-endsnippet
-
-# ---------------------------------------------------------------------------------------------------------
-# /////////////////////////////////////////////////////////////////////////////////////////////////////////
-# Regular expressions
-# /////////////////////////////////////////////////////////////////////////////////////////////////////////
-# ---------------------------------------------------------------------------------------------------------
-
-snippet "(\w+):" "Backslash putter and scope generator" r
-\\`!p snip.rv = match.group(1)`{$1}$0
-endsnippet
-
-snippet "(\w+);" "Backslash putter" r
-\\`!p snip.rv = match.group(1)` $0
-endsnippet
-
-# ---------------------------------------------------------------------------------------------------------
-# /////////////////////////////////////////////////////////////////////////////////////////////////////////
-# Temporal
-# /////////////////////////////////////////////////////////////////////////////////////////////////////////
-# ---------------------------------------------------------------------------------------------------------
-snippet / "temp"
-%Single Variable Calculus, 8th Edition - 9781305266636: Page: $1 Exercise: $2
-$0
 endsnippet
