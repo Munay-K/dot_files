@@ -18,7 +18,15 @@ Plugin 'scrooloose/nerdtree' 			"File manager withiin Vim
 Plugin 'xuhdev/vim-latex-live-preview' 	"LaTeX previewer
 Plugin 'ap/vim-css-color' 				"Color previeww for CSS
 Plugin 'aperezdc/vim-template'			"Templates for code inserting
-Plugin 'vim-scripts/loremipsum'
+Plugin 'vim-scripts/loremipsum'			"Lorem ipsum inserter
+Plugin 'prettier/vim-prettier', {
+  \ 'do': 'yarn install',
+  \ 'branch': 'release/1.x',
+  \ 'for': [
+    \ 'javascript',
+    \ 'css',
+    \ 'html' ] }
+
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -45,7 +53,6 @@ set laststatus=2		"Displays status line always. It allows you to see the current
 colorscheme apprentice 	"Color scheme selector
 syntax on				"Enables syntax highlighting
 set foldmethod=manual	"Determines what kind of folding applies in the current window
-
 set omnifunc=syntaxcomplete#Complete
 
 " -------------------------------------------------------
@@ -79,23 +86,29 @@ let g:tex_flavor="latex" 							"By default, Vim sets ft=plaintex for empty .tex
 
 let g:NERDTreeWinPos = "right" 		"Always open NERDTree on the right sidea
 
-" ---------------------------------------------------------------------------------------------------------
+" ------------------------------------------------------------
 " Settings: Plugin: vim-template
-" ---------------------------------------------------------------------------------------------------------
+" ------------------------------------------------------------
 
 let g:templates_no_autocmd = 0  "Enable atuomatic insertion of templates when new buffers are created.
 let g:templates_directory = ["~/.vim/templates"] "Path of a directory containing additional global templates.
 let g:templates_no_builtin_templates = 1 "Disables usage of the built-in templates
 
-" ---------------------------------------------------------------------------------------------------------
+" ------------------------------------------------------------
+" Settings: prettier/vim-prettier
+" ------------------------------------------------------------
+
+let g:prettier#config#use_tabs = 'true' "Use tab over spaces
+
+
 " /////////////////////////////////////////////////////////////////////////////////////////////////////////
 " Keybindings
 " /////////////////////////////////////////////////////////////////////////////////////////////////////////
-" ---------------------------------------------------------------------------------------------------------
+" ------------------------------------------------------------
 
-" ---------------------------------------------------------------------------------------------------------
+" ------------------------------------------------------------
 " Keybindings: Deactivators
-" ---------------------------------------------------------------------------------------------------------
+" ------------------------------------------------------------
 
 noremap <Up> <Nop>
 noremap <Down> <Nop>
