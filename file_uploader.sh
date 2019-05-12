@@ -10,7 +10,6 @@ BASEDIR=$(dirname "$0")
 
 cd $BASEDIR
 
-rm -rf general/*
 rm -rf vim/*
 rm -rf zsh/*
 rm -rf tmux/*
@@ -21,12 +20,6 @@ rm -rf i3/*
 # Copying files to current directory
 # ///////////////////////////////////////////////////////
 # -------------------------------------------------------
-
-# -------------------------------------------------------
-# Ubuntu vanilla
-# -------------------------------------------------------
-
-cp -r ~/Documents/MyFiles/dc_Miscelanous/Scripts/ general/
 
 # -------------------------------------------------------
 # Vim files
