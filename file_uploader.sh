@@ -26,7 +26,7 @@ rm -rf i3/*
 # Ubuntu vanilla
 # -------------------------------------------------------
 
-cp -r ~/Documents/MyFiles/Scripts/ general/
+cp -r Documents/MyFiles/dc_Miscelanous/Scripts/ general/
 
 # -------------------------------------------------------
 # Vim files

@@ -29,6 +29,7 @@ Plugin 'prettier/vim-prettier', {
     \ 'markdown',
     \ 'css',
     \ 'html' ] }							"wrapper for prettier, pre-configured with custom default prettier settings.
+Plugin 'w0rp/ale'							"Plugin providing linting
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -37,9 +38,9 @@ filetype plugin indent on    " required
 filetype plugin on 
 
 " ------------------------------------------------------------
-" ///////////////////////////////////////////////////////
+" ////////////////////////////////////////////////////////////
 " Settings
-" ///////////////////////////////////////////////////////
+" ////////////////////////////////////////////////////////////
 " ------------------------------------------------------------
 
 " ------------------------------------------------------------
@@ -66,7 +67,7 @@ set shiftwidth=4 						"Changes the number of spaces to use for each step of (au
 set wrap								"Disables word wrapping
 set breakindent							"Enables indentation when wrapping
 set laststatus=2						"Displays status line always. It allows you to see the current mode, file name, file status, ruler, etc.
-set background=dark					"Set the background color to dark
+set background=dark						"Set the background color to dark
 colorscheme PaperColor					"Color scheme selector
 syntax on								"Enables syntax highlighting
 set foldmethod=manual					"Determines what kind of folding applies in the current window
@@ -125,6 +126,19 @@ let g:cpp_member_variable_highlight = 1 "Enables highlighting of member variable
 let g:cpp_class_decl_highlight = 1 "Enables highlighting of class names in declarations
 let g:cpp_experimental_template_highlight = 1 "There are two ways to highlight template functions. This one is a faster implementation but has some corner cases where it doesn't work.
 let g:cpp_concepts_highlight = 1 "Enables highlighting of library concepts. This will highlight the keywords concept and requires as well as all named requirements (like DefaultConstructible) in the standard library.
+
+" ------------------------------------------------------------
+" Settings: Plugin: w0rp/ale
+" ------------------------------------------------------------
+
+let g:ale_completion_enabled = 1 			"Enable completion where available.
+let g:deoplete#sources = {'_': ['ale']}
+
+" ------------------------------------------------------------
+" Settings: Plugin: Shougo/deoplete.nvim
+" ------------------------------------------------------------
+
+let g:deoplete#enable_at_startup = 1 		"Use deoplete.
 
 " -------------------------------------------------------
 " ///////////////////////////////////////////////////////
