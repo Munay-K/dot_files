@@ -26,15 +26,17 @@ rm -rf i3/*
 # -------------------------------------------------------
 
 #file with general settings with vim
-cp ~/.vimrc vim/
+cp ~/.vimrc 			vim/
 #Snipptets
 cp -r ~/.vim/MySnippets vim/
 #Useful scripts to be used in vim
-cp -r ~/.vim/plugin vim/
+cp -r ~/.vim/plugin 	vim/
 #Selected color schemes
-cp -r ~/.vim/colors vim/
+cp -r ~/.vim/colors 	vim/
 #Templates used with the vim/templates plugin
-cp -r ~/.vim/templates vim/
+cp -r ~/.vim/templates 	vim/
+#separate .vimrc files
+cp -r ~/.vim/.vimrc 	vim/
 
 # -------------------------------------------------------
 # zsh files
