@@ -1,1 +1,1 @@
-source ~/.vim/.vimrc/semivanilla
+source ~/.vim/.vimrcs/semivanilla

@@ -1,0 +1,14 @@
+" ------------------------------------------------------------
+" General
+" ------------------------------------------------------------
+
+let g:UltiSnipsSnippetDirectories=["MySnippets"] 	"Specifies the directories which are going to be searched by Vim when looking for snippets.
+let g:tex_flavor="latex" 							"By default, Vim sets ft=plaintex for empty .tex files, which can be changed with this
+
+
+" ------------------------------------------------------------
+" Keybindings
+" ------------------------------------------------------------
+
+"Snippets refresher
+map <C-m> :call UltiSnips#RefreshSnippets()<CR>

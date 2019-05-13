@@ -36,7 +36,7 @@ cp -r ~/.vim/colors 	vim/
 #Templates used with the vim/templates plugin
 cp -r ~/.vim/templates 	vim/
 #separate .vimrc files
-cp -r ~/.vim/.vimrc 	vim/
+cp -r ~/.vim/.vimrcs 	vim/
 
 # -------------------------------------------------------
 # zsh files

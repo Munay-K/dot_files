@@ -1,0 +1,6 @@
+" ------------------------------------------------------------
+" General
+" ------------------------------------------------------------
+
+let g:instant_markdown_autostart = 0 	"It makes the preview window not to be launched automatically. :InstantMarkdownPreview will enable that window.
+let g:instant_markdown_slow = 0 		"It makes vim-instant-markdown not to refresh each second so as to avoid unneecesary computer resources.
