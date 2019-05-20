@@ -32,3 +32,4 @@ filetype plugin on
 source ~/.vim/.vimrcs/root_vanilla
 source ~/.vim/.vimrcs/plugin_settings_nerdtree
 source ~/.vim/.vimrcs/plugin_settings_ultisnips
+source ~/.vim/.vimrcs/plugin_settings_vim_instant_markdown

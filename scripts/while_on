@@ -1,6 +1,8 @@
-# Change cursor speed
+# Changes cursor speed
 xset r rate 90 50
-# Change mouse speed
+# Changes mouse speed
 xinput --set-prop "SynPS/2 Synaptics TouchPad" "libinput Accel Speed" 1
-# Change keyboard layout
+# Changes keyboard layout
 setxkbmap -layout us
+# Maps caps lock to escape
+setxkbmap -option caps:swapescape

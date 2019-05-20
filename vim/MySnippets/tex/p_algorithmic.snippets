@@ -1,0 +1,79 @@
+# ------------------------------------------------------------
+# ////////////////////////////////////////////////////////////
+# Scope constructor
+# ////////////////////////////////////////////////////////////
+# ------------------------------------------------------------
+
+snippet while
+\\WHILE{$1}
+	$0
+\\ENDWHILE
+endsnippet
+
+snippet if
+\\IF{$1}
+	$0
+\\ENDIF
+endsnippet
+
+snippet for
+\\FOR{$1 \\TO $2}
+	$0
+\\ENDFOR
+endsnippet
+
+snippet forall
+\\FORALL{$1}
+	$0
+\\ENDFORALL
+endsnippet
+
+snippet repeat
+\\REPEAT
+	$1
+\\UNTIL{$2}
+endsnippet
+
+# ------------------------------------------------------------
+# ////////////////////////////////////////////////////////////
+# Single statements
+# ////////////////////////////////////////////////////////////
+# ------------------------------------------------------------
+
+snippet comment
+\\COMMENT{$1}
+endsnippet
+
+snippet else
+\\ELSE{$1}
+endsnippet
+
+snippet elsif
+\\ELSIF{$1}
+endsnippet
+
+snippet ensure
+\\ENSURE{$1}
+endsnippet
+
+snippet print
+\\PRINT{$1}
+endsnippet
+
+snippet return
+\\RETURN{$1}
+endsnippet
+
+snippet state
+\\STATE{$1}
+endsnippet
+
+snippet require
+\\REQUIRE{$1}
+endsnippet
+
+snippet loop
+\\LOOP
+	$1
+\\ENDLOOP
+endsnippet

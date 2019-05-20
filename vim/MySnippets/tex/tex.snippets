@@ -2,12 +2,12 @@
 # Regular expressions
 # ------------------------------------------------------------
 
-snippet "(\w+):" "Backslash putter and scope generator" r
-\\`!p snip.rv = match.group(1)`{$1}$0
+snippet "(\w+);" "Backslash putter" rA
+\\`!p snip.rv = match.group(1)` $0
 endsnippet
 
-snippet "(\w+);" "Backslash putter" r
-\\`!p snip.rv = match.group(1)` $0
+snippet "(\w+)\.\." "Backslash putter" rA
+\\`!p snip.rv = match.group(1)`{$1} $0
 endsnippet
 
 # ------------------------------------------------------------
@@ -16,43 +16,33 @@ endsnippet
 
 snippet begin
 \begin{$1}
-	$2
+	${VISUAL}$2
 \end{$1}
 endsnippet
 
-snippet eq "." i
-$$ ${VISUAL}$1 $$
-endsnippet
-
-snippet frac "fraction" iw
+snippet frac "fraction" iwA
 \frac{$1}{$2}
 endsnippet
 
-snippet dfrac "fraction" iw
-\dfrac{${VISUAL}$1}{$2}
-endsnippet
-
-snippet bf "Bold" i
-\textbf{${VISUAL}$1}
-endsnippet
-
-snippet $ "." i
-\$${VISUAL}$1\$
+snippet dfrac "fraction" iwA
+\dfrac
+	{
+		${VISUAL}$1
+	}
+	{
+		$2
+	}
 endsnippet
 
 snippet nl
 \\\\ 
 endsnippet
 
-snippet ttt "code in line" i
-\\texttt{$1}
-endsnippet
-
 snippet _s "underscore string" i
 \string_
 endsnippet
 
-snippet fx "function" i
+snippet fx "function" iA
 f(x) 
 endsnippet
 
@@ -64,8 +54,54 @@ snippet exp "." i
 {$1}^{$2}
 endsnippet
 
-snippet sqrt "Square root" i
-\sqrt[$1]{$2}
+snippet sqrt "Square root" iA
+\sqrt[${1:2}]{$2}
+endsnippet
+
+snippet lim "." iA
+\lim_{${1:x} \to ${2:\infty}} \left($3\right)$0
+endsnippet
+
+snippet mk "inline math" iA
+$${VISUAL}$1$
+endsnippet
+
+snippet dm "Display math" iA
+\[
+	${VISUAL}$1
+\]
+endsnippet
+
+# ------------------------------------------------------------
+# Stylers
+# ------------------------------------------------------------
+
+snippet ttt "inline code" i
+\\texttt{$1}
+endsnippet
+
+snippet bf "Bold" i
+\\textbf{${VISUAL}$1}
+endsnippet
+
+snippet it "Italics" i
+\\textit{${VISUAL}$1}
+endsnippet
+
+# ------------------------------------------------------------
+# Operators
+# ------------------------------------------------------------
+
+snippet = "." iA
+ = 
+endsnippet
+
+snippet + "." iA
+ + 
+endsnippet
+
+snippet - "." iA
+ - 
 endsnippet
 
 # ------------------------------------------------------------
@@ -92,14 +128,6 @@ endsnippet
 # Pairs to group things together
 # ------------------------------------------------------------
 
-snippet le "left" i
-\left
-endsnippet
-
-snippet ri "right" i
-\right
-endsnippet
-
 snippet lrp "left-right parentheses" i
 \left(${VISUAL}$1\right)
 endsnippet
@@ -114,4 +142,8 @@ endsnippet
 
 snippet lra "left-right angle brackets" i
 \left<${VISUAL}$1\right>
+endsnippet
+
+snippet lrv "left-right absolute values" i
+\left|${VISUAL}$1\right|
 endsnippet

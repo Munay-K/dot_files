@@ -10,9 +10,10 @@
 
 colorscheme industry					"Set colorscheme for entire Vim
 set background=dark						"Set the background color to dark
-set backspace=indent,eol,start			"Allow backspacing over autoindent, libe breaks (join lines), start of insert.
+set backspace=indent,eol,start			"Allow backspacing over autoindent, line breaks (join lines), start of insert. In simpler words, it maakes backspace behave properly in insert mode
 set breakindent							"Enables indentation when wrapping
 set foldmethod=manual					"Determines what kind of folding applies in the current window
+set hlsearch							"Highlight ocurrences of a pattern when searching
 set laststatus=2						"Displays status line always. It allows you to see the current mode, file name, file status, ruler, etc.
 set number								"Enables line numbers
 set shiftwidth=4 						"Changes the number of spaces to use for each step of (auto)indent to 4, the default value is 8.
@@ -25,12 +26,11 @@ syntax on								"Enables syntax highlighting
 " ------------------------------------------------------------
 
 "Enable cursor line position tracking
-set cursorline
+"set cursorline
 "Remove the underline from enabling cursorline
-highlight clear CursorLine
+"highlight clear CursorLine
 "Set line numbering to gray background
-highlight CursorLineNR ctermbg=gray
-
+"highlight CursorLineNR ctermbg=gray
 
 " ------------------------------------------------------------
 " ////////////////////////////////////////////////////////////

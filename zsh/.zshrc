@@ -124,10 +124,7 @@ source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
 # Settings: Aliases
 # ---------------------------------------------------------------------------------------------------------
 
-alias ls='ls -1a'
-alias tkill='tmux kill-session -t'
-alias tnew='tmux new-session -t'
-alias tattach='tmux attach-session -t'
+alias mls='ls -1aX'
 alias battery='upower -i /org/freedesktop/UPower/devices/battery_BAT1'
 
 # ---------------------------------------------------------------------------------------------------------
@@ -140,4 +137,5 @@ function pushall()
 	git commit -m $1
 	git push origin master
 }
+
 

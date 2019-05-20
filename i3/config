@@ -136,14 +136,25 @@ bindsym $mod+Shift+r restart
 # exit i3 (logs you out of your X session)
 bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
 
-# MY CONFIG: Hide all windows title bar
+# ------------------------------------------------------------
+# ////////////////////////////////////////////////////////////
+# My own settings
+# ////////////////////////////////////////////////////////////
+# ------------------------------------------------------------
+
+# Hide all windows title bar
 for_window [class="^.*"] border pixel 1
 new_window 1pixel
 
-# MY CONFIG: Open specific applications in floating mode
-for_window [title="Python Turtle Graphics"] floating enable
+# Open a .tex file in vim in order to insert fast math equations.
+bindsym $mod+Shift+w exec gnome-terminal -e "vim -c 'startinsert' ~/Downloads/main.tex" && i3-msg "floating enable"
 
-# MY CONFIG: Changing the magnitud of change at the time of windows size changing.
+# Open specific applications in floating mode
+# oooo
+for_window [title="Python Turtle Graphics"] floating enable
+for_window [title="Enter LaTeX Formula - TexText 0.10.2"] floating enable
+
+# Changing the magnitud of change at the time of windows size changing.
 # resize window (you can also use the mouse for that)
 mode "resize" {
         # These bindings trigger as soon as you enter the resize mode
