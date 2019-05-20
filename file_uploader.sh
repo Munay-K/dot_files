@@ -31,10 +31,6 @@ cp ~/.vimrc 			vim/
 cp -r ~/.vim/MySnippets vim/
 #Useful scripts to be used in vim
 cp -r ~/.vim/plugin 	vim/
-#Selected color schemes
-cp -r ~/.vim/colors 	vim/
-#Templates used with the vim/templates plugin
-cp -r ~/.vim/templates 	vim/
 #separate .vimrc files
 cp -r ~/.vim/.vimrcs 	vim/
 
