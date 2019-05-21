@@ -6,9 +6,17 @@ snippet "(\w+);" "Backslash putter" rA
 \\`!p snip.rv = match.group(1)` $0
 endsnippet
 
+# SNAP:
+# pi; ==> [\pi $0]
+# pm; ==> [\pm $0]
+
 snippet "(\w+)\.\." "Backslash putter" rA
 \\`!p snip.rv = match.group(1)`{$1} $0
 endsnippet
+
+# SNAP:
+# mathbb.. ==> [\mathbb{$1}]
+# usepackage.. ==> [\usepackage{$1}]
 
 # ------------------------------------------------------------
 # General
@@ -25,16 +33,10 @@ snippet frac "fraction" iwA
 endsnippet
 
 snippet dfrac "fraction" iwA
-\dfrac
-	{
-		${VISUAL}$1
-	}
-	{
-		$2
-	}
+\dfrac { ${VISUAL}$1 } { $2 }
 endsnippet
 
-snippet nl
+snippet nl "newline" iA
 \\\\ 
 endsnippet
 
@@ -46,20 +48,8 @@ snippet fx "function" iA
 f(x) 
 endsnippet
 
-snippet sub "." i
-{$1}_{$2}
-endsnippet
-
-snippet exp "." i
-{$1}^{$2}
-endsnippet
-
 snippet sqrt "Square root" iA
 \sqrt[${1:2}]{$2}
-endsnippet
-
-snippet lim "." iA
-\lim_{${1:x} \to ${2:\infty}} \left($3\right)$0
 endsnippet
 
 snippet mk "inline math" iA
@@ -70,6 +60,61 @@ snippet dm "Display math" iA
 \[
 	${VISUAL}$1
 \]
+endsnippet
+
+# ------------------------------------------------------------
+# Math expressions
+# ------------------------------------------------------------
+
+snippet lim "limits" iA
+\lim_{${1:x} \to ${2:\infty}} $0
+endsnippet
+
+snippet integral "integral" iA
+\int_{${1:a}}^{${2:b}} $3  dx
+endsnippet
+
+snippet log "Logarithm" iA
+\log_{${1:10}} $0
+endsnippet
+
+snippet sum "Sum" iA
+\sum_{${1:n=1}}^{${2:\infty}} $0
+endsnippet
+
+snippet ln "Natural logarithm" iA
+\ln 
+endsnippet
+
+snippet binom "Binomial" iA
+\binom{$1}{$2}
+endsnippet
+
+# ------------------------------------------------------------
+# Subscripts and supperscripts
+# ------------------------------------------------------------
+
+snippet ww "Subscript" iA
+{${VISUAL}$1}_{$2}
+endsnippet
+
+# SNAP:
+# \piww ==> [\pi{$1}_{$2}]
+# \thetaww ==> [\theta{$1}_{$2}]
+
+snippet xx "Supperscript" iA
+{${VISUAL}$1}^{$2}
+endsnippet
+
+# SNAP:
+# xx ==> [{$1}^{$2}]
+
+snippet yy "Subscript and supperscript" iA
+_{$1}^{$2}
+endsnippet
+
+snippet pyy "Superscript and left right parentheses" iA
+{\left($1\right)}^{$2}
 endsnippet
 
 # ------------------------------------------------------------
@@ -128,22 +173,28 @@ endsnippet
 # Pairs to group things together
 # ------------------------------------------------------------
 
-snippet lrp "left-right parentheses" i
+snippet lrp "left-right parentheses" iA
 \left(${VISUAL}$1\right)
 endsnippet
 
-snippet lrc "left-right [braces]/[curly brackets]" i
+# SNAP:
+# lrp ==> [\left($1\right)]
+
+snippet lrc "left-right [braces]/[curly brackets]" iA
 \left\\{${VISUAL}$1\right\\}
 endsnippet
 
-snippet lrs "left-right square brackets" i
+# SNAP:
+# lrc ==> [\left\{$1\right\}]
+
+snippet lrs "left-right square brackets" iA
 \left[${VISUAL}$1\right]
 endsnippet
 
-snippet lra "left-right angle brackets" i
+snippet lra "left-right angle brackets" iA
 \left<${VISUAL}$1\right>
 endsnippet
 
-snippet lrv "left-right absolute values" i
+snippet lrv "left-right absolute values" iA
 \left|${VISUAL}$1\right|
 endsnippet
