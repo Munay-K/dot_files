@@ -11,7 +11,7 @@ endsnippet
 # pm; ==> [\pm $0]
 
 snippet "(\w+)\.\." "Backslash putter" rA
-\\`!p snip.rv = match.group(1)`{$1} $0
+\\`!p snip.rv = match.group(1)`{${VISUAL}$1} $0
 endsnippet
 
 # SNAP:
@@ -22,6 +22,16 @@ endsnippet
 # General
 # ------------------------------------------------------------
 
+snippet cblock "Comment block" iA
+\iffalse
+	${VISUAL}$1
+\fi
+endsnippet
+
+snippet latex "latex" iA
+\LaTeX $0
+endsnippet
+
 snippet begin
 \begin{$1}
 	${VISUAL}$2
@@ -29,18 +39,18 @@ snippet begin
 endsnippet
 
 snippet frac "fraction" iwA
-\frac{$1}{$2}
+\frac{${VISUAL}$1}{$2}
 endsnippet
 
 snippet dfrac "fraction" iwA
-\dfrac { ${VISUAL}$1 } { $2 }
+\dfrac{${VISUAL}$1}{$2}
 endsnippet
 
 snippet nl "newline" iA
 \\\\ 
 endsnippet
 
-snippet _s "underscore string" i
+snippet s__ "underscore string" iA
 \string_
 endsnippet
 
@@ -49,7 +59,7 @@ f(x)
 endsnippet
 
 snippet sqrt "Square root" iA
-\sqrt[${1:2}]{$2}
+\sqrt[{${1:2}}]{$2}
 endsnippet
 
 snippet mk "inline math" iA
@@ -63,27 +73,43 @@ snippet dm "Display math" iA
 endsnippet
 
 # ------------------------------------------------------------
+# Arrows
+# ------------------------------------------------------------
+
+snippet rarr "Right arrow" iA
+\rightarrow $0
+endsnippet
+
+snippet larr "Left arrow" iA
+\leftarrow $0
+endsnippet
+
+snippet Rarr "Right arrow" iA
+\Rightarrow $0
+endsnippet
+
+snippet Larr "Left arrrow" iA
+\Leftarrow $0
+endsnippet
+
+# ------------------------------------------------------------
 # Math expressions
 # ------------------------------------------------------------
 
-snippet lim "limits" iA
+snippet lima "limits" iA
 \lim_{${1:x} \to ${2:\infty}} $0
 endsnippet
 
-snippet integral "integral" iA
+snippet inta "integral" iA
 \int_{${1:a}}^{${2:b}} $3  dx
 endsnippet
 
-snippet log "Logarithm" iA
+snippet loga "Logarithm" iA
 \log_{${1:10}} $0
 endsnippet
 
-snippet sum "Sum" iA
+snippet suma "Sum" iA
 \sum_{${1:n=1}}^{${2:\infty}} $0
-endsnippet
-
-snippet ln "Natural logarithm" iA
-\ln 
 endsnippet
 
 snippet binom "Binomial" iA
@@ -113,7 +139,7 @@ snippet yy "Subscript and supperscript" iA
 _{$1}^{$2}
 endsnippet
 
-snippet pyy "Superscript and left right parentheses" iA
+snippet psup "Superscript and left right parentheses" iA
 {\left($1\right)}^{$2}
 endsnippet
 
@@ -122,15 +148,19 @@ endsnippet
 # ------------------------------------------------------------
 
 snippet ttt "inline code" i
-\\texttt{$1}
+\texttt{${VISUAL}$1}
 endsnippet
 
 snippet bf "Bold" i
-\\textbf{${VISUAL}$1}
+\textbf{${VISUAL}$1}
 endsnippet
 
 snippet it "Italics" i
-\\textit{${VISUAL}$1}
+\textit{${VISUAL}$1}
+endsnippet
+
+snippet text "text" i
+\text{${VISUAL}$1}
 endsnippet
 
 # ------------------------------------------------------------
@@ -138,15 +168,15 @@ endsnippet
 # ------------------------------------------------------------
 
 snippet = "." iA
- = 
+ = $0
 endsnippet
 
 snippet + "." iA
- + 
+ + $0
 endsnippet
 
 snippet - "." iA
- - 
+ - $0
 endsnippet
 
 # ------------------------------------------------------------
@@ -158,15 +188,23 @@ snippet c
 endsnippet
 
 snippet s
-\\section{$1}
+\section{$1}
 endsnippet
 
 snippet ss
-\\subsection{$1}
+\subsection{$1}
 endsnippet
 
 snippet sss
-\\subsubsection{$1}
+\subsubsection{$1}
+endsnippet
+
+snippet mp
+\mparagraph{$1}
+endsnippet
+
+snippet msp
+\msubparagraph{$1}
 endsnippet
 
 # ------------------------------------------------------------

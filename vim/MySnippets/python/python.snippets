@@ -1,21 +1,9 @@
-snippet ; "." i
-(${VISUAL}$1)
-endsnippet
-
-snippet : "." i
-[${VISUAL}$1]
-endsnippet
-
-snippet p "." i
-print(${VISUAL}$1)
-endsnippet
-
-snippet cblock "comment block"
+snippet cblock "comment block" iA
 """
-${VISUAL}
-"""$0
+${VISUAL}$0
+"""
 endsnippet
 
-snippet nl "newline" i
-print("\n")
-endsnippet 
+snippet prn "." iA
+print($1)
+endsnippet

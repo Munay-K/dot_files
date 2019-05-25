@@ -10,6 +10,10 @@ snippet action3
 print("\n└──────────────────────────────────────────── Sub-sub-action: $1")
 endsnippet
 
-snippet var
-print(f"Value of the variable \"$1\" is: {$1}")
+snippet 2var "." iA
+print(("Variable \"$1\": \"{variable_name}\"").format(variable_name=$1))
+endsnippet
+
+snippet 3var "." iA
+print(f"Variable $1: {$1}")
 endsnippet

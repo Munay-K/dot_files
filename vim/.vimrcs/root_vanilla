@@ -10,7 +10,7 @@
 
 colorscheme industry					"Set colorscheme for entire Vim
 set background=dark						"Set the background color to dark
-set backspace=indent,eol,start			"Allow backspacing over autoindent, line breaks (join lines), start of insert. In simpler words, it maakes backspace behave properly in insert mode
+set backspace=indent,eol,start			"Allow backspacing over autoindent, line breaks (join lines), start of insert. In simpler words, it makes backspace behave properly in insert mode.
 set breakindent							"Enables indentation when wrapping
 set foldmethod=manual					"Determines what kind of folding applies in the current window
 set hlsearch							"Highlight ocurrences of a pattern when searching
@@ -23,6 +23,8 @@ syntax on								"Enables syntax highlighting
 
 " ------------------------------------------------------------
 " Cursor highliting
+" 
+" Makes vim slow when working with '.tex' files.
 " ------------------------------------------------------------
 
 "Enable cursor line position tracking
@@ -32,15 +34,16 @@ syntax on								"Enables syntax highlighting
 "Set line numbering to gray background
 "highlight CursorLineNR ctermbg=gray
 
+
 " ------------------------------------------------------------
 " ////////////////////////////////////////////////////////////
 " Keybindings
 " ////////////////////////////////////////////////////////////
 " ------------------------------------------------------------
 
-" -------------------------------------------------------
+" ------------------------------------------------------------
 " Disable arrow keys for moving
-" -------------------------------------------------------
+" ------------------------------------------------------------
 
 noremap <Up> <Nop>
 noremap <Down> <Nop>
@@ -52,16 +55,42 @@ inoremap <Down> <Nop>
 inoremap <Left> <Nop>
 inoremap <Right> <Nop>
 
-" -------------------------------------------------------
+" ------------------------------------------------------------
 " Compilation and processing of programming languages
-" -------------------------------------------------------
+" ------------------------------------------------------------
 
-autocmd filetype cpp nnoremap <F7> :w <bar> !clear && g++ -std=gnu++14 -O2 % -o %:p:h/%:t:r.exe && ./%:r.exe<CR>
-autocmd filetype tex nnoremap <F7> :w <bar> !pdflatex % && xdg-open %:t:r.pdf<CR>
-
-autocmd filetype perl nnoremap <F7> :w <bar> !perl % <CR>
-autocmd filetype go nnoremap <F7> :w <bar> !go build % && ./%:p <CR>
-autocmd filetype js nnoremap <F7> :w <bar> !node % <CR>
-autocmd filetype c nnoremap <F7> :w <bar> !clear && gcc -std=c99 -Wall -Werror -Wextra -lm % -o %:p:h/%:t:r.out && ./%:r.out<CR>
-autocmd filetype java nnoremap <F7> :w <bar> !javac % && java -enableassertions %:p <CR>
 autocmd filetype python nnoremap <F7> :w <bar> !clear && python3.7 % <CR>
+autocmd filetype cpp 	nnoremap <F7> :w <bar> !clear && g++ -std=gnu++14 -O2 % -o %:p:h/%:t:r.exe && ./%:r.exe<CR>
+
+" Compiles a tex file using 'pdflatex'
+autocmd fileType tex 	nnoremap <F9> :w <bar> :exec '!pdflatex --shell-escape -output-directory=' . shellescape(expand("%:p:h")) . ' ' . shellescape(expand("%:p"), 1)<CR>
+" Open the pdf resulting of having compiled the 'pdflatex'
+autocmd fileType tex 	nnoremap <F10> :w <bar> :exec '!xdg-open ' . shellescape(expand('%:r') . '.pdf', 1) . ' &'<CR>
+
+" ------------------------------------------------------------
+" Files skeletons
+" ------------------------------------------------------------
+
+autocmd fileType tex nnoremap <Leader>m :-1read $HOME/.vim/skeletons/main.tex<CR>11G
+
+" ------------------------------------------------------------
+" ////////////////////////////////////////////////////////////
+" Miscelanous
+" ////////////////////////////////////////////////////////////
+" ------------------------------------------------------------
+
+" ------------------------------------------------------------
+" Auto-closing braces [] and parentheses ()
+"
+" It doesn't write the closing parentheses if it's already present.
+" ------------------------------------------------------------
+
+inoremap        (  ()<Left>
+inoremap <expr> )  strpart(getline('.'), col('.')-1, 1) == ")" ? "\<Right>" : ")"
+inoremap        [  []<Left>
+inoremap <expr> ]  strpart(getline('.'), col('.')-1, 1) == "]" ? "\<Right>" : "]"
+
+inoremap <expr> ' strpart(getline('.'), col('.')-1, 1) == "\'" ? "\<Right>" : "\'\'\<Left>"
+inoremap '' '
+inoremap <expr> " strpart(getline('.'), col('.')-1, 1) == '"' ? '<Right>' : '""<Left>'
+inoremap "" "

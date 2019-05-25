@@ -22,8 +22,9 @@
 
 export AM_THEME=soft					# chosses color theme
 export AM_SHOW_FULL_DIR=0 				# shows the current dir name
-export AM_PROMPT_START_TAG='(◕ ‿ ◕ ) '	# previpusly `PROMPT_START_TAG`     
-export AM_PROMPT_END_TAG=' $'        	# previpusly `PROMPT_END_TAG`       
+# export AM_PROMPT_START_TAG='(◕ ‿ ◕ ) '	# previpusly `PROMPT_START_TAG`     
+# export AM_PROMPT_END_TAG=' $'        	# previpusly `PROMPT_END_TAG`       
+export AM_PROMPT_END_TAG=' ->'        	# previpusly `PROMPT_END_TAG`       
 export AM_PROMPT_START_TAG_COLOR=81  	# previpusly `PROMPT_START_TAG_COLOR`  
 export AM_PROMPT_END_TAG_COLOR=81    	# previpusly `PROMPT_END_TAG_COLOR`    
 ZSH_THEME="alien-minimal/alien-minimal"
@@ -125,7 +126,6 @@ source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
 # ---------------------------------------------------------------------------------------------------------
 
 alias mls='ls -1aX'
-alias battery='upower -i /org/freedesktop/UPower/devices/battery_BAT1'
 
 # ---------------------------------------------------------------------------------------------------------
 # Settings: Functions
@@ -137,5 +137,4 @@ function pushall()
 	git commit -m $1
 	git push origin master
 }
-
 
