@@ -1,0 +1,7 @@
+!Change font size using keyboard
+!Super: Windows key
+!Meta: Alt key
+
+XTerm.VT100.translations: #override \
+Ctrl Shift <Key> minus: smaller-vt-font() \n\
+Ctrl Shift <Key> equal: larger-vt-font() \n

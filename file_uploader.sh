@@ -15,12 +15,14 @@ directory_zsh=ZSH
 directory_tmux=Tmux
 directory_i3=i3
 directory_zathura=Zathura
+directory_xapplications=Xapplications
 
 rm -rf $directory_vim/* ; $directory_vim/.*
 rm -rf $directory_zsh/* ; $directory_zsh/.*
 rm -rf $directory_tmux/* ; $directory_tmux/.*
 rm -rf $directory_i3/* ; $directory_i3/.*
 rm -rf $directory_zathura/* ; $directory_zathura/.*
+rm -rf $directory_xapplications/* ; $directory_xapplications/.*
 
 # ------------------------------------------------------------
 # ////////////////////////////////////////////////////////////
@@ -64,6 +66,13 @@ cp ~/.config/i3/config $directory_i3/
 # ------------------------------------------------------------
 
 cp ~/.config/zathura/zathurarc $directory_zathura/
+
+# ------------------------------------------------------------
+# Xapplications
+# ------------------------------------------------------------
+
+cp ~/.Xresources $directory_xapplications/
+cp -r ~/.Xresources.d $directory_xapplications/
 
 # ------------------------------------------------------------
 # ////////////////////////////////////////////////////////////
