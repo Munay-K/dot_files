@@ -1,0 +1,11 @@
+!Changes background color
+URxvt*background: black
+!Changes general font color
+URxvt*foreground: white
+
+!Hide scrollbar
+URxvt*scrollBar: false
+
+!Default values:
+!Control + Alt + C: Copy selected text.
+!Shift + Insert: Paste text.

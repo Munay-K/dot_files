@@ -1,6 +1,2 @@
-!Changes background color
-xterm*background: black
-!Changes font colors
-xterm*foreground: white
-
 #include ".Xresources.d/xterm"
+#include ".Xresources.d/urxvt"

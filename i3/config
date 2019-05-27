@@ -30,7 +30,7 @@ font pango:monospace 6
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Return exec xterm
+bindsym $mod+Return exec urxvt
 
 # kill focused window
 bindsym $mod+Shift+q kill
@@ -186,7 +186,7 @@ for_window [class="^.*"] border pixel 1
 new_window 1pixel
 
 # Open a .tex file in vim in order to insert fast math equations.
-bindsym $mod+Shift+w exec xterm -e "vim -c 'startinsert' $HOME/Documents/MyFiles/dc_Testing/main.tex"
+bindsym $mod+Shift+w exec urxvt -e sh -c "vim -c 'startinsert' $HOME/Documents/MyFiles/dc_Testing/main.tex"
 
 # Open Gmail in Google Chroome
 bindsym $mod+Shift+g exec "google-chrome --new-window --args https://mail.google.com/mail/u/0/#inbox ; i3-msg 'fullscreen enable'"
@@ -195,10 +195,10 @@ bindsym $mod+Shift+g exec "google-chrome --new-window --args https://mail.google
 #B: Removes the boder of the window if you want.
 #p: Includes mouse pointer in snapshot.
 #--border-efect=border: Adds a border to the image.
-bindsym $mod+Shift+s exec "gnome-screenshot -wBp --border-effect=border ; nautilus ~/Pictures"
+bindsym $mod+Shift+s exec "gnome-screenshot -wBp --border-effect=border"
 
 #a: Screenshot of a particular area
-bindsym $mod+Shift+a exec "gnome-screenshot -a --border-effect=border ; nautilus ~/Pictures"
+bindsym $mod+Shift+a exec "gnome-screenshot -a --border-effect=border"
 
 # Open specific applications in floating mode
 for_window [title="Python Turtle Graphics"] floating enable

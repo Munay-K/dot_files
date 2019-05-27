@@ -1,3 +1,8 @@
+!Changes background color
+XTerm*background: black
+!Changes general font color
+XTerm*foreground: white
+
 !Change font size using keyboard
 !Super: Windows key
 !Meta: Alt key
