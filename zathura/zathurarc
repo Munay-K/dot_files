@@ -1,1 +1,10 @@
+# recolor: Changes the  color layout of the entire document.
 map <C-i> recolor
+
+# Default values:
+#
+# map q quit
+# map d toggle_page_mode
+#
+# References:
+# http://manpages.ubuntu.com/manpages/bionic/man5/zathurarc.5.html
