@@ -32,37 +32,37 @@ rm -rf $directory_zathura/* ; $directory_zathura/.*
 # ------------------------------------------------------------
 
 #file with general settings with vim
-cp ~/.vimrc 			vim/
+cp ~/.vimrc 			$directory_vim/
 #Snipptets
-cp -r ~/.vim/MySnippets vim/
+cp -r ~/.vim/MySnippets $directory_vim/
 #Useful scripts to be used in vim
-cp -r ~/.vim/plugin 	vim/
+cp -r ~/.vim/plugin 	$directory_vim/
 #separate .vimrc files
-cp -r ~/.vim/.vimrcs 	vim/
+cp -r ~/.vim/.vimrcs 	$directory_vim/
 
 # ------------------------------------------------------------
 # zsh files
 # ------------------------------------------------------------
 
-cp ~/.zshrc zsh/
+cp ~/.zshrc $directory_zsh/
 
 # ------------------------------------------------------------
 # tmux files
 # ------------------------------------------------------------
 
-cp ~/.tmux.conf tmux/
+cp ~/.tmux.conf $directory_tmux/
 
 # ------------------------------------------------------------
 # i3 files
 # ------------------------------------------------------------
 
-cp ~/.config/i3/config i3/
+cp ~/.config/i3/config $directory_i3/
 
 # ------------------------------------------------------------
 # Zathura files
 # ------------------------------------------------------------
 
-cp ~/.config/zathura/zathurarc zathura/
+cp ~/.config/zathura/zathurarc $directory_zathura/
 
 # ------------------------------------------------------------
 # ////////////////////////////////////////////////////////////
