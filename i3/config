@@ -43,10 +43,10 @@ bindsym $mod+d exec dmenu_run
 # bindsym $mod+d exec --no-startup-id i3-dmenu-desktop
 
 # change focus
-bindsym $mod+j focus left
-bindsym $mod+k focus down
-bindsym $mod+l focus up
-bindsym $mod+semicolon focus right
+# bindsym $mod+j focus left
+# bindsym $mod+k focus down
+# bindsym $mod+l focus up
+# bindsym $mod+semicolon focus right
 
 # alternatively, you can use the cursor keys:
 bindsym $mod+Left focus left
@@ -67,7 +67,7 @@ bindsym $mod+Shift+Up move up
 bindsym $mod+Shift+Right move right
 
 # split in horizontal orientation
-bindsym $mod+h split h
+# bindsym $mod+h split h
 
 # split in vertical orientation
 bindsym $mod+v split v
@@ -177,6 +177,7 @@ bar {
 # ////////////////////////////////////////////////////////////
 # ------------------------------------------------------------
 #
+# Useful messages:
 # i3-msg 'floating enable'
 # i3-msg 'fullscreen enable'
 
@@ -192,3 +193,9 @@ bindsym $mod+Shift+g exec "google-chrome --new-window --args https://mail.google
 # Open specific applications in floating mode
 for_window [title="Python Turtle Graphics"] floating enable
 for_window [title="Enter LaTeX Formula - TexText 0.10.2"] floating enable
+
+# Like vim keybindings
+bindsym $mod+j focus down
+bindsym $mod+k focus up
+bindsym $mod+h focus left
+bindsym $mod+l focus right

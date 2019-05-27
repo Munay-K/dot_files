@@ -59,7 +59,9 @@ inoremap <Right> <Nop>
 " Compilation and processing of programming languages
 " ------------------------------------------------------------
 
+" Interprets a python file using the version that is specified in the command.
 autocmd filetype python nnoremap <F7> :w <bar> !clear && python3.7 % <CR>
+" Compiles and executes a cpp source file without using headers files
 autocmd filetype cpp 	nnoremap <F7> :w <bar> !clear && g++ -std=gnu++14 -O2 % -o %:p:h/%:t:r.exe && ./%:r.exe<CR>
 
 " Compiles a tex file using 'pdflatex'

@@ -16,6 +16,7 @@ call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
 Plugin 'SirVer/ultisnips' 					"Snippets
 Plugin 'scrooloose/nerdtree' 				"File manager within Vim
+Plugin 'prettier/vim-prettier'				"Prettier
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -32,4 +33,5 @@ filetype plugin on
 source ~/.vim/.vimrcs/root_vanilla
 source ~/.vim/.vimrcs/plugin_settings_nerdtree
 source ~/.vim/.vimrcs/plugin_settings_ultisnips
-source ~/.vim/.vimrcs/plugin_settings_vim_instant_markdown
+source ~/.vim/.vimrcs/plugin_settings_vim_prettier
+
