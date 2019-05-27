@@ -187,15 +187,18 @@ new_window 1pixel
 
 # Open a .tex file in vim in order to insert fast math equations.
 bindsym $mod+Shift+w exec xterm -e "vim -c 'startinsert' $HOME/Documents/MyFiles/dc_Testing/main.tex"
+
 # Open Gmail in Google Chroome
 bindsym $mod+Shift+g exec "google-chrome --new-window --args https://mail.google.com/mail/u/0/#inbox ; i3-msg 'fullscreen enable'"
+
 #w: Capture active current window
 #B: Removes the boder of the window if you want.
 #p: Includes mouse pointer in snapshot.
 #--border-efect=border: Adds a border to the image.
-bindsym $mod+Shift+s exec "gnome-screenshot -wBp --border-effect=border"
+bindsym $mod+Shift+s exec "gnome-screenshot -wBp --border-effect=border ; nautilus ~/Pictures"
+
 #a: Screenshot of a particular area
-bindsym $mod+Shift+a exec "gnome-screenshot -a --border-effect=border"
+bindsym $mod+Shift+a exec "gnome-screenshot -a --border-effect=border ; nautilus ~/Pictures"
 
 # Open specific applications in floating mode
 for_window [title="Python Turtle Graphics"] floating enable
