@@ -1,9 +1,0 @@
-" ------------------------------------------------------------
-" General
-" ------------------------------------------------------------
-
-let g:cpp_class_scope_highlight = 1 "Enables highlighting of class scope
-let g:cpp_member_variable_highlight = 1 "Enables highlighting of member variables
-let g:cpp_class_decl_highlight = 1 "Enables highlighting of class names in declarations
-let g:cpp_experimental_template_highlight = 1 "There are two ways to highlight template functions. This one is a faster implementation but has some corner cases where it doesn't work.
-let g:cpp_concepts_highlight = 1 "Enables highlighting of library concepts. This will highlight the keywords concept and requires as well as all named requirements (like DefaultConstructible) in the standard library.
