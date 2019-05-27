@@ -17,12 +17,12 @@ directory_i3=i3
 directory_zathura=Zathura
 directory_xapplications=Xapplications
 
-rm -rf $directory_vim/* ; $directory_vim/.*
-rm -rf $directory_zsh/* ; $directory_zsh/.*
-rm -rf $directory_tmux/* ; $directory_tmux/.*
-rm -rf $directory_i3/* ; $directory_i3/.*
-rm -rf $directory_zathura/* ; $directory_zathura/.*
-rm -rf $directory_xapplications/* ; $directory_xapplications/.*
+rm -rf $directory_vim/* ; rm -rf $directory_vim/.*
+rm -rf $directory_zsh/* ; rm -rf $directory_zsh/.*
+rm -rf $directory_tmux/* ; rm -rf $directory_tmux/.*
+rm -rf $directory_i3/* ; rm -rf $directory_i3/.*
+rm -rf $directory_zathura/* ; rm -rf $directory_zathura/.*
+rm -rf $directory_xapplications/* ; rm -rf $directory_xapplications/.*
 
 # ------------------------------------------------------------
 # ////////////////////////////////////////////////////////////
