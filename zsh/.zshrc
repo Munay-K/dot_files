@@ -79,10 +79,9 @@ ZSH_THEME="alien-minimal/alien-minimal"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git)
+plugins=(git zsh-autosuggestions)
 
 source $ZSH/oh-my-zsh.sh
-source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
 
 # User configuration
 
@@ -136,3 +135,6 @@ function pushall()
 	git push origin master
 }
 
+export SHELL=zsh
+export EDITOR=vim
+export VISUAL=vim
