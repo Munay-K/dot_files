@@ -15,11 +15,11 @@ directory_tmux=Tmux
 directory_i3=i3
 directory_zathura=Zathura
 
-rm -ri $directory_vim/{,.}*
-rm -ri $directory_zsh/{,.}*
-rm -ri $directory_tmux/{,.}*
-rm -ri $directory_i3/{,.}*
-rm -ri $directory_zathura/{,.}*
+rm -rf $directory_vim/* ; $directory_vim/.*
+rm -rf $directory_zsh/* ; $directory_zsh/.*
+rm -rf $directory_tmux/* ; $directory_tmux/.*
+rm -rf $directory_i3/* ; $directory_i3/.*
+rm -rf $directory_zathura/* ; $directory_zathura/.*
 
 # ------------------------------------------------------------
 # ////////////////////////////////////////////////////////////
