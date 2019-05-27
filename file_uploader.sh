@@ -9,11 +9,17 @@
 BASEDIR=$(dirname "$0")
 cd $BASEDIR
 
-rm -rf vim/*
-rm -rf zsh/*
-rm -rf tmux/*
-rm -rf i3/*
-rm -rf zathura/*
+directory_vim=Vim
+directory_zsh=ZSH
+directory_tmux=Tmux
+directory_i3=i3
+directory_zathura=Zathura
+
+rm -ri $directory_vim/{,.}*
+rm -ri $directory_zsh/{,.}*
+rm -ri $directory_tmux/{,.}*
+rm -ri $directory_i3/{,.}*
+rm -ri $directory_zathura/{,.}*
 
 # ------------------------------------------------------------
 # ////////////////////////////////////////////////////////////
