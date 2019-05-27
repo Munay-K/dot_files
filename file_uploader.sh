@@ -6,6 +6,7 @@
 # ////////////////////////////////////////////////////////////
 # ------------------------------------------------------------
 
+#Go to the directory where this script is located.
 BASEDIR=$(dirname "$0")
 cd $BASEDIR
 
@@ -70,6 +71,10 @@ cp ~/.config/zathura/zathurarc $directory_zathura/
 # ////////////////////////////////////////////////////////////
 # ------------------------------------------------------------
 
+#Delete all files that are cached.
+git rm -r --cached .
+
+#Push all files.
 git add -A
 git commit -m "Monthly backup"
 git push origin master
