@@ -8,7 +8,6 @@
 " General
 " ------------------------------------------------------------
 
-colorscheme industry					"Set colorscheme for entire Vim
 set background=dark						"Set the background color to dark
 set backspace=indent,eol,start			"Allow backspacing over autoindent, line breaks (join lines), start of insert. In simpler words, it makes backspace behave properly in insert mode.
 set breakindent							"Enables indentation when wrapping
@@ -91,8 +90,3 @@ inoremap        (  ()<Left>
 inoremap <expr> )  strpart(getline('.'), col('.')-1, 1) == ")" ? "\<Right>" : ")"
 inoremap        [  []<Left>
 inoremap <expr> ]  strpart(getline('.'), col('.')-1, 1) == "]" ? "\<Right>" : "]"
-
-inoremap <expr> ' strpart(getline('.'), col('.')-1, 1) == "\'" ? "\<Right>" : "\'\'\<Left>"
-inoremap '' '
-inoremap <expr> " strpart(getline('.'), col('.')-1, 1) == '"' ? '<Right>' : '""<Left>'
-inoremap "" "

@@ -1,2 +1,4 @@
+URxvt.perl-lib: .Xresources.d/scripts/
+
 #include ".Xresources.d/xterm"
 #include ".Xresources.d/urxvt"

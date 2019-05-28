@@ -176,10 +176,10 @@ bar {
 # My own settings
 # ////////////////////////////////////////////////////////////
 # ------------------------------------------------------------
-#
-# Useful messages:
-# i3-msg 'floating enable'
-# i3-msg 'fullscreen enable'
+
+# ------------------------------------------------------------
+# General
+# ------------------------------------------------------------
 exec_always "xrdb ~/.Xresources"
 exec_always "$HOME/Documents/MyFiles/dc_GithubRepos/DotFiles/.non_configs/while_on"
 
@@ -187,10 +187,18 @@ exec_always "$HOME/Documents/MyFiles/dc_GithubRepos/DotFiles/.non_configs/while_
 for_window [class="^.*"] border pixel 1
 new_window 1pixel
 
+# Open specific applications in floating mode
+for_window [title="Python Turtle Graphics"] floating enable
+for_window [title="Enter LaTeX Formula - TexText 0.10.2"] floating enable
+
+# ------------------------------------------------------------
+# Keybindings
+# ------------------------------------------------------------
+
 # Open a .tex file in vim in order to insert fast math equations.
 bindsym $mod+Shift+w exec urxvt -e sh -c "vim -c 'startinsert' $HOME/Documents/MyFiles/dc_Testing/main.tex"
 
-# Open Gmail in Google Chroome
+# Open Gmail in Google Chroome in fullscreen
 bindsym $mod+Shift+g exec "google-chrome --new-window --args https://mail.google.com/mail/u/0/#inbox ; i3-msg 'fullscreen enable'"
 
 #w: Capture active current window
@@ -202,11 +210,10 @@ bindsym $mod+Shift+s exec "gnome-screenshot -wBp --border-effect=border"
 #a: Screenshot of a particular area
 bindsym $mod+Shift+a exec "gnome-screenshot -a --border-effect=border"
 
-# Open specific applications in floating mode
-for_window [title="Python Turtle Graphics"] floating enable
-for_window [title="Enter LaTeX Formula - TexText 0.10.2"] floating enable
+#Let pick a color from the screen and save it into the clipboard
+bindsym $mod+Shift+p exec "gpick -p"
 
-# Like vim keybindings
+# Like vim keybindings for moving through windows
 bindsym $mod+j focus down
 bindsym $mod+k focus up
 bindsym $mod+h focus left

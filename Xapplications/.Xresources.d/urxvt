@@ -1,11 +1,77 @@
-!Changes background color
-URxvt*background: black
+! ------------------------------------------------------------
+! ////////////////////////////////////////////////////////////
+! General
+! ////////////////////////////////////////////////////////////
+! ------------------------------------------------------------
+! M-Escape -> "Alt + Esc" at the same time
+! M-u -> "Alt + u" at the same time
+
+!Hides scrollbar
+urxvt*scrollBar: false
+
+!Changes font (it is necessary to set this option in order to "resize-font" extension to work)
+!urxvt.font: xft:Inconsolata:pixelsize=12
+
+!Changes font spacing
+!urxvt.letterSpace: -1
+
+!Changes background transparency
+urxvt*transparent: true
+urxvt*shading: 30
+
+! ------------------------------------------------------------
+! ////////////////////////////////////////////////////////////
+! Colors
+! ////////////////////////////////////////////////////////////
+! ------------------------------------------------------------
+
+!References:
+!Whats the meaning of color[0-15] in urxvt settings? https://stackoverflow.com/questions/29447692/whats-the-meaning-of-color0-15-in-urxvt-settings
+
+!Changes color background
+urxvt.background: black
+
 !Changes general font color
-URxvt*foreground: white
+urxvt*foreground: white
 
-!Hide scrollbar
-URxvt*scrollBar: false
+!Changes the default blue color
+!Zsh: Showing autocompletion options below terminal input.
+urxvt.color4: white
+urxvt.color12: white
 
-!Default values:
-!Control + Alt + C: Copy selected text.
-!Shift + Insert: Paste text.
+!Changes the default 
+!Zsh: Showing autocompletion within terminal input.
+urxvt.color8 : #F48024
+
+! ------------------------------------------------------------
+! ////////////////////////////////////////////////////////////
+! Extensions
+! ////////////////////////////////////////////////////////////
+! ------------------------------------------------------------
+
+! List of enabled extensions
+urxvt.perl-ext-common: resize-font,keyboard-select,url-select
+
+! ------------------------------------------------------------
+! resize-font
+! ------------------------------------------------------------
+
+! ------------------------------------------------------------
+! keyboard-select
+! ------------------------------------------------------------
+
+! Toggler
+urxvt.keysym.M-Escape: perl:keyboard-select:activate
+
+! ------------------------------------------------------------
+! url-select
+! ------------------------------------------------------------
+
+! Toggler
+urxvt.keysym.M-u: perl:url-select:select_next
+
+!Browser/command to open selected URL with
+urxvt.url-select.launcher:  /usr/bin/xdg-open
+
+!If set to true, all URLs get underlined
+urxvt.url-select.underline: true
