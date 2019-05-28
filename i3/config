@@ -180,6 +180,8 @@ bar {
 # Useful messages:
 # i3-msg 'floating enable'
 # i3-msg 'fullscreen enable'
+exec_always "xrdb ~/.Xresources"
+exec_always "$HOME/Documents/MyFiles/dc_GithubRepos/DotFiles/.non_configs/while_on"
 
 # Hide all windows title bar
 for_window [class="^.*"] border pixel 1
