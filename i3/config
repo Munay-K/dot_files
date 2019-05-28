@@ -55,10 +55,10 @@ bindsym $mod+Up focus up
 bindsym $mod+Right focus right
 
 # move focused window
-bindsym $mod+Shift+j move left
-bindsym $mod+Shift+k move down
-bindsym $mod+Shift+l move up
-bindsym $mod+Shift+semicolon move right
+# bindsym $mod+Shift+j move left
+# bindsym $mod+Shift+k move down
+# bindsym $mod+Shift+l move up
+# bindsym $mod+Shift+semicolon move right
 
 # alternatively, you can use the cursor keys:
 bindsym $mod+Shift+Left move left
@@ -180,8 +180,15 @@ bar {
 # ------------------------------------------------------------
 # General
 # ------------------------------------------------------------
+
+# Load all the settings for the X applications.
 exec_always "xrdb ~/.Xresources"
+
+# Execute the script that contains all the settings that I would like to be applied when startup.
 exec_always "$HOME/Documents/MyFiles/dc_GithubRepos/DotFiles/.non_configs/while_on"
+
+# Load wallpaper
+exec_always "feh --bg-fill ~/.config/wallpaper.png"
 
 # Hide all windows title bar
 for_window [class="^.*"] border pixel 1
@@ -213,8 +220,14 @@ bindsym $mod+Shift+a exec "gnome-screenshot -a --border-effect=border"
 #Let pick a color from the screen and save it into the clipboard
 bindsym $mod+Shift+p exec "gpick -p"
 
-# Like vim keybindings for moving through windows
+#Change focus
 bindsym $mod+j focus down
 bindsym $mod+k focus up
 bindsym $mod+h focus left
 bindsym $mod+l focus right
+
+#Move focused window
+bindsym $mod+Shift+h move left
+bindsym $mod+Shift+j move down
+bindsym $mod+Shift+k move up
+bindsym $mod+Shift+l move right

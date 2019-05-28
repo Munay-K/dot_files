@@ -13,11 +13,11 @@ urxvt*scrollBar: false
 !urxvt.font: xft:Inconsolata:pixelsize=12
 
 !Changes font spacing
-!urxvt.letterSpace: -1
+!urxvt.letterSpace: -2
 
 !Changes background transparency
 urxvt*transparent: true
-urxvt*shading: 30
+urxvt*shading: 40
 
 ! ------------------------------------------------------------
 ! ////////////////////////////////////////////////////////////

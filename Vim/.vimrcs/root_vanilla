@@ -72,7 +72,8 @@ autocmd fileType tex 	nnoremap <F10> :w <bar> :exec '!xdg-open ' . shellescape(e
 " Files skeletons
 " ------------------------------------------------------------
 
-autocmd fileType tex nnoremap <Leader>m :-1read $HOME/.vim/skeletons/main.tex<CR>11G
+autocmd fileType tex nnoremap <Leader>m :-1read $HOME/.vim/skeletons/latex<CR>14G
+autocmd fileType cpp nnoremap <Leader>m :-1read $HOME/.vim/skeletons/cpp<CR>5G
 
 " ------------------------------------------------------------
 " ////////////////////////////////////////////////////////////

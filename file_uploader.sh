@@ -16,6 +16,7 @@ directory_tmux=Tmux
 directory_i3=i3
 directory_zathura=Zathura
 directory_xapplications=Xapplications
+directory_ranger=Ranger
 
 rm -rf $directory_vim/* ; rm -rf $directory_vim/.*
 rm -rf $directory_zsh/* ; rm -rf $directory_zsh/.*
@@ -23,6 +24,7 @@ rm -rf $directory_tmux/* ; rm -rf $directory_tmux/.*
 rm -rf $directory_i3/* ; rm -rf $directory_i3/.*
 rm -rf $directory_zathura/* ; rm -rf $directory_zathura/.*
 rm -rf $directory_xapplications/* ; rm -rf $directory_xapplications/.*
+rm -rf $directory_ranger/* ; rm -rf $directory_ranger/.*
 
 # ------------------------------------------------------------
 # ////////////////////////////////////////////////////////////
@@ -73,6 +75,12 @@ cp ~/.config/zathura/zathurarc $directory_zathura/
 
 cp ~/.Xresources $directory_xapplications/
 cp -r ~/.Xresources.d $directory_xapplications/
+
+# ------------------------------------------------------------
+# Ranger
+# ------------------------------------------------------------
+
+cp ~/.config/ranger/rc.conf $directory_ranger/
 
 # ------------------------------------------------------------
 # ////////////////////////////////////////////////////////////
