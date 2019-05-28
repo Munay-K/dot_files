@@ -1,0 +1,15 @@
+\documentclass{report}
+
+\usepackage{amsmath}
+
+\author{Rodrigo Morales}
+\date{\today} 
+\title{}
+
+\begin{document}
+	\maketitle
+	\tableofcontents
+	\clearpage
+
+	Hello World!
+\end{document}

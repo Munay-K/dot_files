@@ -38,12 +38,18 @@ rm -rf $directory_ranger/* ; rm -rf $directory_ranger/.*
 
 #file with general settings with vim
 cp ~/.vimrc 			$directory_vim/
+
 #Snipptets
 cp -r ~/.vim/MySnippets $directory_vim/
+
 #Useful scripts to be used in vim
 cp -r ~/.vim/plugin 	$directory_vim/
+
 #separate .vimrc files
 cp -r ~/.vim/.vimrcs 	$directory_vim/
+
+#Skeleton for different filetypes
+cp -r ~/.vim/skeletons	$directory_vim/
 
 # ------------------------------------------------------------
 # zsh files
