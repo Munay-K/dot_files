@@ -17,7 +17,7 @@ urxvt*scrollBar: false
 
 !Changes background transparency
 urxvt*transparent: true
-urxvt*shading: 40
+urxvt*shading: 60
 
 ! ------------------------------------------------------------
 ! ////////////////////////////////////////////////////////////
