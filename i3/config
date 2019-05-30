@@ -189,7 +189,7 @@ exec_always "xrdb ~/.Xresources"
 exec_always "$HOME/Documents/MyFiles/dc_GithubRepos/DotFiles/.non_configs/while_on"
 
 # Load wallpaper
-exec_always "feh --bg-fill ~/.config/wallpaper.png"
+exec_always "feh --bg-fill ~/.config/wallpaper"
 
 # Hide all windows title bar
 for_window [class="^.*"] border pixel 1
@@ -210,7 +210,7 @@ bindsym $mod+Shift+w exec urxvt -e sh -c "vim -c 'startinsert' $HOME/Documents/M
 bindsym $mod+Shift+g exec "google-chrome --new-window --args https://mail.google.com/mail/u/0/#inbox ; i3-msg 'fullscreen enable'"
 
 # Take fullscreenshot regardless of the current focused windows on i3wm
-bindsym $mod+Shift+f exec "python3 ~/Documents/MyFiles/dc_GithubRepos/DotFiles/.non_configs/take_full_screenshot.py"
+bindsym $mod+Shift+f exec "python3 ~/Documents/MyFiles/dc_GithubRepos/dot_files/.non_configs/take_full_screenshot.py"
 
 
 #w: Capture active current window
@@ -259,3 +259,4 @@ mode "resize" {
 }
 
 bindsym $mod+r mode "resize"
+

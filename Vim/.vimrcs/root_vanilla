@@ -18,6 +18,7 @@ set number								"Enables line numbers
 set shiftwidth=4 						"Changes the number of spaces to use for each step of (auto)indent to 4, the default value is 8.
 set tabstop=4							"Changes the number of visual space per tab
 set wrap								"Disables word wrapping
+set digraph								"Allows input of character that normally cannot be entered by an ordinary keyboard.
 syntax on								"Enables syntax highlighting
 
 " ------------------------------------------------------------
