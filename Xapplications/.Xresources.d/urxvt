@@ -10,14 +10,14 @@
 urxvt*scrollBar: false
 
 !Changes font (it is necessary to set this option in order to "resize-font" extension to work)
-!urxvt.font: xft:Inconsolata:pixelsize=12
+urxvt.font: xft:Inconsolata:pixelsize=12
 
 !Changes font spacing
-!urxvt.letterSpace: -2
+urxvt.letterSpace: -2
 
 !Changes background transparency
-urxvt*transparent: true
-urxvt*shading: 30
+!urxvt*transparent: true
+!urxvt*shading: 40
 
 ! ------------------------------------------------------------
 ! ////////////////////////////////////////////////////////////

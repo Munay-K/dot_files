@@ -1,0 +1,7 @@
+#!/bin/bash
+
+#Variable definition statement
+var="Hello World"
+
+#Print statement
+echo $var

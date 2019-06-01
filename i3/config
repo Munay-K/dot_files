@@ -182,14 +182,8 @@ bar {
 # General
 # ------------------------------------------------------------
 
-# Load all the settings for the X applications.
-exec_always "xrdb ~/.Xresources"
-
 # Execute the script that contains all the settings that I would like to be applied when startup.
 exec_always "$HOME/Documents/MyFiles/dc_GithubRepos/DotFiles/.non_configs/while_on"
-
-# Load wallpaper
-exec_always "feh --bg-fill ~/.config/wallpaper"
 
 # Hide all windows title bar
 for_window [class="^.*"] border pixel 1
@@ -211,7 +205,6 @@ bindsym $mod+Shift+g exec "google-chrome --new-window --args https://mail.google
 
 # Take fullscreenshot regardless of the current focused windows on i3wm
 bindsym $mod+Shift+f exec "python3 ~/Documents/MyFiles/dc_GithubRepos/dot_files/.non_configs/take_full_screenshot.py"
-
 
 #w: Capture active current window
 #B: Removes the boder of the window if you want.

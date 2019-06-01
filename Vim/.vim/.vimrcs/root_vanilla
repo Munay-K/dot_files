@@ -73,8 +73,10 @@ autocmd fileType tex 	nnoremap <F10> :w <bar> :exec '!xdg-open ' . shellescape(e
 " Files skeletons
 " ------------------------------------------------------------
 
-autocmd fileType tex nnoremap <Leader>m :-1read $HOME/.vim/skeletons/latex<CR>14G
-autocmd fileType cpp nnoremap <Leader>m :-1read $HOME/.vim/skeletons/cpp<CR>5G
+autocmd fileType tex nnoremap <buffer> <Leader>m :-1read $HOME/.vim/skeletons/latex<CR>
+autocmd fileType cpp nnoremap <buffer> <Leader>m :-1read $HOME/.vim/skeletons/cpp<CR>
+autocmd fileType sh nnoremap  <buffer> <Leader>m :-1read $HOME/.vim/skeletons/sh<CR>
+autocmd fileType python nnoremap  <buffer> <Leader>m :-1read $HOME/.vim/skeletons/python<CR>
 
 " ------------------------------------------------------------
 " ////////////////////////////////////////////////////////////

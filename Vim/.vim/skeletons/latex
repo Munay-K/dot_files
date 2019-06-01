@@ -1,7 +1,5 @@
 \documentclass{report}
 
-\usepackage{amsmath}
-
 \author{Rodrigo Morales}
 \date{\today} 
 \title{}
