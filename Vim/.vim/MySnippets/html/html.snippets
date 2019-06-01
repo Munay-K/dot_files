@@ -1,10 +1,10 @@
-snippet t "A simple HTML tag" b
+snippet dm "A simple HTML tag" bA
 <${1:tag}>
 	${VISUAL}$2
 </${1/(\w+).*/$1/}>
 endsnippet
 
-snippet ti "A simple intline HTML tag" i
+snippet mk "A simple intline HTML tag" iA
 <${1:tag}>${VISUAL}$2</${1/(\w+).*/$1/}>
 endsnippet
 
@@ -12,10 +12,6 @@ snippet cblock
 <!--
 ${VISUAL}$1
 --!>
-endsnippet
-
-snippet comment "Comment for .html files"
-<!-- $1 -->
 endsnippet
 
 snippet css "CSS style inserter" i
@@ -28,8 +24,4 @@ endsnippet
 
 snippet < "tag" i
 <${VISUAL}$1>
-endsnippet
-
-snippet inp
-<input type="$1" $2>$0
 endsnippet
