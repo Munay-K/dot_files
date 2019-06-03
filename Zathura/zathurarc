@@ -1,5 +1,8 @@
-# recolor: Changes the  color layout of the entire document.
+# recolor: Changes the  color layout of the entire document. 
 map <C-i> recolor
+
+# Defines if recent files should be displayed in completion
+set show-recent false
 
 # Default values:
 #

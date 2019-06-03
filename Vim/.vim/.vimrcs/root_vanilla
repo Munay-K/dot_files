@@ -1,25 +1,19 @@
 " ------------------------------------------------------------
-" ////////////////////////////////////////////////////////////
-" Settings
-" ////////////////////////////////////////////////////////////
+" _[1]_ General settings
 " ------------------------------------------------------------
 
-" ------------------------------------------------------------
-" General
-" ------------------------------------------------------------
-
-set background=dark						"Set the background color to dark
-set backspace=indent,eol,start			"Allow backspacing over autoindent, line breaks (join lines), start of insert. In simpler words, it makes backspace behave properly in insert mode.
-set breakindent							"Enables indentation when wrapping
-set foldmethod=manual					"Determines what kind of folding applies in the current window
-set hlsearch							"Highlight ocurrences of a pattern when searching
-set laststatus=2						"Displays status line always. It allows you to see the current mode, file name, file status, ruler, etc.
 set number								"Enables line numbers
-set shiftwidth=4 						"Changes the number of spaces to use for each step of (auto)indent to 4, the default value is 8.
-set tabstop=4							"Changes the number of visual space per tab
 set wrap								"Disables word wrapping
-set digraph								"Allows input of character that normally cannot be entered by an ordinary keyboard.
 syntax on								"Enables syntax highlighting
+set background=dark						"Set the background color to dark
+set breakindent							"Enables indentation when wrapping
+set tabstop=4							"Changes the number of visual space per tab
+set hlsearch							"Highlight ocurrences of a pattern when searching
+set foldmethod=manual					"Determines what kind of folding applies in the current window
+set digraph								"Allows input of character that normally cannot be entered by an ordinary keyboard.
+set shiftwidth=4 						"Changes the number of spaces to use for each step of (auto)indent to 4, the default value is 8.
+set laststatus=2						"Displays status line always. It allows you to see the current mode, file name, file status, ruler, etc.
+set backspace=indent,eol,start			"Allow backspacing over autoindent, line breaks (join lines), start of insert. In simpler words, it makes backspace behave properly in insert mode.
 
 " ------------------------------------------------------------
 " Cursor highliting
@@ -34,15 +28,12 @@ syntax on								"Enables syntax highlighting
 "Set line numbering to gray background
 "highlight CursorLineNR ctermbg=gray
 
-
 " ------------------------------------------------------------
-" ////////////////////////////////////////////////////////////
-" Keybindings
-" ////////////////////////////////////////////////////////////
+" _[1]_ Keybindings
 " ------------------------------------------------------------
 
 " ------------------------------------------------------------
-" Disable arrow keys for moving
+" _[2]_ Disabling arrows for moving
 " ------------------------------------------------------------
 
 noremap <Up> <Nop>
@@ -56,7 +47,7 @@ inoremap <Left> <Nop>
 inoremap <Right> <Nop>
 
 " ------------------------------------------------------------
-" Compilation and processing of programming languages
+" _[2]_ Executing source code
 " ------------------------------------------------------------
 
 " Interprets a python file using the version that is specified in the command.
@@ -70,25 +61,26 @@ autocmd fileType tex 	nnoremap <F9> :w <bar> :exec '!pdflatex --shell-escape -ou
 autocmd fileType tex 	nnoremap <F10> :w <bar> :exec '!xdg-open ' . shellescape(expand('%:r') . '.pdf', 1) . ' &'<CR>
 
 " ------------------------------------------------------------
-" Files skeletons
+" _[2]_ Files skeletons
 " ------------------------------------------------------------
 
-autocmd fileType tex nnoremap <buffer> <Leader>m :-1read $HOME/.vim/skeletons/latex<CR>
-autocmd fileType cpp nnoremap <buffer> <Leader>m :-1read $HOME/.vim/skeletons/cpp<CR>
-autocmd fileType sh nnoremap  <buffer> <Leader>m :-1read $HOME/.vim/skeletons/sh<CR>
-autocmd fileType python nnoremap  <buffer> <Leader>m :-1read $HOME/.vim/skeletons/python<CR>
+" Simple skeleton inserter
+" autocmd fileType tex nnoremap <buffer> <Leader>m :-1read $HOME/.vim/skeletons/tex<CR>
+
+" Generic skeleton inserter
+:nnoremap <Leader>m :exe ":read $HOME/.vim/skeletons/" . expand('%:e')<CR>
 
 " ------------------------------------------------------------
-" ////////////////////////////////////////////////////////////
-" Miscelanous
-" ////////////////////////////////////////////////////////////
+" _[1]_ Miscelanous
 " ------------------------------------------------------------
 
+" Go to the middle of the line
+nnoremap <Leader>v :call cursor(0, len(getline('.'))/2+1)<CR>
+
 " ------------------------------------------------------------
-" Auto-closing braces [] and parentheses ()
-"
-" It doesn't write the closing parentheses if it's already present.
+" _[2]_ Auto-closing braces [] and parentheses ()
 " ------------------------------------------------------------
+" It doesn't write the closing parentheses if it's already present
 
 inoremap        (  ()<Left>
 inoremap <expr> )  strpart(getline('.'), col('.')-1, 1) == ")" ? "\<Right>" : ")"
