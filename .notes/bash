@@ -1,0 +1,28 @@
+------------------------------------------------------------
+_[1]_ For-loop
+------------------------------------------------------------
+
+# Printing a sequence of numbers
+for i in {1..5}; do echo $i; done
+	1
+	2
+	3
+	4
+	5
+
+# Printing a sequence of numbers
+for my_number in {0..1}; do echo $my_number; done
+	0
+	1
+
+# Printing all the files in a directory:
+for i in *; do echo $i; done
+
+# Adding a suffix to all the files in a directory:
+for i in *; do mv $f $f.cpp; done
+
+# Adding a prefix to all the files in a directory:
+for i in *; do mv $f my_$f; done
+
+# Copying all files that belong to a directory and met a pattern into a directory:
+for i in /etc/*.conf; do cp $i /backup; done

@@ -1,0 +1,75 @@
+------------------------------------------------------------
+branches
+------------------------------------------------------------
+
+What are branches used for?
+	https://uoftcoders.github.io/studyGroup/lessons/git/branches/lesson/
+
+------------------------------------------------------------
+add
+------------------------------------------------------------
+
+git add -A
+	Adds all files from current repository.
+
+------------------------------------------------------------
+commit
+------------------------------------------------------------
+
+git commit -m <message>
+	Commit changes with a given message to the current branch.
+
+------------------------------------------------------------
+push
+------------------------------------------------------------
+
+git push <acronyms> <branch_name>
+
+git push --delete <remote_name> <branch_name>
+	In most cases the remote name is origin.
+
+------------------------------------------------------------
+fetch
+------------------------------------------------------------
+
+git fetch
+	It will download all the changes (mætadata) from the remote repository and that information will be used to check the status of the local repository.
+
+------------------------------------------------------------
+pull
+------------------------------------------------------------
+
+git pull
+	It will fetch all the changes from the remote repository and will merge it (to the current branch or the original branch).
+
+------------------------------------------------------------
+branch
+------------------------------------------------------------
+
+git branch
+	List branches (the asterisk denotes the current branch)
+
+git branch [-d | --delete] <branch_name>
+	Delete a branch. The bursh must be fully merged in its upstream branch, or in the HEAD if no upstream was set with --track or --set-upstream-to. Otherwise, It will not allow to proceed.
+
+git branch [-D | --delete --force] <branch_name>
+	It can be used to avoid the fact that git will not proceed if the branch to delete has not bee fully merged.
+
+------------------------------------------------------------
+remote
+------------------------------------------------------------
+
+git remote [-v | --verbose]
+	Be a little more verbose and show remote url after name. In other words, show remote URLs after each name.
+
+------------------------------------------------------------
+checkout
+------------------------------------------------------------
+It is not possible to use "git checkout <brach_name>" if you have changes in any of the tracked files. That means, that you will not be able to move to another branch if there are changes in a given file that is being tracked. If that file is not being tracked, then that file will be shared among the all branches.
+
+git checkout <branch_name>
+	Moves to another branch
+
+git checkout -b <new_branch>
+	It causes a new branch to be created.
+	This is a shorthand for: git branch <branch_name> ; git checkout <branch_name>

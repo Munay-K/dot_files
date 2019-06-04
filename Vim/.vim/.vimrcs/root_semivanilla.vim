@@ -1,7 +1,5 @@
 " ------------------------------------------------------------
-" ////////////////////////////////////////////////////////////
-" VUNDLE REQUIREMENTS (DON'T TOUCH)
-" ////////////////////////////////////////////////////////////
+" _[1]_ Vundle requirements (don't touch)
 " ------------------------------------------------------------
 
 set nocompatible              " be iMproved, required
@@ -25,13 +23,11 @@ filetype plugin indent on    " required
 filetype plugin on 
 
 " ------------------------------------------------------------
-" ////////////////////////////////////////////////////////////
-" Link to external files
-" ////////////////////////////////////////////////////////////
+" _[1]_ Link to external files
 " ------------------------------------------------------------
 
-source ~/.vim/.vimrcs/root_vanilla
-source ~/.vim/.vimrcs/plugin_settings_nerdtree
-source ~/.vim/.vimrcs/plugin_settings_ultisnips
-source ~/.vim/.vimrcs/plugin_settings_vim_prettier
+source ~/.vim/.vimrcs/root_vanilla.vim
+source ~/.vim/.vimrcs/plugin_settings_nerdtree.vim
+source ~/.vim/.vimrcs/plugin_settings_ultisnips.vim
+source ~/.vim/.vimrcs/plugin_settings_vim_prettier.vim
 

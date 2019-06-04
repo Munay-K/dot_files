@@ -1,0 +1,22 @@
+------------------------------------------------------------
+_[1]_ To-do list
+------------------------------------------------------------
+
+------------------------------------------------------------
+_[2]_ Vim
+------------------------------------------------------------
+
+Shortcut that changes the current working directory, open NERDTree and make the current working directory be the same as it was before it changes.
+
+------------------------------------------------------------
+_[2]_ ZSH
+------------------------------------------------------------
+
+DONE: Make a function that add a preffix and a suffix for a given pattern.
+
+------------------------------------------------------------
+_[2]_ i3
+------------------------------------------------------------
+
+Mod + Tab = next workspace
+Shift + Mod + Tab = previous workspace

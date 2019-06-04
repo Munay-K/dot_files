@@ -16,10 +16,9 @@ set laststatus=2						"Displays status line always. It allows you to see the cur
 set backspace=indent,eol,start			"Allow backspacing over autoindent, line breaks (join lines), start of insert. In simpler words, it makes backspace behave properly in insert mode.
 
 " ------------------------------------------------------------
-" Cursor highliting
-" 
-" Makes vim slow when working with '.tex' files.
+" _[1]_ Cursor highlighting
 " ------------------------------------------------------------
+" Makes vim slow when working with '.tex' files
 
 "Enable cursor line position tracking
 "set cursorline
@@ -36,15 +35,25 @@ set backspace=indent,eol,start			"Allow backspacing over autoindent, line breaks
 " _[2]_ Disabling arrows for moving
 " ------------------------------------------------------------
 
-noremap <Up> <Nop>
-noremap <Down> <Nop>
-noremap <Left> <Nop>
-noremap <Right> <Nop>
+noremap <Up> 	:echoe "YOU INCOMPETENT, USE k"<CR>
+noremap <Down> 	:echoe "YOU INCOMPETENT, USE j"<CR>
+noremap <Left> 	:echoe "YOU INCOMPETENT, USE h"<CR>
+noremap <Right> :echoe "YOU INCOMPETENT, USE l"<CR>
 
-inoremap <Up> <Nop>
-inoremap <Down> <Nop>
-inoremap <Left> <Nop>
-inoremap <Right> <Nop>
+inoremap <Up> 		<Esc>:echoe "YOU INCOMPETENT, USE k"<CR>i
+inoremap <Down> 	<Esc>:echoe "YOU INCOMPETENT, USE j"<CR>i
+inoremap <Left> 	<Esc>:echoe "YOU INCOMPETENT, USE h"<CR>i
+inoremap <Right>	<Esc>:echoe "YOU INCOMPETENT, USE l"<CR>i
+
+" ------------------------------------------------------------
+" _[2]_ Quicker windows move
+" ------------------------------------------------------------
+" It doesn't work appropiately when working with the terminal
+
+nnoremap <C-j> <C-w>j
+nnoremap <C-k> <C-w>k
+nnoremap <C-h> <C-w>h
+nnoremap <C-l> <C-w>l
 
 " ------------------------------------------------------------
 " _[2]_ Executing source code
@@ -71,13 +80,6 @@ autocmd fileType tex 	nnoremap <F10> :w <bar> :exec '!xdg-open ' . shellescape(e
 :nnoremap <Leader>m :exe ":read $HOME/.vim/skeletons/" . expand('%:e')<CR>
 
 " ------------------------------------------------------------
-" _[1]_ Miscelanous
-" ------------------------------------------------------------
-
-" Go to the middle of the line
-nnoremap <Leader>v :call cursor(0, len(getline('.'))/2+1)<CR>
-
-" ------------------------------------------------------------
 " _[2]_ Auto-closing braces [] and parentheses ()
 " ------------------------------------------------------------
 " It doesn't write the closing parentheses if it's already present
@@ -86,3 +88,10 @@ inoremap        (  ()<Left>
 inoremap <expr> )  strpart(getline('.'), col('.')-1, 1) == ")" ? "\<Right>" : ")"
 inoremap        [  []<Left>
 inoremap <expr> ]  strpart(getline('.'), col('.')-1, 1) == "]" ? "\<Right>" : "]"
+
+" ------------------------------------------------------------
+" _[2]_ Miscelanous
+" ------------------------------------------------------------
+
+" Go to the middle of the line
+nnoremap <Leader>v :call cursor(0, len(getline('.'))/2+1)<CR>

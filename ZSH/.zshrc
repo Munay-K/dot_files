@@ -1,10 +1,3 @@
-# ------------------------------------------------------------------------------------------
-# ------------------------------------------------------------------------------------------
-# Default configuration
-# ------------------------------------------------------------------------------------------
-# ------------------------------------------------------------------------------------------
-
-
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
@@ -16,9 +9,9 @@
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
 
-# ------------------------------------------------------------------
-# Setting: Theme
-# ------------------------------------------------------------------
+# ------------------------------------------------------------
+# _[1]_ Theme
+# ------------------------------------------------------------
 
 export AM_THEME=soft					# chooses color theme
 export AM_SHOW_FULL_DIR=0 				# shows the current dir name
@@ -113,32 +106,60 @@ source $ZSH/oh-my-zsh.sh
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
 # ------------------------------------------------------------
-# ////////////////////////////////////////////////////////////
-# My settings
-# ////////////////////////////////////////////////////////////
-# ------------------------------------------------------------
-
-# ------------------------------------------------------------
-# General
+# _[1]_ Personal settings
 # ------------------------------------------------------------
 
 #Enables the showing of hidden directories and files when autocompleting.
-#reference: https://unix.stackexchange.com/questions/308315/how-can-i-configure-zsh-completion-to-show-hidden-files-and-folders/366137
 setopt globdots
 
 # ------------------------------------------------------------
-# Aliases
+# _[1]_ Aliases
 # ------------------------------------------------------------
 
 alias mls='ls -1aX'
 
 # ------------------------------------------------------------
-# Functions
+# _[1]_ Functions
 # ------------------------------------------------------------
 
-function pushall()
+# ------------------------------------------------------------
+# _[2]_ Git
+# ------------------------------------------------------------
+
+# 1) Remove all the files in current remote repository.
+# 2) Adds all the files in local repository.
+# 3) Do a commit with a given messsage.
+# 4) Push all the changes to current remote repository.
+function crazypush()
 {
+	git rm -rf --cached .
 	git add -A
 	git commit -m $1
 	git push origin master
+}
+
+# ------------------------------------------------------------
+# _[2]_ Linux
+# ------------------------------------------------------------
+
+# Addѕ a preffix to all the files that meet a pattern.
+function preffix()
+{
+	pattern=$1
+	for f in ${~pattern};
+		do
+			mv $f $2$f;
+			echo \"$f\" \-\> \"$2$f\";
+		done
+}
+
+# Adds a suffix to all the files that meet a pattern.
+function suffix()
+{
+	pattern=$1
+	for f in ${~pattern};
+		do
+			mv $f $f$2;
+			echo \"$f\" \-\> \"$f$2\";
+		done
 }

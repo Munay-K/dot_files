@@ -171,15 +171,12 @@ bar {
         status_command i3status
 }
 
-
 # ------------------------------------------------------------
-# ////////////////////////////////////////////////////////////
-# My own settings
-# ////////////////////////////////////////////////////////////
+# _[1]_ Personal settings
 # ------------------------------------------------------------
 
 # ------------------------------------------------------------
-# General
+# _[2]_ General
 # ------------------------------------------------------------
 
 # Execute the script that contains all the settings that I would like to be applied when startup.
@@ -196,6 +193,9 @@ for_window [title="Enter LaTeX Formula - TexText 0.10.2"] floating enable
 # ------------------------------------------------------------
 # Keybindings
 # ------------------------------------------------------------
+
+# Goes to workspace 11.
+bindsym $mod+Shift+o workspace 11
 
 # Open a .tex file in vim in order to insert fast math equations.
 bindsym $mod+Shift+w exec urxvt -e sh -c "vim -c 'startinsert' $HOME/Documents/MyFiles/dc_Testing/main.tex"
@@ -236,18 +236,11 @@ bindsym $mod+Shift+l move right
 
 # Like vim-keybindings for resizing windows
 mode "resize" {
-        # These bindings trigger as soon as you enter the resize mode
-
-        # Pressing left will shrink the window’s width.
-        # Pressing right will grow the window’s width.
-        # Pressing up will shrink the window’s height.
-        # Pressing down will grow the window’s height.
         bindsym l resize shrink width 1 px or 1 ppt
         bindsym k resize grow height 1 px or 1 ppt
         bindsym j resize shrink height 1 px or 1 ppt
         bindsym h resize grow width 1 px or 1 ppt
 
-        # back to normal: Escape
         bindsym Escape mode "default"
 }
 
