@@ -1,22 +1,51 @@
 ------------------------------------------------------------
-_[1]_ To-do list
-------------------------------------------------------------
-
-------------------------------------------------------------
 _[2]_ Vim
 ------------------------------------------------------------
 
-Shortcut that changes the current working directory, open NERDTree and make the current working directory be the same as it was before it changes.
+╔══════╗
+║ Done ║
+╚══════╝
+
+- Shortcut that changes the current working directory to the directory in where the file persists.
+- Like ranger file moving. Map "l" to open a folder.
+- Create a shortcut that open the folder that contains my templates
+
+╔═══════════╗
+║ Todo-list ║
+╚═══════════╝
+
+- Shortcut that changes the current working directory to a the directory of the file from the current buffer, open NERDTree, make the current working directory be the same as it was before.
+- NERDTree: When I press a key in a file within the menu, vim reads that file into the current buffer.
+- NERDTree: yank file to a given register
 
 ------------------------------------------------------------
 _[2]_ ZSH
 ------------------------------------------------------------
 
-DONE: Make a function that add a preffix and a suffix for a given pattern.
+╔══════╗
+║ Done ║
+╚══════╝
+
+- Make a function that add a preffix and a suffix for a given pattern.
+- UNNECESARY BECAUSE OF DEFAULT KEYBINDINGS: Changes completion toggler to Alt+Shift+L instead of the right key
+- UNNECESARY BECAUSE OF DEFAULT KEYBINDINGS: Moving left or right using Alt+L and Alt+H 
+
+╔═══════════╗
+║ Todo-list ║
+╚═══════════╝
+
 
 ------------------------------------------------------------
 _[2]_ i3
 ------------------------------------------------------------
 
-Mod + Tab = next workspace
-Shift + Mod + Tab = previous workspace
+╔══════╗
+║ Done ║
+╚══════╝
+
+╔═══════════╗
+║ Todo-list ║
+╚═══════════╝
+
+- Mod + Tab = next workspace
+- Shift + Mod + Tab = previous workspace

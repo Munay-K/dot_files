@@ -1,0 +1,19 @@
+snippet cblock "." A
+{% comment %}
+	${VISUAL}$1
+{% endcomment %}
+endsnippet
+
+snippet blocks "." A
+{% block $1 %}
+	${VISUAL}$2
+{% endblock %}
+endsnippet
+
+snippet blocki "." Ai
+{% block $1 %} ${VISUAL}$2 {% endblock %}
+endsnippet
+
+snippet bll "." Ai
+{% ${VISUAL}$1 %}
+endsnippet

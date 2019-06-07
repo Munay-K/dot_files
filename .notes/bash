@@ -26,3 +26,31 @@ for i in *; do mv $f my_$f; done
 
 # Copying all files that belong to a directory and met a pattern into a directory:
 for i in /etc/*.conf; do cp $i /backup; done
+
+------------------------------------------------------------
+_[1]_ Wireless connections
+------------------------------------------------------------
+https://www.tecmint.com/nmcli-connect-wi-fi-from-linux-terminal/
+
+іw dev
+	Show the current interface to wireless connections and current status (current connected network).
+
+iw <interface_name> link
+iw wlp2s0 link
+	Wi-fi deveice connection status
+
+sudo iw <interface_name> scan
+sudo iw wlp2s0 scan
+	Scan available Wi-Fi networks
+
+sudo ip link set wlp2s0 up
+sudo ip link set <interface_name> up
+	Turn up the network device/interface
+
+nmcli dev wifi connect [<SSID>|<network_name>] password [<password>]
+
+------------------------------------------------------------
+_[1]_ Find
+------------------------------------------------------------
+
+

@@ -5,7 +5,6 @@
 set number								"Enables line numbers
 set wrap								"Disables word wrapping
 syntax on								"Enables syntax highlighting
-set background=dark						"Set the background color to dark
 set breakindent							"Enables indentation when wrapping
 set tabstop=4							"Changes the number of visual space per tab
 set hlsearch							"Highlight ocurrences of a pattern when searching
@@ -28,8 +27,21 @@ set backspace=indent,eol,start			"Allow backspacing over autoindent, line breaks
 "highlight CursorLineNR ctermbg=gray
 
 " ------------------------------------------------------------
+" _[1]_ Clipboard
+" ------------------------------------------------------------
+
+autocmd VimLeave * call system("xsel -ib", getreg('+'))
+
+" ------------------------------------------------------------
 " _[1]_ Keybindings
 " ------------------------------------------------------------
+
+" Copy all the content of the file inro primary clipboard
+" nnoremap <Leader>ca ggVG"+y<CR>
+nnoremap <Leader>ca :% y+<CR>
+
+" Changes the current working directory to the directory of the file being edited in current buffer
+nnoremap <Leader>ch :exe ":chdir " . expand("%:p:h") <CR>
 
 " ------------------------------------------------------------
 " _[2]_ Disabling arrows for moving
@@ -77,7 +89,7 @@ autocmd fileType tex 	nnoremap <F10> :w <bar> :exec '!xdg-open ' . shellescape(e
 " autocmd fileType tex nnoremap <buffer> <Leader>m :-1read $HOME/.vim/skeletons/tex<CR>
 
 " Generic skeleton inserter
-:nnoremap <Leader>m :exe ":read $HOME/.vim/skeletons/" . expand('%:e')<CR>
+:nnoremap <Leader><Space> :exe ":-1read $HOME/.vim/templates/skeletons/" . expand('%:e')<CR>
 
 " ------------------------------------------------------------
 " _[2]_ Auto-closing braces [] and parentheses ()
@@ -88,6 +100,7 @@ inoremap        (  ()<Left>
 inoremap <expr> )  strpart(getline('.'), col('.')-1, 1) == ")" ? "\<Right>" : ")"
 inoremap        [  []<Left>
 inoremap <expr> ]  strpart(getline('.'), col('.')-1, 1) == "]" ? "\<Right>" : "]"
+
 
 " ------------------------------------------------------------
 " _[2]_ Miscelanous

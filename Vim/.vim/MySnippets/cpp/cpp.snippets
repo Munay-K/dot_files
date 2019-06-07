@@ -1,35 +1,16 @@
-snippet cblock
+snippet cblock "Multi-line comment" bA
 /*
 ${VISUAL}$0
 */
 endsnippet
 
-snippet cout "Stream output" w
-std::cout<<$0
+snippet prs "string printer" bA
+std::cout<<"$1";
 endsnippet
 
-snippet cin "Stream input" w
-std::cin>>$0
-endsnippet
-
-snippet ternary "Ternary operator" w
-( (${1:Condition}) ? (${2:True value}) : (${3:False value}) )
-endsnippet
-
-snippet returne "Stylish return value"
-return ( ${VISUAL}$0 );
-endsnippet
-
-snippet ife "hola"
-if( $1 )
-{
-	$0	
-}
-endsnippet
-
-snippet this "Specifier for current object" i
-(*this).
-endsnippet
+# ------------------------------------------------------------
+# _[1]_ General
+# ------------------------------------------------------------
 
 snippet class
 #ifndef CLASS_`!p snip.rv = t[1].upper()`
@@ -58,7 +39,7 @@ class $1
 };$0
 endsnippet
 
-snippet saver
+snippet ifndef
 #ifndef `!p t[1] = snip.rv = t[1].upper()`
 #define $1
 
@@ -67,55 +48,14 @@ ${VISUAL}$0
 #endif // $1
 endsnippet 
 
-snippet nl "New line"
-std::cout<<"\n";
+snippet ;; "." A
+std::
 endsnippet
 
-snippet for "for loop" 
-for($1 i {$2}; i<$3; i++)
-{
-	${VISUAL}$0
-}
+# ------------------------------------------------------------
+# _[1]_ Input and output
+# ------------------------------------------------------------
+
+snippet cout "." iA
+std::cout<<
 endsnippet
-
-snippet ( "parentheses" i
-( $1 )
-endsnippet
-
-snippet bcsds "Basic constructor and destructor"
-$1::$1() {}
-$1::~$1() {}
-endsnippet
-
-snippet ns
-namespace $1
-{
-	${VISUAL}$0
-}
-endsnippet
-
-# -------------------------------------------------------
-# ///////////////////////////////////////////////////////
-# Regular expressions
-# ///////////////////////////////////////////////////////
-# -------------------------------------------------------
-
-snippet "\"(.+)(;)" "Comment" r
-std::cout<<"`!p snip.rv = match.group(1)`";
-endsnippet
-
-snippet ">(.+)(;)" "Input operator" r
-std::cin >> `!p snip.rv = match.group(1)`;
-endsnippet
-
-snippet "<(.+)(;)" "Input operator" r
-std::cout << `!p snip.rv = match.group(1)`;
-endsnippet
-
-snippet "for (.+)(;)" "for  loop from 0 until a given number" r
-for(int i {0}; i < `!p snip.rv = match.group(1)`; i++)
-{
-	${VISUAL}$0
-}
-endsnippet
-

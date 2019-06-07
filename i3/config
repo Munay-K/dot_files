@@ -180,7 +180,7 @@ bar {
 # ------------------------------------------------------------
 
 # Execute the script that contains all the settings that I would like to be applied when startup.
-exec_always "/home/onceiusedwindows/Documents/MyFiles/dc_GithubRepos/dot_files/.non_configs/while_on.sh"
+exec_always "$HOME/Documents/MyFiles/dc_GithubRepos/dot_files/.non_configs/while_on.sh"
 
 # Hide all windows title bar
 for_window [class="^.*"] border pixel 1
@@ -191,20 +191,24 @@ for_window [title="Python Turtle Graphics"] floating enable
 for_window [title="Enter LaTeX Formula - TexText 0.10.2"] floating enable
 
 # ------------------------------------------------------------
-# Keybindings
+# _[2]_ Keybindings
 # ------------------------------------------------------------
 
 # Goes to workspace 11.
-bindsym $mod+Shift+o workspace 11
+# bindsym $mod+Shift+o workspace 11
+# bindsym $mod+Shift+o exec --no-startup-id "$HOME/Documents/MyFiles/dc_GithubRepos/dot_files/.non_configs/editinvim.sh"
+bindsym $mod+Shift+o exec --no-startup-id "$HOME/Documents/MyFiles/dc_GithubRepos/dot_files/.non_configs/editinvim.sh"
 
 # Open a .tex file in vim in order to insert fast math equations.
+# INCORRECT: bindsym $mod+Shift+w exec gnome-terminal -e "vim -c 'startinsert' $HOME/Documents/MyFiles/dc_Testing/main.tex ; i3-msg 'floating toggle'"
+# CORRECT: bindsym $mod+Shift+w exec gnome-terminal -e "vim -c 'startinsert' ~/Downloads/main.tex" && i3-msg "floating enable"
 bindsym $mod+Shift+w exec urxvt -e sh -c "vim -c 'startinsert' $HOME/Documents/MyFiles/dc_Testing/main.tex"
 
 # Open Gmail in Google Chroome in fullscreen
 bindsym $mod+Shift+g exec "google-chrome --new-window --args https://mail.google.com/mail/u/0/#inbox ; i3-msg 'fullscreen enable'"
 
 # Take fullscreenshot regardless of the current focused windows on i3wm
-bindsym $mod+Shift+f exec "python3 /home/onceiusedwindows/Documents/MyFiles/dc_GithubRepos/dot_files/.non_configs/take_full_screenshot.py"
+bindsym $mod+Shift+f exec "python3 $HOME/Documents/MyFiles/dc_GithubRepos/dot_files/.non_configs/take_full_screenshot.py"
 
 #w: Capture active current window
 #B: Removes the boder of the window if you want.
@@ -215,8 +219,14 @@ bindsym $mod+Shift+s exec "gnome-screenshot -wBp --border-effect=border"
 #a: Screenshot of a particular area
 bindsym $mod+Shift+a exec "gnome-screenshot -a --border-effect=border"
 
-#Let pick a color from the screen and save it into the clipboard
-bindsym $mod+Shift+p exec "gpick -p"
+# Let pick a color from the screen and save it into the clipboard
+# bindsym $mod+Shift+p exec "gpick -p"
+
+# Creates a new workspace in order to avoid clashing
+# bindsym $mod+Shift+p workspace "Don't bother me!"
+
+# Creates a new workspace
+bindsym $mod+Shift+p workspace "11"
 
 #Change focus
 bindsym $mod+j focus down
@@ -231,11 +241,12 @@ bindsym $mod+Shift+k move up
 bindsym $mod+Shift+l move right
 
 # ------------------------------------------------------------
-# Modes
+# _[2]_ Modes 
 # ------------------------------------------------------------
 
 # Like vim-keybindings for resizing windows
-mode "resize" {
+mode "resize"
+{
         bindsym l resize shrink width 1 px or 1 ppt
         bindsym k resize grow height 1 px or 1 ppt
         bindsym j resize shrink height 1 px or 1 ppt
@@ -245,4 +256,3 @@ mode "resize" {
 }
 
 bindsym $mod+r mode "resize"
-

@@ -1,0 +1,8 @@
+if __name__ == "__main__":
+    app.secret_key = ".." #Necessary for flask "session" feature.
+    app.run(
+           debug = True,       #Activates the debugger and the reloader. This option is useful during development.
+           threaded=True,      #Enables threaded mode which is already defined by default.
+           host=('0.0.0.0'),   #Defines the host to launch the current web application
+           port=5000           #Defines the port to launch the current web application
+          )

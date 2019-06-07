@@ -118,6 +118,18 @@ setopt globdots
 
 alias mls='ls -1aX'
 
+
+# ------------------------------------------------------------
+# _[1]_ Keybindings
+# ------------------------------------------------------------
+
+# Accepts the autosuggest
+# bindkey '^I' autosuggest-accept
+# bindkey '^I' forward-char
+
+# Inserts next word from the autosuggestion
+bindkey '^O' forward-word
+
 # ------------------------------------------------------------
 # _[1]_ Functions
 # ------------------------------------------------------------
@@ -133,6 +145,13 @@ alias mls='ls -1aX'
 function crazypush()
 {
 	git rm -rf --cached .
+	git add -A
+	git commit -m "First commit"
+	git push origin master
+}
+
+function pushall()
+{
 	git add -A
 	git commit -m $1
 	git push origin master
