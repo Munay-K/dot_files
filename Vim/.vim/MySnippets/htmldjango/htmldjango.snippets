@@ -1,19 +1,44 @@
-snippet cblock "." A
-{% comment %}
-	${VISUAL}$1
-{% endcomment %}
-endsnippet
+extends html
 
-snippet blocks "." A
+snippet tbbl "." A
 {% block $1 %}
 	${VISUAL}$2
 {% endblock %}
 endsnippet
 
-snippet blocki "." Ai
+snippet tibl "." Ai
 {% block $1 %} ${VISUAL}$2 {% endblock %}
 endsnippet
 
-snippet bll "." Ai
+snippet tpb "." Ai
 {% ${VISUAL}$1 %}
+endsnippet
+
+snippet tsb "." Ai
+{{ ${VISUAL}$1 }}
+endsnippet
+
+snippet tcblock
+{#
+${VISUAL}$1
+#}
+endsnippet
+
+# !1| --------------------------------------------------
+# !1| Tags
+# !1| --------------------------------------------------
+
+snippet tjs "." b
+<link rel="icon" type="image/ico" href=" {{ url_for('static', filename='${1:js/index.js}') }}">
+endsnippet
+
+snippet tfavicon "." b
+[.ico]
+<link rel="icon" type="image/x-icon" href="{{ url_for('static', filename='${1:favicon.ico}') }}">
+[.gif, .png, .jpg]
+<link rel="icon" type="image/ico" href="{{ url_for('static', filename='${1:favicon.png}') }}">
+endsnippet
+
+snippet tcss "CSS style inserter" b
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='${1:css/styles.css}') }}">
 endsnippet

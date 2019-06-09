@@ -48,14 +48,34 @@ ${VISUAL}$0
 #endif // $1
 endsnippet 
 
-snippet ;; "." A
+snippet ;; "." Ai
 std::
 endsnippet
 
+snippet returne "." A
+return ($1);
+endsnippet
+
+snippet lambda "."
+[${1:captures}]
+(${2:parameters}) -> ${3:return type declaration}
+{
+	${4:statements}
+}
+endsnippet
+
+snippet nl; "." Ai
+\n
+endsnippet
+
 # ------------------------------------------------------------
-# _[1]_ Input and output
+# _[1]_ <iostream>
 # ------------------------------------------------------------
 
 snippet cout "." iA
 std::cout<<
+endsnippet
+
+snippet cin "." iA
+std::cin>>
 endsnippet

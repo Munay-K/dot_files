@@ -1,6 +1,5 @@
 extends htmldjango
 
-
 snippet dm "A simple HTML tag" bA
 <${1:tag}>
 	${VISUAL}$2
@@ -17,14 +16,24 @@ ${VISUAL}$1
 --!>
 endsnippet
 
-snippet css "CSS style inserter" i
-<link rel="stylesheet" type="text/css" href="$1">
-endsnippet
-
 snippet br "Break line" i
 <br>
 endsnippet
 
-snippet < "tag" i
-<${VISUAL}$1>
+# !1| --------------------------------------------------
+# !1| Tagѕ
+# !1| --------------------------------------------------
+snippet favicon "." b
+[.ico]
+<link rel="icon" type="image/x-icon" href="$1">
+[.gif, .png, .jpg]
+<link rel="icon" type="image/ico" href="$1">
+endsnippet
+
+snippet css "CSS style inserter" b
+<link rel="stylesheet" type="text/css" href="$1">
+endsnippet
+
+snippet js "." b
+<script type="text/javascript" src="$1"></script>  
 endsnippet

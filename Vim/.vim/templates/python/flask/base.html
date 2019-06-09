@@ -1,0 +1,140 @@
+{% extends "bootstrap/base.html" %}
+{#
+For more information, visit "templates/bootstrap/base.html" located in the directory which contains the flask-bootstrap extension.
+#}
+
+{#
+!1| --------------------------------------------------
+!1| PROTECTED BLOCKS: You should not modify this blocks unless special circumstances.
+!1| --------------------------------------------------
+#}
+
+{#
+!2| --------------------------------------------------
+!2| {doc}: The entire HTML document
+!2| --------------------------------------------------
+#}
+
+{% block doc %}
+	{{ super() }}
+{% endblock %}
+
+{#
+!2| --------------------------------------------------
+!2| {head}: The contents of the <head> tag. {meta}, {styles}, and {title} are inside this block
+!2| --------------------------------------------------
+#}
+
+{% block head %}
+	{{ super() }}
+	<link rel="icon" type="image/x-icon" href="{{ url_for('static', filename='favicon.ico') }}">
+{% endblock %}
+
+{#
+!2| --------------------------------------------------
+!2| {body}: The contents of the <body> tag. {scripts}, {navbar} and {contents}  are inside this block.
+!2| --------------------------------------------------
+#}
+
+{% block body %}
+	{{ super() }}
+{% endblock %}
+
+{#
+!2| --------------------------------------------------
+!2| {body_attribs}: Attributes inside the <body> tag
+!2| --------------------------------------------------
+#}
+
+{% block body_attribs %}
+	
+{% endblock %}
+
+{#
+!2| --------------------------------------------------
+!2| {html}: The contents of the <html> tag
+!2| --------------------------------------------------
+#}
+
+{% block html %}
+	{{ super() }}
+{% endblock %}
+
+{#
+!2| --------------------------------------------------
+!2| {html_attribs}: Attributes inside the <html> tag
+!2| --------------------------------------------------
+#}
+
+{% block html_attribs %}
+	
+{% endblock %}
+
+{#
+!1| --------------------------------------------------
+!1| UNPROTECTED BLOCKS: Changes on these blocks won't have major effects.
+!1| --------------------------------------------------
+#}
+
+{#
+!2| --------------------------------------------------
+!2| {title}: The contents of the <title> tag
+!2| --------------------------------------------------
+#}
+
+{% block title %}
+	Title{% block sub_title %}{% endblock %}
+{% endblock %}
+
+{#
+!2| --------------------------------------------------
+!2| {metas}: The list of <meta> tags
+!2| --------------------------------------------------
+#}
+
+{% block metas %}
+{% endblock %}
+
+{#
+!2| --------------------------------------------------
+!2| {styles}: Cascading stylesheet definitions
+!2| --------------------------------------------------
+#}
+
+{% block styles %}
+	{{ super() }}
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/styles.css' }}">
+{% endblock %}
+
+{#
+!2| --------------------------------------------------
+!2| {scripts}: JavaScript declarations at the bottom of the document
+!2| --------------------------------------------------
+#}
+
+{% block scripts %}
+	{{ super() }}
+	<link rel="icon" type="image/ico" href="{{ url_for('static', filename='js/index.js') }}">
+{% endblock %}
+
+{#
+!2| --------------------------------------------------
+!2| {navbar}: User-defined navigation bar
+!2| --------------------------------------------------
+#}
+
+{% block navbar %}
+
+{% endblock %}
+
+{#
+!2| --------------------------------------------------
+!2| {content}: User-defined page content
+!2| --------------------------------------------------
+#}
+
+{% block content %}
+	<div class="main-container">
+		{% block page_content %}{% endblock %}
+	</div>
+{% endblock %}

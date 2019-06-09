@@ -1,6 +1,6 @@
-# ------------------------------------------------------------
-# _[1]_ General
-# ------------------------------------------------------------
+# !1| --------------------------------------------------
+# !1| General
+# !1| --------------------------------------------------
 
 snippet { "Scope generator" i
 {
@@ -8,53 +8,28 @@ snippet { "Scope generator" i
 }
 endsnippet
 
-snippet snip "snippet creator" 
-snippet "." 
-
-#endsnippet
-# b - Beginning of line
-# i - In-word expansion
-# r - Regular expression
-# A - Snippet will be triggered automatically
-# 
-# w - Word boundary
-# t - Do not expand tabs
-# s - Remove whitespace immediately before the cursor at the end of a line before jumping to the next tabstop.
-# m - Trim all whitespaces from right side of snippet lines. 
-# e - Custom context snippet
-#
-# For more information, visit: ":help UltiSnips-snippet-options"
+snippet gw "Hello World!" i
+Goodbye World!
 endsnippet
 
-# ------------------------------------------------------------
-# _[1]_ Separators
-# ------------------------------------------------------------
+# !1| --------------------------------------------------
+# !1| Separators
+# !1| --------------------------------------------------
 
-# Length: 60
+# Length: 50
 snippet sep "." i
-------------------------------------------------------------
+--------------------------------------------------
 endsnippet
 
 snippet sep1 "." A
-------------------------------------------------------------
-_[$1]_ $0
-------------------------------------------------------------
+!$1| --------------------------------------------------
+!$1| $0
+!$1| --------------------------------------------------
 endsnippet
 
-snippet sep21 "Separator classifier with priority 1" A
-$1
-000000000000000000000000000000000000000000000000000000000000
-endsnippet
-
-snippet sep22 "Separator classifier with priority 2" A
-$1
-------------------------------------------------------------
-endsnippet
-
-
-# ------------------------------------------------------------
-# _[1]_ Temporals
-# ------------------------------------------------------------
+# !1| --------------------------------------------------
+# !1| Temporals
+# !1| --------------------------------------------------
 
 snippet done
 '''

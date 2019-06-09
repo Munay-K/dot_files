@@ -15,7 +15,7 @@
 
 export AM_THEME=soft					# chooses color theme
 export AM_SHOW_FULL_DIR=0 				# shows the current dir name
-export AM_PROMPT_END_TAG=''        	# previpusly `PROMPT_END_TAG`       
+export AM_PROMPT_END_TAG=' =>'        		# previpusly `PROMPT_END_TAG`       
 export AM_PROMPT_START_TAG_COLOR=81  	# previpusly `PROMPT_START_TAG_COLOR`  
 export AM_PROMPT_END_TAG_COLOR=81    	# previpusly `PROMPT_END_TAG_COLOR`    
 ZSH_THEME="alien-minimal/alien-minimal"
@@ -117,7 +117,6 @@ setopt globdots
 # ------------------------------------------------------------
 
 alias mls='ls -1aX'
-
 
 # ------------------------------------------------------------
 # _[1]_ Keybindings

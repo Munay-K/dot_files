@@ -27,9 +27,10 @@ set backspace=indent,eol,start			"Allow backspacing over autoindent, line breaks
 "highlight CursorLineNR ctermbg=gray
 
 " ------------------------------------------------------------
-" _[1]_ Clipboard
+" _[1]_ Clipboard settings
 " ------------------------------------------------------------
 
+" Makes Vim not to flusht the buffer when is closed.
 autocmd VimLeave * call system("xsel -ib", getreg('+'))
 
 " ------------------------------------------------------------
