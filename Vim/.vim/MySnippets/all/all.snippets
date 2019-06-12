@@ -25,3 +25,11 @@ snippet "box4\((.{1})\,(\d+)\)" "Box" ir
 `!p snip.rv = match.group(1)``!p snip.rv = " " * int(match.group(2))`$1`!p snip.rv = " " * int(match.group(2))``!p snip.rv = match.group(1)`
 `!p snip.rv = match.group(1) * (len(t[1]) + (int(match.group(2))+1)*2)`
 endsnippet
+
+snippet filep "." i
+`!v expand("%:p")`.
+endsnippet
+
+snippet filet "." i
+`!v expand("%:t")`.
+endsnippet

@@ -1,20 +1,20 @@
 extends html
 
-snippet tbbl "." A
+snippet tblock "." A
 {% block $1 %}
 	${VISUAL}$2
 {% endblock %}
 endsnippet
 
-snippet tibl "." Ai
+snippet tiblock "." Ai
 {% block $1 %} ${VISUAL}$2 {% endblock %}
 endsnippet
 
-snippet tpb "." Ai
+snippet tpblock "." Ai
 {% ${VISUAL}$1 %}
 endsnippet
 
-snippet tsb "." Ai
+snippet tsblock "." Ai
 {{ ${VISUAL}$1 }}
 endsnippet
 
@@ -24,12 +24,19 @@ ${VISUAL}$1
 #}
 endsnippet
 
+snippet super "." b
+{{ super() }}
+endsnippet
+
+snippet extends
+{% extends "${1:bootstrap/base.html}" %} endsnippet
+
 # !1| --------------------------------------------------
 # !1| Tags
 # !1| --------------------------------------------------
 
 snippet tjs "." b
-<link rel="icon" type="image/ico" href=" {{ url_for('static', filename='${1:js/index.js}') }}">
+<script type="text/javascript" src="{{ url_for('static', filename='js/${1:index.js}') }}"></script>
 endsnippet
 
 snippet tfavicon "." b
@@ -40,5 +47,5 @@ snippet tfavicon "." b
 endsnippet
 
 snippet tcss "CSS style inserter" b
-<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='${1:css/styles.css}') }}">
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/${1:styles.css}') }}">
 endsnippet

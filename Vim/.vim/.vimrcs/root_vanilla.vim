@@ -1,6 +1,6 @@
-" ------------------------------------------------------------
-" _[1]_ General settings
-" ------------------------------------------------------------
+" !1| --------------------------------------------------
+" !1| General settings
+" !1| --------------------------------------------------
 
 set number								"Enables line numbers
 set wrap								"Disables word wrapping
@@ -14,9 +14,9 @@ set shiftwidth=4 						"Changes the number of spaces to use for each step of (au
 set laststatus=2						"Displays status line always. It allows you to see the current mode, file name, file status, ruler, etc.
 set backspace=indent,eol,start			"Allow backspacing over autoindent, line breaks (join lines), start of insert. In simpler words, it makes backspace behave properly in insert mode.
 
-" ------------------------------------------------------------
-" _[1]_ Cursor highlighting
-" ------------------------------------------------------------
+" !1| --------------------------------------------------
+" !1| Cursor highlighting
+" !1| --------------------------------------------------
 " Makes vim slow when working with '.tex' files
 
 "Enable cursor line position tracking
@@ -26,27 +26,25 @@ set backspace=indent,eol,start			"Allow backspacing over autoindent, line breaks
 "Set line numbering to gray background
 "highlight CursorLineNR ctermbg=gray
 
-" ------------------------------------------------------------
-" _[1]_ Clipboard settings
-" ------------------------------------------------------------
+" !1| --------------------------------------------------
+" !1| Clipboard settings
+" !1| --------------------------------------------------
 
-" Makes Vim not to flusht the buffer when is closed.
+" Makes Vim not to flush the clipboard buffer when is closed.
 autocmd VimLeave * call system("xsel -ib", getreg('+'))
 
-" ------------------------------------------------------------
-" _[1]_ Keybindings
-" ------------------------------------------------------------
+" !1| --------------------------------------------------
+" !1| Keybindings
+" !1| --------------------------------------------------
 
-" Copy all the content of the file inro primary clipboard
-" nnoremap <Leader>ca ggVG"+y<CR>
+" Copy all the content of the file into primary clipboard
 nnoremap <Leader>ca :% y+<CR>
 
-" Changes the current working directory to the directory of the file being edited in current buffer
 nnoremap <Leader>ch :exe ":chdir " . expand("%:p:h") <CR>
 
-" ------------------------------------------------------------
-" _[2]_ Disabling arrows for moving
-" ------------------------------------------------------------
+" !2| --------------------------------------------------
+" !2| Disable arrows for moving
+" !2| --------------------------------------------------
 
 noremap <Up> 	:echoe "YOU INCOMPETENT, USE k"<CR>
 noremap <Down> 	:echoe "YOU INCOMPETENT, USE j"<CR>
@@ -58,9 +56,9 @@ inoremap <Down> 	<Esc>:echoe "YOU INCOMPETENT, USE j"<CR>i
 inoremap <Left> 	<Esc>:echoe "YOU INCOMPETENT, USE h"<CR>i
 inoremap <Right>	<Esc>:echoe "YOU INCOMPETENT, USE l"<CR>i
 
-" ------------------------------------------------------------
-" _[2]_ Quicker windows move
-" ------------------------------------------------------------
+" !2| --------------------------------------------------
+" !2| Quicker windows move
+" !2| --------------------------------------------------
 " It doesn't work appropiately when working with the terminal
 
 nnoremap <C-j> <C-w>j
@@ -68,9 +66,16 @@ nnoremap <C-k> <C-w>k
 nnoremap <C-h> <C-w>h
 nnoremap <C-l> <C-w>l
 
-" ------------------------------------------------------------
-" _[2]_ Executing source code
-" ------------------------------------------------------------
+" !2| --------------------------------------------------
+" !2| Better moving on splitted lines
+" !2| --------------------------------------------------
+
+nnoremap j gj
+nnoremap k gk
+
+" !2| --------------------------------------------------
+" !2| Compiling/interpreting translation units
+" !2| --------------------------------------------------
 
 " Interprets a python file using the version that is specified in the command.
 autocmd filetype python nnoremap <F7> :w <bar> !clear && python3.7 % <CR>
@@ -82,30 +87,32 @@ autocmd fileType tex 	nnoremap <F9> :w <bar> :exec '!pdflatex --shell-escape -ou
 " Open the pdf resulting of having compiled the 'pdflatex'
 autocmd fileType tex 	nnoremap <F10> :w <bar> :exec '!xdg-open ' . shellescape(expand('%:r') . '.pdf', 1) . ' &'<CR>
 
-" ------------------------------------------------------------
-" _[2]_ Files skeletons
-" ------------------------------------------------------------
+" !2| --------------------------------------------------
+" !2| Files skeletons
+" !2| --------------------------------------------------
 
 " Simple skeleton inserter
 " autocmd fileType tex nnoremap <buffer> <Leader>m :-1read $HOME/.vim/skeletons/tex<CR>
 
 " Generic skeleton inserter
-:nnoremap <Leader><Space> :exe ":-1read $HOME/.vim/templates/skeletons/" . expand('%:e')<CR>
+nnoremap <Leader><Space> :exe ":-1read $HOME/.vim/templates/skeletons/" . expand('%:e')<CR>
 
-" ------------------------------------------------------------
-" _[2]_ Auto-closing braces [] and parentheses ()
-" ------------------------------------------------------------
+" !2| --------------------------------------------------
+" !2| Auto-closing braces [] and parentheses ()
+" !2| --------------------------------------------------
 " It doesn't write the closing parentheses if it's already present
 
 inoremap        (  ()<Left>
 inoremap <expr> )  strpart(getline('.'), col('.')-1, 1) == ")" ? "\<Right>" : ")"
+
 inoremap        [  []<Left>
 inoremap <expr> ]  strpart(getline('.'), col('.')-1, 1) == "]" ? "\<Right>" : "]"
 
+" !2| --------------------------------------------------
+" !2| Miscelanous
+" !2| --------------------------------------------------
 
-" ------------------------------------------------------------
-" _[2]_ Miscelanous
-" ------------------------------------------------------------
-
-" Go to the middle of the line
+" Go to the middle of the current selected line
 nnoremap <Leader>v :call cursor(0, len(getline('.'))/2+1)<CR>
+" Fastest search and replace
+nnoremap ;; :%s:::g<Left><Left><Left>
