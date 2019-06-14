@@ -129,36 +129,10 @@ alias mls='ls -1aX'
 # Inserts next word from the autosuggestion
 bindkey '^O' forward-word
 
-# ------------------------------------------------------------
-# _[1]_ Functions
-# ------------------------------------------------------------
 
-# ------------------------------------------------------------
-# _[2]_ Git
-# ------------------------------------------------------------
+# !1| Functions
 
-# 1) Remove all the files in current remote repository.
-# 2) Adds all the files in local repository.
-# 3) Do a commit with a given messsage.
-# 4) Push all the changes to current remote repository.
-function crazypush()
-{
-	git rm -rf --cached .
-	git add -A
-	git commit -m "First commit"
-	git push origin master
-}
-
-function pushall()
-{
-	git add -A
-	git commit -m $1
-	git push origin master
-}
-
-# ------------------------------------------------------------
-# _[2]_ Linux
-# ------------------------------------------------------------
+# !2| Linux
 
 # Addѕ a preffix to all the files that meet a pattern.
 function preffix()
@@ -180,4 +154,18 @@ function suffix()
 			mv $f $f$2;
 			echo \"$f\" \-\> \"$f$2\";
 		done
+}
+
+
+function wtype()
+{
+	if [[ -d $1 ]]
+	then
+		echo "\"$1\" is a directory"
+	elif [[ -f $1 ]]
+	then
+		echo "\"$1\" is a file"
+	else
+		echo "\"$1\" is not a valid name"
+	fi
 }

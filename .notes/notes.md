@@ -1,3 +1,7 @@
+╔════════╗
+║ Clases ║
+╚════════╝
+
 ┌─────────────────────────┐
 │ Práctica califica No. 1 │
 └─────────────────────────┘
@@ -37,3 +41,42 @@ Miércoles, 05 Junio 2019:
 Lunes, 10 Junio 2019:
 	Diapositiva -> Clase 17: Desempleo.
 	Capítulo de libro -> Capitulo 28: Desempleo.
+
+╔══════════════╗
+║ Exposiciones ║
+╚══════════════╝
+
+┌───────────────┐
+│ PBI sectorial │
+└───────────────┘
+
+┌─────────┐
+│ Consumo │
+└─────────┘
+
+Tipos de bienes
+- Bienes duⅹaderos
+- Bienes no duraderos
+- Servicios
+
+Evaluación temporal del consumo público
+- Renatin :D
+
+┌───────────────┐
+│ Gasto publico │
+└───────────────┘
+
+Politica fiscal para manejar el PBI
+Que es la base tributaria?
+
+┌───────────┐
+│ Inversión │
+└───────────┘
+
+Se compone de inversiones públicas e inversiones privadas.
+que deberia hacer el congreso en el caso que se cierre el congreso, se paralizan las obras, el comite dice que peru ya no va, entonces las obras se paralizan? Que trae consigo?  Trae consigo empleo, ya que la construccion mueve un moonton de empleo y consumo. Deberia buscar algunas forma que no este sujeto a la crisis politica para empezar a gastar.
+
+
+Que es la canasta basica?
+Cual es el precio de la canasta basica del Peru?
+Para que nos sirve conocer sobre la canasta basica?

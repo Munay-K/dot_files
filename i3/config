@@ -66,19 +66,10 @@ bindsym $mod+d exec dmenu_run
 # bindsym $mod+Shift+Up move up
 # bindsym $mod+Shift+Right move right
 
-# split in horizontal orientation
-# bindsym $mod+h split h
-
-# split in vertical orientation
-bindsym $mod+v split v
 
 # enter fullscreen mode for the focused container
 bindsym $mod+f fullscreen toggle
 
-# change container layout (stacked, tabbed, toggle split)
-bindsym $mod+s layout stacking
-bindsym $mod+w layout tabbed
-bindsym $mod+e layout toggle split
 
 # toggle tiling / floating
 bindsym $mod+Shift+space floating toggle
@@ -171,13 +162,57 @@ bar {
         status_command i3status
 }
 
-# ------------------------------------------------------------
-# _[1]_ Personal settings
-# ------------------------------------------------------------
 
-# ------------------------------------------------------------
-# _[2]_ General
-# ------------------------------------------------------------
+# !1| Keybindings !1|
+# !2| Miscelanous !2|
+
+# change container layout (stacked, tabbed, toggle split)
+bindsym $mod+s layout stacking
+bindsym $mod+w layout tabbed
+bindsym $mod+e layout toggle split
+
+# split in horizontal orientation
+bindsym $mod+b split h
+
+# split in vertical orientation
+bindsym $mod+v split v
+
+#Change focus
+bindsym $mod+j focus down
+bindsym $mod+k focus up
+bindsym $mod+h focus left
+bindsym $mod+l focus right
+
+#Move focused window
+bindsym $mod+Shift+h move left
+bindsym $mod+Shift+j move down
+bindsym $mod+Shift+k move up
+bindsym $mod+Shift+l move right
+
+# Returns to the previous workspace
+bindsym $mod+Tab workspace back_and_forth
+
+# !2| Applications !2|
+
+bindsym $mod+c exec "google-chrome"
+bindsym $mod+n exec "nautilus"
+
+# !2| Modes !2|
+bindsym $mod+r mode "resize"
+
+# !1| Modes !1|
+# Like vim-keybindings for resizing windows
+mode "resize"
+{
+        bindsym l resize shrink width 1 px or 1 ppt
+        bindsym k resize grow height 1 px or 1 ppt
+        bindsym j resize shrink height 1 px or 1 ppt
+        bindsym h resize grow width 1 px or 1 ppt
+
+        bindsym Escape mode "default"
+}
+
+# !1| General settings !1|
 
 # Execute the script that contains all the settings that I would like to be applied when startup.
 exec_always "$HOME/Documents/MyFiles/dc_GithubRepos/dot_files/.non_configs/while_on.sh"
@@ -190,13 +225,7 @@ new_window 1pixel
 for_window [title="Python Turtle Graphics"] floating enable
 for_window [title="Enter LaTeX Formula - TexText 0.10.2"] floating enable
 
-# ------------------------------------------------------------
-# _[2]_ Keybindings
-# ------------------------------------------------------------
-
-# Goes to workspace 11.
-# bindsym $mod+Shift+o workspace 11
-# bindsym $mod+Shift+o exec --no-startup-id "$HOME/Documents/MyFiles/dc_GithubRepos/dot_files/.non_configs/editinvim.sh"
+# Enters vim in a temporal file that is destroyed when the windows is closed.
 bindsym $mod+Shift+o exec --no-startup-id "$HOME/Documents/MyFiles/dc_GithubRepos/dot_files/.non_configs/editinvim.sh"
 
 # Open a .tex file in vim in order to insert fast math equations.
@@ -205,7 +234,7 @@ bindsym $mod+Shift+o exec --no-startup-id "$HOME/Documents/MyFiles/dc_GithubRepo
 bindsym $mod+Shift+w exec urxvt -e sh -c "vim -c 'startinsert' $HOME/Documents/MyFiles/dc_Testing/main.tex"
 
 # Open Gmail in Google Chroome in fullscreen
-bindsym $mod+Shift+g exec "google-chrome --new-window --args https://mail.google.com/mail/u/0/#inbox ; i3-msg 'fullscreen enable'"
+# bindsym $mod+Shift+g exec "google-chrome --new-window --args https://mail.google.com/mail/u/0/#inbox ; i3-msg 'fullscreen enable'"
 
 # Take fullscreenshot regardless of the current focused windows on i3wm
 bindsym $mod+Shift+f exec "python3 $HOME/Documents/MyFiles/dc_GithubRepos/dot_files/.non_configs/take_full_screenshot.py"
@@ -227,32 +256,3 @@ bindsym $mod+Shift+a exec "gnome-screenshot -a --border-effect=border"
 
 # Creates a new workspace
 bindsym $mod+Shift+p workspace "11"
-
-#Change focus
-bindsym $mod+j focus down
-bindsym $mod+k focus up
-bindsym $mod+h focus left
-bindsym $mod+l focus right
-
-#Move focused window
-bindsym $mod+Shift+h move left
-bindsym $mod+Shift+j move down
-bindsym $mod+Shift+k move up
-bindsym $mod+Shift+l move right
-
-# ------------------------------------------------------------
-# _[2]_ Modes 
-# ------------------------------------------------------------
-
-# Like vim-keybindings for resizing windows
-mode "resize"
-{
-        bindsym l resize shrink width 1 px or 1 ppt
-        bindsym k resize grow height 1 px or 1 ppt
-        bindsym j resize shrink height 1 px or 1 ppt
-        bindsym h resize grow width 1 px or 1 ppt
-
-        bindsym Escape mode "default"
-}
-
-bindsym $mod+r mode "resize"

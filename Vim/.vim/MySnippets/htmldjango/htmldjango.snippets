@@ -18,10 +18,8 @@ snippet tsblock "." Ai
 {{ ${VISUAL}$1 }}
 endsnippet
 
-snippet tcblock
-{#
-${VISUAL}$1
-#}
+snippet tcblock "." A
+{# ${VISUAL}$1 #}
 endsnippet
 
 snippet super "." b
@@ -29,11 +27,10 @@ snippet super "." b
 endsnippet
 
 snippet extends
-{% extends "${1:bootstrap/base.html}" %} endsnippet
+{% extends "${2:bootstrap/base.html}" %}
+endsnippet
 
-# !1| --------------------------------------------------
-# !1| Tags
-# !1| --------------------------------------------------
+# !1| Tagѕ
 
 snippet tjs "." b
 <script type="text/javascript" src="{{ url_for('static', filename='js/${1:index.js}') }}"></script>
@@ -48,4 +45,16 @@ endsnippet
 
 snippet tcss "CSS style inserter" b
 <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/${1:styles.css}') }}">
+endsnippet
+
+snippet tfor "." A
+{% for $1 %}
+	$2
+{% endfor %}
+endsnippet
+
+snippet tif "." A
+{% if $1 %}
+	$2
+{% endif %}
 endsnippet

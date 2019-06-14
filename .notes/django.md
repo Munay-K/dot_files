@@ -1,0 +1,166 @@
+ \Sources of information
+
+https://simpleisbetterthancomplex.com/series/2017/09/04/a-complete-beginners-guide-to-django-part-1.html
+
+## Setting up a Django  project
+
+Install virtual environments
+-> pip3 install virtualenv --user
+
+Creates a new virtual environment
+-> virtualenv venv -p python3
+
+Enables the uses of variables from within virtual environments
+-> source venv/bin/activate
+
+Deactivates the current virtual environment
+-> deactivate
+
+Installing the package that will let us create new projects
+Installs DJango
+-> pip3 install django
+
+## Creating a Django project
+
+Start a new Django project
+-> django-admin startproject myproject
+
+Run the current web project
+-> python3 manage.py runserver
+
+Since one project can be composed by miltiple web application, we create our first web application by  using:
+-> django-admin startapp <web_app_name>
+-> django-admin startapp boards
+
+## Initializing the ORM
+
+python3 manage.py makemigrations
+pyhont3 manage.py migrate
+
+## Creating a superuser
+
+python manage.py createsuperuser
+This will create a superuser that can be logged into /admin website.
+
+# Questions
+
+- It is true that Django already come with 6 build-in apps installed, but what the hell are authentication, sessions, static files management (images, javascripts, css, etc.) What do they represent?
+- What's the difference between using `virtualenv` which  was installed by `sudo apt install virtualenv` and the other one that was installed with `sudo pip3 install virtualenv`?
+
+# Notes
+
+█▀▀▀▀▀▀▀▀█
+▌ Django ▐
+█▄▄▄▄▄▄▄▄█
+
+- Las funciones "view" se deben definir en el archivo "views.py", y estas deben ser llamadas desde "urls.py" mediante enunciados que utilizan expresiones regulares
+	"url(r'^$', views.home, name='home')"
+- El archivo "models.py" nos servirá para definir las entidades de la aplicación de la web. Estos modelos son traducidos a Djanto automáticamente.
+- Each Django project has its own settings in the folder <project_name>/settings.py.
+- Django works with regex to match the requested URL.
+
+█▀▀▀▀▀▀▀▀▀▀▀▀█
+▌ PostgreSQL ▐
+█▄▄▄▄▄▄▄▄▄▄▄▄█
+
+╔══════════╗
+║ Commands ║
+╚══════════╝
+
+┌────────────────────┐
+│ sudo su - postgres │
+└────────────────────┘
+
+pg_dump dbname > outfile
+psql dbname < infile
+	For these commands to work, it is necessary that "dbname" is the name of an available database. Al hacer un dump, por alguna extrana razon
+
+┌─────────────────┐
+│ SQL environment │
+└─────────────────┘
+
+DROP USER <user_name>
+	Destroys, kills a user from a database.
+DROP DATABASE <database_name>
+	Destroys, kills a database.
+TABLE <table_name>
+SELECT * FROM <table_name> LIMIT <items_to_print>;
+	List all the content from a table.
+\?
+	List all the available commands
+\l
+	Show current created tables and users with special privileges within that tables.
+\c <table_name>
+	Connects to an specific with a given name.
+\d
+	List tables, views and sequences.
+\du
+	List created users
+
+╔═══════════════════════╗
+║ Anotaciones generales ║
+╚═══════════════════════╝
+
+- Al utilizar DJango con PostgreSQL, la base de datos se guarda localmente.
+- Se puede saber donde PostgreSQL guarda los datos, ejecutando el comando: "show data_directory" en el ambiente "sudo su - postgres."
+- Para tener un listado de todas las tablas, se puede obtener "\l". Es necesario ejecutar este comando en el ambiente "sudo su - postgres".
+- DJango hace el mapeo de las clases de Python a un ambiente de PostgreSQL, es por eso que al eliminar tu projecto de Django, las bases de datos van a seguir en el ambiente de PostgreSQL. Incluso el "superuser" creado por Django es guardado en PostgreSQL.
+- Una base de datos contiene muchas tablas, se pueden eliminar tablas usando "DROP TABLE", y las bases de datos se pueden eliminar usando "DROP DATABASE".
+- Necesitamos crear un usuario con todos los privilegios en un ambiente PostgreSQL, para luego especificar este usuario en el archivo "settings.py". Es diferente crear un usuario con privilegios especiales utilizndo "python3 manage.py createsuperuser"  y "GRANT ALL PRIVILEGES ON DATABASE myproject TO myprojectuser;". El primero sirve para ingresar al dashboard de nuestra aplicación, mientras que el segundo sirve para que Django tenga la comunicación con la base de datos y este último pueda ejecutar comandos en SQL.
+
+╔════════════╗
+║ PostgreSQL ║
+╚════════════╝
+
+- Formara parte del backend, en otras palabras sera nuestra base de datos.
+- Se recomienda utilizar ya que tiene mas funciones que SQLAlchemy y es open source.
+- Corre en un puerto.
+- Para ejecutar PostgreSQL necesitamos ejecutar los siguientes comandos:
+	- sudo -i te loguea como sudo 
+	- sudo -i -u postgres
+- Creamos las bases de datos:
+	- sudo friends -i 
+	- pug
+	- El puerto por defecto de POЅTGRESQL es 5432.
+	- En todo cambio que hagamos en las clases que crean las tablas, tenemos que hacer un `makemigrations` y `migrate`.
+- DynamoDB
+- Cosas desconocidas
+	- Create superuser()
+	- DJango Rest es como un plugin de DJango.
+	- Serializer procesara la data.
+	- El request que nosotros vamos a mandar es post o request.
+
+╔══════════╗
+║ Rest API ║
+╚══════════╝
+
+- Django formara parte del APIs.
+	- settings.py es como el config de Django (no es recomendable que guardemos la config en un archivo plano de texto, esto no se hace en producción.)
+	- manage.py ejecutar comandos de Django.
+	- urls.py -> define las URLS de la aplicaacion
+	- wsql nunca lo deberiamos tocar.
+- Necesitaremos crear un virtual environment "python3-env"
+- Instalación:
+	- pip3 install django
+	- pip3 install drf
+
+╔════════════════════════╗
+║ HTML, CSS y Javascript ║
+╚════════════════════════╝
+
+- Formaran parte del frontend y dentro de estos podemos utilizar librerias.
+
+
+█▀▀▀▀▀▀▀▀▀▀▀▀▀█
+▌ Referencias ▐
+█▄▄▄▄▄▄▄▄▄▄▄▄▄█
+
+- docs.djangoproject.com/tutorial (organization for a root directory)
+- digitalocean (how to use postgresql with your django application)
+- django-rest-framework.org
+
+█▀▀▀▀▀▀▀▀▀▀▀▀█
+▌ To-do list ▐
+█▄▄▄▄▄▄▄▄▄▄▄▄█
+
+i3 -> Win + Tab -> Volver a la anterior ventana
