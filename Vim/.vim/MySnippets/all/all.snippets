@@ -1,6 +1,15 @@
-snippet timenow "Insert current time" i
+# !1| Time inserters !1|
+
+snippet time "Insert current time" i
 `!v strftime("%a, %d %b %y, %H:%M:%S, %z")`
 endsnippet
+
+# sudo apt-get install language-pack-es
+snippet time_es
+`LC_TIME='es_CO.UTF-8' date '+%^A, %e de %^B del %Y, a las %I:%M:%S:%N %p'`
+endsnippet
+
+# !1| Boxes !1|
 
 snippet box1 "Box"
 `!p snip.rv = '┌' + '─' * (len(t[1]) + 2) + '┐'`
@@ -17,7 +26,7 @@ endsnippet
 snippet box3 "Box"
 `!p snip.rv = '█' + '▀' * (len(t[1]) + 2) + '█'`
 ▌ $1 ▐
-`!p snip.rv = '█' + '▄' * (len(t[1]) + 2) + '█'`
+`!p snip.rv = '█' + '▄' * (len([1]) + 2) + '█'`
 endsnippet
 
 snippet "box4\((.{1})\,(\d+)\)" "Box" ir
@@ -26,10 +35,12 @@ snippet "box4\((.{1})\,(\d+)\)" "Box" ir
 `!p snip.rv = match.group(1) * (len(t[1]) + (int(match.group(2))+1)*2)`
 endsnippet
 
+# !1| File paths !1|
+
 snippet filep "." i
-`!v expand("%:p")`.
+`!v expand("%:p")`
 endsnippet
 
 snippet filet "." i
-`!v expand("%:t")`.
+`!v expand("%:t")`
 endsnippet

@@ -1,5 +1,7 @@
 extends html
 
+# !1| Blocks !1|
+
 snippet tblock "." A
 {% block $1 %}
 	${VISUAL}$2
@@ -18,19 +20,44 @@ snippet tsblock "." Ai
 {{ ${VISUAL}$1 }}
 endsnippet
 
-snippet tcblock "." A
+snippet mlcomm "Multi-line comment" bA
+{#
+	${VISUAL}$1
+#}
+endsnippet
+
+snippet slcomm "Single-line comment" bA
 {# ${VISUAL}$1 #}
 endsnippet
 
-snippet super "." b
-{{ super() }}
+snippet load "." b
+{% load $1 %}
 endsnippet
 
 snippet extends
-{% extends "${2:bootstrap/base.html}" %}
+{% extends "$1" %}
 endsnippet
 
-# !1| Tagѕ
+# !1| Statements !1|
+
+snippet tfor "." A
+{% for $1 %}
+	${VISUAL}$2
+{% endfor %}
+endsnippet
+
+snippet tif "." A
+{% if $1 %}
+	${VISUAL}$2
+{% endif %}
+endsnippet
+
+snippet telse
+{% else %}
+	$0
+endsnippet
+
+# !1| Tags !1|
 
 snippet tjs "." b
 <script type="text/javascript" src="{{ url_for('static', filename='js/${1:index.js}') }}"></script>
@@ -45,16 +72,4 @@ endsnippet
 
 snippet tcss "CSS style inserter" b
 <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/${1:styles.css}') }}">
-endsnippet
-
-snippet tfor "." A
-{% for $1 %}
-	$2
-{% endfor %}
-endsnippet
-
-snippet tif "." A
-{% if $1 %}
-	$2
-{% endif %}
 endsnippet

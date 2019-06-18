@@ -1,60 +1,93 @@
-------------------------------------------------------------
-_[2]_ Vim
-------------------------------------------------------------
+!1| Meta !1|
 
-╔══════╗
-║ Done ║
-╚══════╝
+- Create a documment for each programming language that lists best practices I find.
+- Create my own Google Chrome extensions
+	QUESTIONS:
+		How do Google Chrome extensions save data?
+	- Mashup of all different tab google chrome extensions.
+		- Edit created alarms
+		- It must measure the hours left to a given hour (It must not only work as a days left google chrome extension)
+		- Let the user choose whether sort the tasks according to the most recent one or to drag them and let him sort them as he wants.
+		- It must let measure the time left to a given time from the current day.
+- Understand at a great extent how da faq Django forms work.
+	- max_lengths in forms
+	- "global" keyword in Python and how it can be used to share variables across different files to have a single max_length that is shared between forms and the database. There shouldn't be magic numbers, just a single number that is shared across the form, model, etc.
+
+!1| Vim !1|
+
+!2| Done !2|
 
 - Shortcut that changes the current working directory to the directory in where the file persists.
-- Like ranger file moving. Map "l" to open a folder.
-- Create a shortcut that open the folder that contains my templates
+- Like ranger file moving. Map "l" to open a folder or a file.
+- Kebinding that open the folder that contains my templates.
+- Highlight separators considering hierarchy.
 
-╔═══════════╗
-║ Todo-list ║
-╚═══════════╝
+!3| Unnecessary !3|
 
-- Shortcut that changes the current working directory to a the directory of the file from the current buffer, open NERDTree, make the current working directory be the same as it was before.
-- NERDTree: When I press a key in a file within the menu, vim reads that file into the current buffer.
-- NERDTree: yank file to a given register
+- Keybinding that changes the current working directory to a the directory which contain the file from the current buffer, open NERDTree, make the current working directory be the same as it was before.
+	EXPLANATION
+	It is more convenient to open NERDTree in the directory where the file from the current buffer is, this way it is not necessary to change the current working directory. Note that this is what I wanted to accomplish in the first place.
 
-------------------------------------------------------------
-_[2]_ ZSH
-------------------------------------------------------------
+!2| Todo !2| 
 
-╔══════╗
-║ Done ║
-╚══════╝
+- Highlight decorative boxes that are created using UltiSnips.
+- Learn how to work within vim on a single file from different computers.
+- Make the highlighting of separators to be always enabled.
+
+!3| NERDTree !3|
+
+- Appending files to current buffer using the NERDTree menu.
+	When I press a key while the cursor is on a file from the NERDTree menu, vim reads that file into the buffer where the cursor was, before NERDTree was opened.
+	
+	You should consider that NERDTree knows which window toggled the NERDTree menu, because when you open a file using the NERDTree menu, it knows in which windows.
+
+- Yank file to a given register from the NERDTree menu just by pressing: y<register>".
+
+!1| ZSH !1|
+
+!2| Done !2|
 
 - Make a function that add a preffix and a suffix for a given pattern.
-- UNNECESARY BECAUSE OF DEFAULT KEYBINDINGS: Changes completion toggler to Alt+Shift+L instead of the right key
-- UNNECESARY BECAUSE OF DEFAULT KEYBINDINGS: Moving left or right using Alt+L and Alt+H 
 
-╔═══════════╗
-║ Todo-list ║
-╚═══════════╝
+!3| Unnecessary !3|
 
+- UNNECESARY: Complete the suggestion using Alt+Shift+L instead of the right key
+	The default keybinding to do this is Control + F.
+- UNNECESARY: Moving left or right using Alt+L and Alt+H
+	EXPLANATION
+	The default keybindings to do this are:
+		- Control + B to go backward.
+		- Control + F to go forward.
 
-------------------------------------------------------------
-_[2]_ i3
-------------------------------------------------------------
+!2| Todo !2|
 
-╔══════╗
-║ Done ║
-╚══════╝
+!1| i3 !1|
 
-╔═══════════╗
-║ Todo-list ║
-╚═══════════╝
+!2| Done !2|
+
+!3| Unnecessary !3|
 
 - Mod + Tab = next workspace
+	EXPLANATION
+	It wouldn't help me to do anything.
 - Shift + Mod + Tab = previous workspace
-- Add transparency to terminal
+	EXPLANATION
+	It wouldn't help me to do anything.
 
-!2| --------------------------------------------------
-!2| LaTeX
-!2| --------------------------------------------------
-
-Know how to do a bibliography
+!2| Todo !2|
 
 
+!1| LaTeX !1|
+
+!2| Done !2|
+
+- Learn how to do a bibliography
+
+!2| Todo !2|
+
+- Find out which sources of information can be referenced using BibTeX, and what's the best way to do this?
+- Do a template for each of the types of references that can be referenced with bibtex (websites, articles, reports).
+- Understand the different types of sources of information that can be refenced with bibtex.
+	- What should be considered as an article?
+	- What should be considered as a report?
+	- Which kind of websites should be considered as reliable sources of information? and which kind of meta information it is necessary in order to include them in a bibliography. I can't cite any of the websites i find, can I?

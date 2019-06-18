@@ -1,9 +1,0 @@
-# !1| Vim
-
-# !2| Swap
-
-*.sw*
-
-# !2| Sessions
-
-Session.vim

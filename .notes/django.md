@@ -1,4 +1,94 @@
- \Sources of information
+!1| Setting up a new project !1|
+
+Installing virtual environment to current user
+	pip3 install virtualenv --user 
+Create a folder that will contain the Django project.
+Go inside the created folder.
+Creating a virtual environment that uses Python 3.
+	virtualenv -p python3 venv/
+Activate created virtual environment
+	source venv/bin/activate
+Install Python dependencies
+	pip3 install django
+Create a DJango project
+	django-admin startproject <project_name>
+Create a Django app
+	django-admin startapp <app_name>
+Add the template folder to enable Jinja templates
+Add the static folder
+Create a django admin
+Run server
+	python3 manage.py runserver
+
+!1| General notes !1|
+
+- A simple DJango project can have multiple apps. An "app" is a web application that do something, while a "project" is a collection of configurations and apps.
+- Everytime we create a Django app, we need to include it in the configuration from a project.
+- Django checks if the INSTALLED_APPS exists, if they don't exist, the project won't be executed.
+- Django already comes with built-in apps installed.
+- Cada especificación que hagamos con un ForeignKey deben ser especificadas con un 'on_delete'
+- We can define variable in routes by specifying the characters "P<variable_name>"
+- Django hace los test con una base de datos a parte, no considera los datos actualmente existentes, es por eso que al escribir tests que tengan que ver con existencia en la base de datos es necesario crear la clase "setUp" para crear objetos en la base de datos.
+
+!2| Default files !2|
+
+!3| Django project !3|
+
+settings.py
+	Project's configuration
+wsgi.py
+	Simple gateway interface used for deployment.
+urls.py
+	File responsible for mapping the routes and paths in our project.
+
+!3| Django application !3|
+
+admin.py
+	Configuration file for a built-in Django app called admin.
+models.py
+	File to define the entities of our web application.
+views.py
+	This is the file where we handle the requests/response of our web application.
+tests.py
+	File used to write unit tests for the app.
+migration/
+	Folder to store some files to keep track of the changes that are done in the file models.py.
+
+!2| Required packages !2|
+
+pip3 install django
+pip3 install django-widget-tweaks
+
+!2| "manage.py" commands !2|
+
+python3 manage.py
+	List all the available commands
+python3 manage.py runserver
+	Run the server with the configurations from the project.
+
+!1| Questions !1|
+
+- Why is it said that a simple Django project can have multiple apps? (what it means by "apps"? A web application? so a single Django project can manage different web applications like different websites or "app" have a different meaning?)
+- Why should we have a single project for different app if we know that a single configuration from a Django project only specify the name of a database? Isn't it advisable to have different databases for different web applications? Is it possible to specify a different database configuration for each application from a single Django project?
+- Is it correct to assume that an Django consider the terminology "app" to the differents functionalities from a single website? 
+- Why do I get a warning when I do this: "url(r'^admin/$', admin.site.urls)."
+- Is it recommended to delete the "migrations" folder? What would happen if I do this?
+
+!1| Todo !1|
+
+- Learn in which cases it is appropiate to have multiple apps in a single Django project.
+
+##############################################################################
+#                              RESTARTING NOTES                              #
+##############################################################################
+
+
+
+
+
+
+
+\Sources of information
 
 https://simpleisbetterthancomplex.com/series/2017/09/04/a-complete-beginners-guide-to-django-part-1.html
 
@@ -58,22 +148,21 @@ This will create a superuser that can be logged into /admin website.
 - El archivo "models.py" nos servirá para definir las entidades de la aplicación de la web. Estos modelos son traducidos a Djanto automáticamente.
 - Each Django project has its own settings in the folder <project_name>/settings.py.
 - Django works with regex to match the requested URL.
+- Cuando modificamos los modelos de "models.py", especificamente añadimos una columna, y ya hay datos existentes e intentamos hacer "makemigrations" and "migrate", entonces recibiremos errores (que expresan que debemos especificar valores aleatorios para los datos con los que estamos trabajando), ya que DJango no sabe que datos ponerle a esa columna en específico,
 
-█▀▀▀▀▀▀▀▀▀▀▀▀█
-▌ PostgreSQL ▐
-█▄▄▄▄▄▄▄▄▄▄▄▄█
+█▀▀▀▀▀▀▀▀▀▀▀▀█ 
+▌ PostgreSQL ▐ 
+█▄▄▄▄▄▄▄▄▄▄▄▄█ 
 
-╔══════════╗
-║ Commands ║
-╚══════════╝
+╔══════════╗ 
+║ Commands ║ 
+╚══════════╝ 
 
-┌────────────────────┐
-│ sudo su - postgres │
+┌────────────────────┐ 
+│ sudo su - postgres │ 
 └────────────────────┘
 
-pg_dump dbname > outfile
-psql dbname < infile
-	For these commands to work, it is necessary that "dbname" is the name of an available database. Al hacer un dump, por alguna extrana razon
+pg_dump dbname > outfile psql dbname < infile For these commands to work, it is necessary that "dbname" is the name of an available database. Al hacer un dump, por alguna extrana razon
 
 ┌─────────────────┐
 │ SQL environment │

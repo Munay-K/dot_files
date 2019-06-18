@@ -19,4 +19,4 @@ xinput set-prop 'SynPS/2 Synaptics TouchPad' 'Device Enabled' 0
 xrdb ~/.Xresources
 
 # Load wallpaper
-feh --bg-fill ~/.config/wallpaper
+# feh --bg-fill ~/.config/wallpaper

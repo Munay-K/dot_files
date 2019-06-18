@@ -16,8 +16,8 @@ urxvt*scrollBar: false
 !urxvt.letterSpace: -2
 
 !Changes background transparency
-urxvt*transparent: true
-urxvt*shading: 40
+!urxvt*transparent: true
+!urxvt*shading: 40
 
 ! ------------------------------------------------------------
 ! ////////////////////////////////////////////////////////////

@@ -5,7 +5,8 @@ set wrap								"Disables word wrapping
 syntax on								"Enables syntax highlighting
 set breakindent							"Enables indentation when wrapping
 set tabstop=4							"Changes the number of visual space per tab
-set hlsearch							"Highlight ocurrences of a pattern when searching
+set incsearch							"Highlight the matching results when searching.
+set hlsearch							"Highlight all ocurrences of a pattern that has been searched.
 set foldmethod=manual					"Determines what kind of folding applies in the current window
 set digraph								"Allows input of character that are difficult to type when using an english keyboard.
 set shiftwidth=4 						"Changes the number of spaces to use for each step of (auto)indent to 4, the default value is 8.
@@ -13,15 +14,13 @@ set laststatus=2						"Displays status line always. It allows you to see the cur
 set backspace=indent,eol,start			"Allow backspacing over autoindent, line breaks (join lines), start of insert. In simpler words, it makes backspace behave properly in insert mode.
 set smartcase							"If you search for something containing uppercase characters, it will do a case sensitive search; if you search for something purely lowercase, it will do a case insensitive search.
 
-" !1| Cursor highlighing !1|
-" Makes vim slow when working with '.tex' files
+" !1| Separators !1|
 
-"Enable cursor line position tracking
-"set cursorline
-"Remove the underline from enabling cursorline
-"highlight clear CursorLine
-"Set line numbering to gray background
-"highlight CursorLineNR ctermbg=gray
+highlight separator_1 cterm=bold ctermbg=022 ctermfg=015
+highlight separator_2 cterm=bold ctermbg=028 ctermfg=015
+highlight separator_3 cterm=bold ctermbg=034 ctermfg=015
+
+nnoremap <Leader>c :call matchadd("separator_1", ".*!1\|.*!1\|")<CR> \| :call matchadd("separator_2", ".*!2\|.*!2\|")<CR> \| :call matchadd("separator_3", ".*!3\|.*!3\|")<CR>
 
 " !1| Clipboard settings !1|
 
@@ -30,11 +29,22 @@ autocmd VimLeave * call system("xsel -ib", getreg('+'))
 
 " !1| Keybindings !1|
 
+" !2| Normal mode !2|
+" !2| Insert mode !2|
+" !2| Visual mode !2|
+
+" Replace spaces with underscores on visual selected text and unhighlights spaces.
+vnoremap ;; :s:\%V :_:g<CR>:noh<CR>
+" Faster text replacement on visual selected text
+vnoremap <Leader>r :s:\%V::g<Left><Left><Left>
+
+" !1| Todo !1|
+
 " Copy all the content of the file into primary clipboard
 nnoremap <Leader>ca :% y+<CR>
 
 " Delete all the file content
-nnoremap <Leader>da ggdGi<CR>
+nnoremap <Leader>da ggdG
 
 " Change the current working directory to the directory in which the current file is.
 nnoremap <Leader>ch :exe ":chdir " . expand("%:p:h") <CR>
@@ -46,10 +56,10 @@ noremap <Down> 	:echoe "YOU INCOMPETENT, USE j"<CR>
 noremap <Left> 	:echoe "YOU INCOMPETENT, USE h"<CR>
 noremap <Right> :echoe "YOU INCOMPETENT, USE l"<CR>
 
-inoremap <Up> 		<Esc>:echoe "YOU INCOMPETENT, USE k"<CR>i
-inoremap <Down> 	<Esc>:echoe "YOU INCOMPETENT, USE j"<CR>i
-inoremap <Left> 	<Esc>:echoe "YOU INCOMPETENT, USE h"<CR>i
-inoremap <Right>	<Esc>:echoe "YOU INCOMPETENT, USE l"<CR>i
+inoremap <Up> 		<Esc>:echoe "YOU INCOMPETENT, USE k"<CR>
+inoremap <Down> 	<Esc>:echoe "YOU INCOMPETENT, USE j"<CR>
+inoremap <Left> 	<Esc>:echoe "YOU INCOMPETENT, USE h"<CR>
+inoremap <Right>	<Esc>:echoe "YOU INCOMPETENT, USE l"<CR>
 
 " !2| Quicker windows move !2|
 " It doesn't work appropiately when working with the terminal
@@ -99,19 +109,19 @@ inoremap <expr> ]  strpart(getline('.'), col('.')-1, 1) == "]" ? "\<Right>" : "]
 
 " Go to the middle of the current selected line
 nnoremap <Leader>v :call cursor(0, len(getline('.'))/2+1)<CR>
-" Fastest search and replace
-nnoremap ;; :%s:::g<Left><Left><Left>
 " Better screen centering
 nnoremap <Leader>zz :let &scrolloff=999-&scrolloff<CR>
+" word wrapping activator
+nnoremap <Leader>w :set wrap!<CR>
 
-" Search separator patterns (see my Ultisnips snippets from the 'all' section for a better understanding)
-nnoremap <Leader>s1 /.\+!1\| .\+ !1\|<CR>
-nnoremap <Leader>s2 /.\+!2\| .\+ !2\|<CR>
-nnoremap <Leader>s3 /.\+!3\| .\+ !3\|<CR>
-nnoremap <Leader>s4 /.\+!4\| .\+ !4\|<CR>
-nnoremap <Leader>s5 /.\+!5\| .\+ !5\|<CR>
-nnoremap <Leader>s6 /.\+!6\| .\+ !6\|<CR>
-nnoremap <Leader>s7 /.\+!7\| .\+ !7\|<CR>
-nnoremap <Leader>s8 /.\+!8\| .\+ !8\|<CR>
-nnoremap <Leader>s9 /.\+!9\| .\+ !9\|<CR>
-nnoremap <Leader>sa /.\+!\d\+\|.\+!\d\+\|<CR>
+" !1| Highlighting !1|
+
+" !2| Cursor !2|
+"Makes vim slow when working with '.tex' files.
+
+"Enable cursor line position tracking
+"set cursorline
+"Remove the underline from enabling cursorline
+"highlight clear CursorLine
+"Set line numbering to gray background
+"highlight CursorLineNR ctermbg=gray

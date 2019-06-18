@@ -105,22 +105,16 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
-# ------------------------------------------------------------
-# _[1]_ Personal settings
-# ------------------------------------------------------------
+# !1| General settings !1|
 
 #Enables the showing of hidden directories and files when autocompleting.
 setopt globdots
 
-# ------------------------------------------------------------
-# _[1]_ Aliases
-# ------------------------------------------------------------
+# !1| Aliases !1|
 
 alias mls='ls -1aX'
 
-# ------------------------------------------------------------
-# _[1]_ Keybindings
-# ------------------------------------------------------------
+# !1| Keybindings !1|
 
 # Accepts the autosuggest
 # bindkey '^I' autosuggest-accept
@@ -130,9 +124,9 @@ alias mls='ls -1aX'
 bindkey '^O' forward-word
 
 
-# !1| Functions
+# !1| Functions !1|
 
-# !2| Linux
+# !2| Unix !2|
 
 # Addѕ a preffix to all the files that meet a pattern.
 function preffix()
@@ -155,7 +149,6 @@ function suffix()
 			echo \"$f\" \-\> \"$f$2\";
 		done
 }
-
 
 function wtype()
 {

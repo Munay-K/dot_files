@@ -32,7 +32,7 @@ _[1]_ Wireless connections
 ------------------------------------------------------------
 https://www.tecmint.com/nmcli-connect-wi-fi-from-linux-terminal/
 
-іw dev
+iw dev
 	Show the current interface to wireless connections and current status (current connected network).
 
 iw <interface_name> link
