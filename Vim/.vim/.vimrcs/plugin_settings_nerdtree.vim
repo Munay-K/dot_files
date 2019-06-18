@@ -23,11 +23,11 @@ let NERDTreeShowHidden = 1
 nnoremap <C-n> :NERDTree<CR>
 
 " Open my templates folder
-nnoremap <Leader>nt :NERDTree ~/.vim/templates/<CR>
+nnoremap <Leader>nt :NERDTree ~/Documents/MyFiles/dc_GithubRepos/dot_files/.txt_files/templates/<CR>
 " Open my snippets folder
 nnoremap <Leader>ns :NERDTree ~/.vim/MySnippets/<CR>
 " Open my snippets folder
-nnoremap <Leader>nn :NERDTree ~/Documents/MyFiles/dc_GithubRepos/dot_files/.notes/<CR>
+nnoremap <Leader>nn :NERDTree ~/Documents/MyFiles/dc_GithubRepos/dot_files/.txt_files/notes/<CR>
 
 " Open NERDTree in the file from the current folder
 nnoremap <Leader>nc :exe ":NERDTree " . expand("%:p:h")<CR>

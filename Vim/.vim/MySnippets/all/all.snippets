@@ -1,11 +1,16 @@
 # !1| Time inserters !1|
 
-snippet time "Insert current time" i
-`!v strftime("%a, %d %b %y, %H:%M:%S, %z")`
+# time_es depends on package "language-pack-es"
+
+snippet time_en
+`LC_TIME='en_US.UTF-8' date '+%^a, %d %^b %Y, %H:%M:%S %p, %z'`
 endsnippet
 
-# sudo apt-get install language-pack-es
 snippet time_es
+`LC_TIME='es_CO.UTF-8' date '+%^a, %d %^b %Y, %H:%M:%S %p, %z'`
+endsnippet
+
+snippet time_es_verbose
 `LC_TIME='es_CO.UTF-8' date '+%^A, %e de %^B del %Y, a las %I:%M:%S:%N %p'`
 endsnippet
 
@@ -44,3 +49,8 @@ endsnippet
 snippet filet "." i
 `!v expand("%:t")`
 endsnippet
+
+
+
+
+

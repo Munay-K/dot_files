@@ -30,21 +30,29 @@ autocmd VimLeave * call system("xsel -ib", getreg('+'))
 " !1| Keybindings !1|
 
 " !2| Normal mode !2|
+
+" Copy all content from the file into primary clipboard 
+" 'ca' stands for '(c)opy (a)ll'
+nnoremap <Leader>ca :% y+<CR>
+
+" Deletes all content from the file.
+" 'da' stands for '(d)elete (a)ll'
+nnoremap <Leader>da ggdG
+
+" Select all content from the file.
+" 'sa' stands for '(s)elect (a)ll'
+nnoremap <Leader>sa GVggzz
+
 " !2| Insert mode !2|
 " !2| Visual mode !2|
 
 " Replace spaces with underscores on visual selected text and unhighlights spaces.
-vnoremap ;; :s:\%V :_:g<CR>:noh<CR>
+vnoremap .. :s:\%V :_:g<CR>:noh<CR>
 " Faster text replacement on visual selected text
 vnoremap <Leader>r :s:\%V::g<Left><Left><Left>
 
-" !1| Todo !1|
+" !1| ORGANIZEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE !1|
 
-" Copy all the content of the file into primary clipboard
-nnoremap <Leader>ca :% y+<CR>
-
-" Delete all the file content
-nnoremap <Leader>da ggdG
 
 " Change the current working directory to the directory in which the current file is.
 nnoremap <Leader>ch :exe ":chdir " . expand("%:p:h") <CR>
