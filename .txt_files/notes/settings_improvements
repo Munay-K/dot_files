@@ -34,7 +34,7 @@
 - JUE, 20 JUN 2019, 02:18:06 AM, -0500: Highlight separators considering hierarchy.
 - JUE, 20 JUN 2019, 02:17:58 AM, -0500: Highlight decorative boxes that are created using UltiSnips.
 - JUE, 20 JUN 2019, 02:17:28 AM, -0500: Make some improvements to the separators I use to have better organization within files.
-- JUE, 20 JUN 2019, 02:17:32 AM, -0500: Make the highlighting of separators to be always enabled.
+- JUE, 20 JUN 2019, 02:17:32 AM, -0500: Make highlighting of separators be always enabled.
 
 !2| --------------------------------------------------
 !2| Unnecessary

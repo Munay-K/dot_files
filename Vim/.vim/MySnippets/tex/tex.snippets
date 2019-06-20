@@ -1,6 +1,20 @@
-# ------------------------------------------------------------
-# Regular expressions
-# ------------------------------------------------------------
+# !1| --------------------------------------------------
+# !1| General
+# !1| --------------------------------------------------
+
+snippet mlcomm "Multi-line comment" bA
+\iffalse
+	${VISUAL}$1
+\fi
+endsnippet
+
+snippet slcomm "Single-line comment" bA
+% $0
+endsnippet
+
+# !1| --------------------------------------------------
+# !1| Regular expressions
+# !1| --------------------------------------------------
 
 snippet "(\w+);" "Backslash putter" rA
 \\`!p snip.rv = match.group(1)` $0
@@ -18,63 +32,53 @@ endsnippet
 # mathbb.. ==> [\mathbb{$1}]
 # usepackage.. ==> [\usepackage{$1}]
 
-# ------------------------------------------------------------
-# General
-# ------------------------------------------------------------
+# !1| --------------------------------------------------
+# !1| Miscelanous
+# !1| --------------------------------------------------
 
-snippet cblock "Comment block" iA
-\iffalse
-	${VISUAL}$1
-\fi
-endsnippet
-
-snippet latex "latex" iA
-\LaTeX $0
+snippet latex "latex" ia
+\latex $0
 endsnippet
 
 snippet begin
 \begin{$1}
-	${VISUAL}$2
+	${visual}$2
 \end{$1}
 endsnippet
 
-snippet frac "fraction" iwA
-\frac{${VISUAL}$1}{$2}
+snippet frac "fraction" iwa
+\frac{${visual}$1}{$2}
 endsnippet
 
-snippet dfrac "fraction" iwA
-\dfrac{${VISUAL}$1}{$2}
+snippet dfrac "fraction" iwa
+\dfrac{${visual}$1}{$2}
 endsnippet
 
-snippet nl "newline" iA
+snippet nl "newline" ia
 \\\\ 
 endsnippet
 
-snippet s__ "underscore string" iA
+snippet s_ "underscore string" ia
 \string_
 endsnippet
 
-snippet fx "function" iA
-f(x) 
-endsnippet
-
-snippet sqrt "Square root" iA
+snippet sqrt "square root" ia
 \sqrt[{${1:2}}]{$2}
 endsnippet
 
-snippet mk "inline math" iA
-$${VISUAL}$1$
+snippet mk "inline math" ia
+$${visual}$1$
 endsnippet
 
-snippet dm "Display math" iA
+snippet dm "display math" ia
 \[
-	${VISUAL}$1
+	${visual}$1
 \]
 endsnippet
 
-# ------------------------------------------------------------
-# Arrows
-# ------------------------------------------------------------
+# !2| --------------------------------------------------
+# !2| Arrows
+# !2| --------------------------------------------------
 
 snippet rarr "Right arrow" iA
 \rightarrow $0
@@ -92,9 +96,9 @@ snippet Larr "Left arrrow" iA
 \Leftarrow $0
 endsnippet
 
-# ------------------------------------------------------------
-# Math expressions
-# ------------------------------------------------------------
+# !2| --------------------------------------------------
+# !2| Math expressions
+# !2| --------------------------------------------------
 
 snippet lima "limits" iA
 \lim_{${1:x} \to ${2:\infty}} $0
@@ -116,9 +120,13 @@ snippet binom "Binomial" iA
 \binom{$1}{$2}
 endsnippet
 
-# ------------------------------------------------------------
-# Subscripts and supperscripts
-# ------------------------------------------------------------
+snippet fx "function" iA
+f(x) 
+endsnippet
+
+# !2| --------------------------------------------------
+# !2| Subscripts and superscripts
+# !2| --------------------------------------------------
 
 snippet ww "Subscript" iA
 {${VISUAL}$1}_{$2}
@@ -136,16 +144,16 @@ endsnippet
 # xx ==> [{$1}^{$2}]
 
 snippet yy "Subscript and supperscript" iA
-_{$1}^{$2}
+{${1:${VISUAL}}_{$2}^{$3}
 endsnippet
 
 snippet psup "Superscript and left right parentheses" iA
 {\left($1\right)}^{$2}
 endsnippet
 
-# ------------------------------------------------------------
-# Stylers
-# ------------------------------------------------------------
+# !2| --------------------------------------------------
+# !2| Text styles
+# !2| --------------------------------------------------
 
 snippet ttt "inline code" i
 \texttt{${VISUAL}$1}
@@ -159,13 +167,9 @@ snippet it "Italics" i
 \textit{${VISUAL}$1}
 endsnippet
 
-snippet text "text" i
-\text{${VISUAL}$1}
-endsnippet
-
-# ------------------------------------------------------------
-# Operators
-# ------------------------------------------------------------
+# !2| --------------------------------------------------
+# !2| Operators
+# !2| --------------------------------------------------
 
 snippet = "." iA
  = $0
@@ -179,9 +183,9 @@ snippet - "." iA
  - $0
 endsnippet
 
-# ------------------------------------------------------------
-# Sections and chapters
-# ------------------------------------------------------------
+# !2| --------------------------------------------------
+# !2| Sections and chapters
+# !2| --------------------------------------------------
 
 snippet c
 \\chapter{$1}
@@ -207,12 +211,11 @@ snippet sp
 \subparagraph{$1}
 endsnippet
 
-# ------------------------------------------------------------
-# Pairs to group things together
-# ------------------------------------------------------------
+# !2| --------------------------------------------------
+# !2| Scope openers
+# !2| --------------------------------------------------
 
-snippet lrp "left-right parentheses" iA
-\left(${VISUAL}$1\right)
+snippet lrp "left-right parentheses" iA \left(${VISUAL}$1\right)
 endsnippet
 
 # SNAP:

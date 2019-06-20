@@ -27,19 +27,32 @@ autocmd VimLeave * call system("xclip -selection clipboard", getreg('+'))
 " !1| Highlighting
 " !1| --------------------------------------------------
 
+
+" !2| --------------------------------------------------
+" !2| Cursor
+" !2| --------------------------------------------------
+"Makes vim slow when working with '.tex' files.
+
+" Enable cursor line position tracking
+" set cursorline
+" Remove the underline from enabling cursorline
+" highlight clear CursorLine
+" Set line numbering to gray background
+" highlight CursorLineNR ctermbg=gray
+
 " !2| --------------------------------------------------
 " !2| Separators
 " !2| --------------------------------------------------
 
-highlight separator_1 cterm=bold ctermbg=022 ctermfg=015
+highlight separator_3 cterm=bold ctermbg=022 ctermfg=015
 highlight separator_2 cterm=bold ctermbg=028 ctermfg=015
-highlight separator_3 cterm=bold ctermbg=034 ctermfg=015
+highlight separator_1 cterm=bold ctermbg=034 ctermfg=015
 
 " It will match from 0 to 3 character before the separator.
 " It is important to consider that regex don't overlap.
-autocmd BufNewFile,BufRead * call matchadd('separator_1', '^.\{0,3\}!1| .*')
-autocmd BufNewFile,BufRead * call matchadd('separator_2', '^.\{0,3\}!2| .*')
-autocmd BufNewFile,BufRead * call matchadd('separator_3', '^.\{0,3\}!3| .*')
+autocmd BufNewFile,BufRead,WinEnter * call matchadd('separator_1', '^.\{0,3\}!1| .*')
+autocmd BufNewFile,BufRead,WinEnter * call matchadd('separator_2', '^.\{0,3\}!2| .*')
+autocmd BufNewFile,BufRead,WinEnter * call matchadd('separator_3', '^.\{0,3\}!3| .*')
 
 " !2| --------------------------------------------------
 " !2| Boxes
@@ -47,17 +60,17 @@ autocmd BufNewFile,BufRead * call matchadd('separator_3', '^.\{0,3\}!3| .*')
 
 highlight boxes ctermbg=243 ctermfg=015
 
-autocmd BufNewFile,BufRead * call matchadd('boxes', '^.\{0,3\}█▀\{1,}█')
-autocmd BufNewFile,BufRead * call matchadd('boxes', '^.\{0,3\}▌ .* ▐')
-autocmd BufNewFile,BufRead * call matchadd('boxes', '^.\{0,3\}█▄\{1,}█')
+autocmd BufNewFile,BufRead,WinEnter * call matchadd('boxes', '^.\{0,3\}█▀\{1,}█')
+autocmd BufNewFile,BufRead,WinEnter * call matchadd('boxes', '^.\{0,3\}▌ .* ▐')
+autocmd BufNewFile,BufRead,WinEnter * call matchadd('boxes', '^.\{0,3\}█▄\{1,}█')
 
-autocmd BufNewFile,BufRead * call matchadd('boxes', '^.\{0,3\}╔═\{1,}╗')
-autocmd BufNewFile,BufRead * call matchadd('boxes', '^.\{0,3\}║ .* ║')
-autocmd BufNewFile,BufRead * call matchadd('boxes', '^.\{0,3\}╚═\{1,}╝')
+autocmd BufNewFile,BufRead,WinEnter * call matchadd('boxes', '^.\{0,3\}╔═\{1,}╗')
+autocmd BufNewFile,BufRead,WinEnter * call matchadd('boxes', '^.\{0,3\}║ .* ║')
+autocmd BufNewFile,BufRead,WinEnter * call matchadd('boxes', '^.\{0,3\}╚═\{1,}╝')
 
-autocmd BufNewFile,BufRead * call matchadd('boxes', '^.\{0,3\}┌─\{1,}┐')
-autocmd BufNewFile,BufRead * call matchadd('boxes', '^.\{0,3\}│ .* │')
-autocmd BufNewFile,BufRead * call matchadd('boxes', '^.\{0,3\}└─\{1,}┘')
+autocmd BufNewFile,BufRead,WinEnter * call matchadd('boxes', '^.\{0,3\}┌─\{1,}┐')
+autocmd BufNewFile,BufRead,WinEnter * call matchadd('boxes', '^.\{0,3\}│ .* │')
+autocmd BufNewFile,BufRead,WinEnter * call matchadd('boxes', '^.\{0,3\}└─\{1,}┘')
 
 " !1| --------------------------------------------------
 " !1| Keybindings
@@ -78,6 +91,48 @@ nnoremap <Leader>da ggdG
 " Select all content from the file.
 " 'sa' stands for '(s)elect (a)ll'
 nnoremap <Leader>sa GVggzz
+
+" Go to the middle of the current selected line
+nnoremap <Leader>v :call cursor(0, len(getline('.'))/2+1)<CR>
+
+" Better screen centering
+nnoremap <Leader>zz :let &scrolloff=999-&scrolloff<CR>
+
+" word wrapping activator
+nnoremap <Leader>w :set wrap!<CR>
+
+" Change the current working directory to the directory in which the current file is.
+nnoremap <Leader>ch :exe ":chdir " . expand("%:p:h") <CR>
+
+" !2| --------------------------------------------------
+" !2| Compiling/interpreting translation units
+" !2| --------------------------------------------------
+
+" Interprets a python file using the version that is specified in the command.
+autocmd filetype python nnoremap <F7> :w <bar> !clear && python3.7 % <CR>
+" Compiles and executes a cpp source file without using headers files
+autocmd filetype cpp nnoremap <F7> :w <bar> !clear && g++ -std=gnu++14 -O2 % -o %:p:h/%:t:r.exe && ./%:r.exe<CR>
+
+" Compiles a tex file using 'pdflatex'
+autocmd fileType tex nnoremap <F9> :w <bar> :exec '!pdflatex --shell-escape -output-directory=' . shellescape(expand("%:p:h")) . ' ' . shellescape(expand("%:p"), 1)<CR>
+" Open the pdf resulting of having compiled the 'pdflatex'
+autocmd fileType tex nnoremap <F10> :w <bar> :exec '!xdg-open ' . shellescape(expand('%:r') . '.pdf', 1) . ' &'<CR>
+
+" !3| --------------------------------------------------
+" !3| File skeleton inserter
+" !3| --------------------------------------------------
+
+nnoremap <Leader><Space> :exe ":-1read $HOME/Documents/MyFiles/dc_GithubRepos/dot_files/.txt_files/templates/skeletons/" . expand('%:e')<CR>
+
+" !2| --------------------------------------------------
+" !2| Quicker windows move
+" !2| --------------------------------------------------
+" It doesn't work appropiately when working with the terminal
+
+nnoremap <C-j> <C-w>j
+nnoremap <C-k> <C-w>k
+nnoremap <C-h> <C-w>h
+nnoremap <C-l> <C-w>l
 
 " !2| --------------------------------------------------
 " !2| Insert mode
@@ -121,66 +176,3 @@ inoremap <Right>	<Esc>:echoe "YOU INCOMPETENT, USE l"<CR>
 vnoremap .. :s:\%V :_:g<CR>:noh<CR>
 " Faster text replacement on visual selected text
 vnoremap <Leader>r :s:\%V::g<Left><Left><Left>
-
-" $$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
-" $                                                  REORGANIZE                                                  $
-" $$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
-
-" Change the current working directory to the directory in which the current file is.
-nnoremap <Leader>ch :exe ":chdir " . expand("%:p:h") <CR>
-
-" !2| Quicker windows move !2|
-" It doesn't work appropiately when working with the terminal
-
-nnoremap <C-j> <C-w>j
-nnoremap <C-k> <C-w>k
-nnoremap <C-h> <C-w>h
-nnoremap <C-l> <C-w>l
-
-" !2| Better moving on splitted lines !2|
-" Makes vim a little bit slower
-
-" nnoremap j gj
-" nnoremap k gk
-
-" !2| Compiling/interpreting translation units !2|
-
-" Interprets a python file using the version that is specified in the command.
-autocmd filetype python nnoremap <F7> :w <bar> !clear && python3.7 % <CR>
-" Compiles and executes a cpp source file without using headers files
-autocmd filetype cpp 	nnoremap <F7> :w <bar> !clear && g++ -std=gnu++14 -O2 % -o %:p:h/%:t:r.exe && ./%:r.exe<CR>
-
-" Compiles a tex file using 'pdflatex'
-autocmd fileType tex 	nnoremap <F9> :w <bar> :exec '!pdflatex --shell-escape -output-directory=' . shellescape(expand("%:p:h")) . ' ' . shellescape(expand("%:p"), 1)<CR>
-" Open the pdf resulting of having compiled the 'pdflatex'
-autocmd fileType tex 	nnoremap <F10> :w <bar> :exec '!xdg-open ' . shellescape(expand('%:r') . '.pdf', 1) . ' &'<CR>
-
-" !2| Files skeletons !2|
-
-" Simple skeleton inserter
-" autocmd fileType tex nnoremap <buffer> <Leader>m :-1read $HOME/.vim/skeletons/tex<CR>
-
-" Generic skeleton inserter
-nnoremap <Leader><Space> :exe ":-1read /home/onceiusedwindows/Documents/MyFiles/dc_GithubRepos/dot_files/.txt_files/templates/skeletons/" . expand('%:e')<CR>
-
-
-" !2| Miscelanous !2|
-
-" Go to the middle of the current selected line
-nnoremap <Leader>v :call cursor(0, len(getline('.'))/2+1)<CR>
-" Better screen centering
-nnoremap <Leader>zz :let &scrolloff=999-&scrolloff<CR>
-" word wrapping activator
-nnoremap <Leader>w :set wrap!<CR>
-
-" !1| Highlighting !1|
-
-" !2| Cursor !2|
-"Makes vim slow when working with '.tex' files.
-
-"Enable cursor line position tracking
-"set cursorline
-"Remove the underline from enabling cursorline
-"highlight clear CursorLine
-"Set line numbering to gray background
-"highlight CursorLineNR ctermbg=gray

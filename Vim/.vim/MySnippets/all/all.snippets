@@ -1,4 +1,7 @@
-# !1| Time inserters !1|
+# !1| --------------------------------------------------
+# !1| Time inserters
+# !1| --------------------------------------------------
+
 
 # time_es depends on package "language-pack-es"
 
@@ -14,23 +17,25 @@ snippet time_es_verbose
 `LC_TIME='es_CO.UTF-8' date '+%^A, %e de %^B del %Y, a las %I:%M:%S:%N %p'`
 endsnippet
 
-# !1| Boxes !1|
+# !1| --------------------------------------------------
+# !1| Boxes
+# !1| --------------------------------------------------
 
 snippet box1 "Box"
 `!p snip.rv = '┌' + '─' * (len(t[1]) + 2) + '┐'`
-│ $1 │
+│ ${1:${VISUAL}} │
 `!p snip.rv = '└' + '─' * (len(t[1]) + 2) + '┘'`
 endsnippet
 
 snippet box2 "Box"
 `!p snip.rv = '╔' + '═' * (len(t[1]) + 2) + '╗'`
-║ $1 ║
+║ ${1:${VISUAL}} ║
 `!p snip.rv = '╚' + '═' * (len(t[1]) + 2) + '╝'`
 endsnippet
 
 snippet box3 "Box"
 `!p snip.rv = '█' + '▀' * (len(t[1]) + 2) + '█'`
-▌ $1 ▐
+▌ ${1:${VISUAL}} ▐
 `!p snip.rv = '█' + '▄' * (len(t[1]) + 2) + '█'`
 endsnippet
 
@@ -40,7 +45,9 @@ snippet "box4\((.{1})\,(\d+)\)" "Box" ir
 `!p snip.rv = match.group(1) * (len(t[1]) + (int(match.group(2))+1)*2)`
 endsnippet
 
-# !1| File paths !1|
+# !1| --------------------------------------------------
+# !1| File paths
+# !1| --------------------------------------------------
 
 snippet filep "." i
 `!v expand("%:p")`
@@ -49,8 +56,4 @@ endsnippet
 snippet filet "." i
 `!v expand("%:t")`
 endsnippet
-
-
-
-
 
