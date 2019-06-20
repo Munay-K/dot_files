@@ -1,4 +1,10 @@
-!1| Meta !1|
+!1| --------------------------------------------------
+!1| Meta
+!1| --------------------------------------------------
+
+!2| --------------------------------------------------
+!2| Done
+!2| --------------------------------------------------
 
 - Create a documment for each programming language that lists best practices I find.
 - Create my own Google Chrome extensions
@@ -9,32 +15,45 @@
 		- It must measure the hours left to a given hour (It must not only work as a days left google chrome extension)
 		- Let the user choose whether sort the tasks according to the most recent one or to drag them and let him sort them as he wants.
 		- It must let measure the time left to a given time from the current day.
+- LaTeX templates per packages.
 - Understand at a great extent how da faq Django forms work.
 	- max_lengths in forms
 	- "global" keyword in Python and how it can be used to share variables across different files to have a single max_length that is shared between forms and the database. There shouldn't be magic numbers, just a single number that is shared across the form, model, etc.
 
-!1| Vim !1|
+!1| --------------------------------------------------
+!1| Vim
+!1| --------------------------------------------------
 
-!2| Done !2|
+!2| --------------------------------------------------
+!2| Done
+!2| --------------------------------------------------
 
 - Shortcut that changes the current working directory to the directory in where the file persists.
 - Like ranger file moving. Map "l" to open a folder or a file.
 - Kebinding that open the folder that contains my templates.
-- Highlight separators considering hierarchy.
+- JUE, 20 JUN 2019, 02:18:06 AM, -0500: Highlight separators considering hierarchy.
+- JUE, 20 JUN 2019, 02:17:58 AM, -0500: Highlight decorative boxes that are created using UltiSnips.
+- JUE, 20 JUN 2019, 02:17:28 AM, -0500: Make some improvements to the separators I use to have better organization within files.
+- JUE, 20 JUN 2019, 02:17:32 AM, -0500: Make the highlighting of separators to be always enabled.
 
-!3| Unnecessary !3|
+!2| --------------------------------------------------
+!2| Unnecessary
+!2| --------------------------------------------------
 
 - Keybinding that changes the current working directory to a the directory which contain the file from the current buffer, open NERDTree, make the current working directory be the same as it was before.
 	EXPLANATION
 	It is more convenient to open NERDTree in the directory where the file from the current buffer is, this way it is not necessary to change the current working directory. Note that this is what I wanted to accomplish in the first place.
 
-!2| Todo !2| 
+!2| --------------------------------------------------
+!2| Todo
+!2| --------------------------------------------------
 
-- Highlight decorative boxes that are created using UltiSnips.
-- Learn how to work within vim on a single file from different computers.
-- Make the highlighting of separators to be always enabled.
+- Make vim use Pathogen to make it even more lightweight.
+- Learn how to work within Vim from different computers.
 
-!3| NERDTree !3|
+!3| --------------------------------------------------
+!3| NERDTree
+!3| --------------------------------------------------
 
 - Appending files to current buffer using the NERDTree menu.
 	When I press a key while the cursor is on a file from the NERDTree menu, vim reads that file into the buffer where the cursor was, before NERDTree was opened.
@@ -43,7 +62,10 @@
 
 - Yank file to a given register from the NERDTree menu just by pressing: y<register>".
 
-!1| ZSH !1|
+!1| --------------------------------------------------
+!1| ZSH
+!1| --------------------------------------------------
+
 
 !2| Done !2|
 
@@ -61,7 +83,10 @@
 
 !2| Todo !2|
 
-!1| i3 !1|
+!1| --------------------------------------------------
+!1| i3
+!1| --------------------------------------------------
+
 
 !2| Done !2|
 
@@ -77,7 +102,10 @@
 !2| Todo !2|
 
 
-!1| LaTeX !1|
+!1| --------------------------------------------------
+!1| LaTeX
+!1| --------------------------------------------------
+
 
 !2| Done !2|
 

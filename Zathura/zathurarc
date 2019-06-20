@@ -1,8 +1,26 @@
-# recolor: Changes the  color layout of the entire document. 
+# +info: `man zathurarc.5`
+
+# !1| --------------------------------------------------
+# !1| Mappings
+# !1| --------------------------------------------------
+
+# recolor: Recolor all pages.
 map <C-i> recolor
+
+# !1| --------------------------------------------------
+# !1| Changing options
+# !1| --------------------------------------------------
 
 # Defines if recent files should be displayed in completion
 set show-recent false
+
+# True: Starts zathura with the "recolor" option enabled.
+# False: Starts zathura with the "recolor" option disabled.
+set recolor "false"
+
+# !2| --------------------------------------------------
+# !2| Color scheme
+# !2| --------------------------------------------------
 
 # zathurarc-dark
 set default-bg "#000000" #00
@@ -32,7 +50,6 @@ set completion-fg "#E0E0E0" #0C
 set notification-bg "#90A959" #0B
 set notification-fg "#151515" #00
 
-set recolor "true"
 set recolor-lightcolor "#000000" #00
 set recolor-darkcolor "#E0E0E0" #06
 set recolor-reverse-video "true"

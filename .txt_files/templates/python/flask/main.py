@@ -1,22 +1,16 @@
 from flask import Flask, render_template
 
-# ------------------------------------------------------------
-# _[1]_ Global variables for program operation
-# ------------------------------------------------------------
+# !1| Global variables for program operation !1|
 
 app = Flask(__name__)
 
-# ------------------------------------------------------------
-# _[1]_ URL Handlers
-# ------------------------------------------------------------
+# !1| URL handlers !1|
 
 @app.route('/')
 def index():
     return render_template('index.html')
 
-# ------------------------------------------------------------
-# _[1]_ Server startup
-# ------------------------------------------------------------
+# !1| Server startup !1|
 
 if __name__ == "__main__":
     app.run(

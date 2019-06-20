@@ -1,3 +1,12 @@
+# !1| --------------------------------------------------
+# !1| Regular expressions
+# !1| --------------------------------------------------
+
+
+# !1| --------------------------------------------------
+# !1| General
+# !1| --------------------------------------------------
+
 snippet mlcomm "Multi-line comment" bA
 
 endsnippet
@@ -10,21 +19,15 @@ snippet prs "string printer" bA
 
 endsnippet
 
-# !1| Debugging !1|
+# !1| --------------------------------------------------
+# !1| Debugging
+# !1| --------------------------------------------------
 
-snippet prs "variable printer for debugging" bA
+snippet var "variable printer for debugging" bA
 
 endsnippet
 
-# !1| Regular expressions !1|
-
-
-
-# !1| Statements !1|
-
-
-
-# !1| Regular expressions !1|
-
-
+# !1| --------------------------------------------------
+# !1| Statements
+# !1| --------------------------------------------------
 

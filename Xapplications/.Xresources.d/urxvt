@@ -1,29 +1,31 @@
-! ------------------------------------------------------------
-! ////////////////////////////////////////////////////////////
-! General
-! ////////////////////////////////////////////////////////////
-! ------------------------------------------------------------
 ! M-Escape -> "Alt + Esc" at the same time
 ! M-u -> "Alt + u" at the same time
 
 !Hides scrollbar
 urxvt*scrollBar: false
 
-!Changes font (it is necessary to set this option in order to "resize-font" extension to work)
-!urxvt.font: xft:Inconsolata:pixelsize=20
-
-!Changes font spacing
-!urxvt.letterSpace: -2
-
 !Changes background transparency
 !urxvt*transparent: true
 !urxvt*shading: 40
 
-! ------------------------------------------------------------
-! ////////////////////////////////////////////////////////////
-! Colors
-! ////////////////////////////////////////////////////////////
-! ------------------------------------------------------------
+!!1| Fonts !1|
+
+!!2| General !2|
+
+!urxvt.font: 		Changes font (it is necessary to set this option in order to "resize-font" extension to work)
+!urxvt.letterSpace: Changes font spacing
+
+!URxvt.italicFont: xft:Inconsolata:italic:autohint=truea
+
+!!2| Styles !2|
+
+!urxvt.font: xft:Inconsolata:pixelsize=10
+!urxvt.letterSpace: -2
+
+!urxvt.font:     xft:mono:medium:size=10
+!urxvt.letterSpace: -2
+
+!!1| Colors !1|
 
 !References:
 !Whats the meaning of color[0-15] in urxvt settings? https://stackoverflow.com/questions/29447692/whats-the-meaning-of-color0-15-in-urxvt-settings
@@ -43,11 +45,7 @@ urxvt.color12: white
 !Zsh: Showing autocompletion within terminal input.
 urxvt.color8 : #F48024
 
-! ------------------------------------------------------------
-! ////////////////////////////////////////////////////////////
-! Extensions
-! ////////////////////////////////////////////////////////////
-! ------------------------------------------------------------
+!1| Extensions !1|
 
 ! List of enabled extensions
 urxvt.perl-ext-common: resize-font,keyboard-select,url-select
@@ -55,6 +53,7 @@ urxvt.perl-ext-common: resize-font,keyboard-select,url-select
 ! ------------------------------------------------------------
 ! resize-font
 ! ------------------------------------------------------------
+
 
 ! ------------------------------------------------------------
 ! keyboard-select

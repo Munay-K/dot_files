@@ -215,7 +215,7 @@ mode "resize"
 # !1| General settings !1|
 
 # Execute the script that contains all the settings that I would like to be applied when startup.
-exec_always "$HOME/Documents/MyFiles/dc_GithubRepos/dot_files/.non_configs/while_on.sh"
+exec_always "/home/onceiusedwindows/Documents/MyFiles/dc_GithubRepos/dot_files/.scripts/while_on.sh"
 
 # Hide all windows title bar
 for_window [class="^.*"] border pixel 1
@@ -226,7 +226,7 @@ for_window [title="Python Turtle Graphics"] floating enable
 for_window [title="Enter LaTeX Formula - TexText 0.10.2"] floating enable
 
 # Enters vim in a temporal file that is destroyed when the windows is closed.
-bindsym $mod+Shift+o exec --no-startup-id "$HOME/Documents/MyFiles/dc_GithubRepos/dot_files/.non_configs/editinvim.sh"
+bindsym $mod+Shift+o exec --no-startup-id "$HOME/Documents/MyFiles/dc_GithubRepos/dot_files/.scripts/editinvim.sh"
 
 # Open a .tex file in vim in order to insert fast math equations.
 # INCORRECT: bindsym $mod+Shift+w exec gnome-terminal -e "vim -c 'startinsert' $HOME/Documents/MyFiles/dc_Testing/main.tex ; i3-msg 'floating toggle'"
@@ -237,7 +237,7 @@ bindsym $mod+Shift+w exec urxvt -e sh -c "vim -c 'startinsert' $HOME/Documents/M
 # bindsym $mod+Shift+g exec "google-chrome --new-window --args https://mail.google.com/mail/u/0/#inbox ; i3-msg 'fullscreen enable'"
 
 # Take fullscreenshot regardless of the current focused windows on i3wm
-bindsym $mod+Shift+f exec "python3 $HOME/Documents/MyFiles/dc_GithubRepos/dot_files/.non_configs/take_full_screenshot.py"
+bindsym $mod+Shift+f exec "python3 /home/onceiusedwindows/Documents/MyFiles/dc_GithubRepos/dot_files/.scripts/take_full_screenshot.py"
 
 #w: Capture active current window
 #B: Removes the boder of the window if you want.
