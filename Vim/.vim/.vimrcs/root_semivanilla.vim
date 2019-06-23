@@ -14,6 +14,7 @@ Plugin 'VundleVim/Vundle.vim'
 Plugin 'SirVer/ultisnips' 					"Snippets
 Plugin 'scrooloose/nerdtree' 				"File manager within Vim
 Plugin 'prettier/vim-prettier'				"Prettier
+Plugin 'vim-scripts/loremipsum'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required

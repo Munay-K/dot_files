@@ -1,0 +1,88 @@
+!1| --------------------------------------------------
+!1| Regex patterns
+!1| --------------------------------------------------
+
+!2| --------------------------------------------------
+!2| General
+!2| --------------------------------------------------
+	:g/^$/d
+		Removes all empty lines within a file.
+	:%s:\s\+$::
+		Drops the blanks at the end of the line. Those lines in which there are only blank spaces will be reduced to an empty line.
+	:%s:\(\S.*\)\@<=\s\+$::
+		Drops the blanks at the end of the line. Those lines in which there are only blank spaces won't be modified.
+	:g/^$/,/./-j
+		Reduce multiple blank lines to a single line.
+
+!2| --------------------------------------------------
+!2| Python
+!2| --------------------------------------------------
+	/^def \w*(.*):
+		Python global functionsA
+
+!1| --------------------------------------------------
+!1| Global commands
+!1| --------------------------------------------------
+	:g/^$/d
+		Delete all empty lines.
+	:g/^$/,/./-j
+		Reduce multiple blank lines to a single blank.
+
+	:g/<h[12]>/t$
+		Copies all lines that contain <h1> or <h2> at the end of the file.
+
+	:g/pattern/m$
+		Moves all lines matching a pattern to end of file.
+
+	qaq:g/pattern/y A
+		qaq (clear register "a" by recording an empty macro), y (yank match) A (append to register "a")
+
+	:g/pattern/"_d
+		Optimized deletion of all lines matching a pattern ("_ makes vim yank to the blackhole register)
+
+!1| --------------------------------------------------
+!1| Miscelanous
+!1| --------------------------------------------------
+	:g/.\n\n\@!/norm o
+		Adds a white line æfter each line
+	%! [cmd]
+		Replaces the content of the file with the output of that command.
+
+!1| --------------------------------------------------
+!1| expand()
+!1| --------------------------------------------------
+	Example: /home/onceiusedwindows/Documents/MyFiles/dc_GithubRepos/personal_notes/vim
+		expand("%:p") -> full path /home/onceiusedwindows/Documents/MyFiles/dc_GithubRepos/personal_notes/vim
+		expand("%:p:h") -> directory /home/onceiusedwindows/Documents/MyFiles/dc_GithubRepos/personal_notes
+		expand("%") -> file path relative to current working directory
+		expand("%:c")
+		expand("%:h") -> directory relative to current working directory
+		expand("%:t") -> file name including extension vim
+		expand("%:e") -> file extension blank
+
+!1| --------------------------------------------------
+!1| foldmethods
+!1| --------------------------------------------------
+	general
+		notes
+		keybindings
+			zR -> Deletes all present foldings
+
+	set foldmethod=manual
+		keybindings
+			zf -> folds a visual selected section.
+			za -> Unfolds the folded section in where the cursor is
+			zr -> Unfolds the folded section in where the cursor is
+			zf'a -> Fold from the current line to wherever the mark "a" has been set.
+			zfa} -> Create a fold for the current code block
+			zd -> Delete the fold at the cursor.
+			zD -> Recursively delete folds at the cursor.
+
+	set foldmethod=indent
+		notes
+			- If first line is empty and it is above an indented block, it won't be indented.
+			- If first line begins with a "#" character and it is above an indented block, it won't be indented.
+		keybindings
+			za -> Toggles folding in the indented block space, or unfolds if folded.
+			zr -> It works as "za", but if it is already folded, it doesn't do nothing.
+			zM -> Folds all possible blocks.

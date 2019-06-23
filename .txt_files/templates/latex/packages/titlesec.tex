@@ -1,0 +1,26 @@
+!2| --------------------------------------------------
+!2| {titlesec}
+!2| --------------------------------------------------
+
+\usepackage{titlesec} %Provides an interface to sectioning commands for selection from various title styles.
+
+%Make paragraph behave like all the other section (adding a newline after its declaration)
+\titleformat {\paragraph}
+	{\normalfont\normalsize\bfseries}
+	{\theparagraph}
+	{1em}
+	{}
+
+%Make subparagraph behave like all the other section (adding a newline after its declaration)
+\titleformat {\subparagraph}
+	{\normalfont\normalsize\bfseries}
+	{\thesubparagraph}
+	{1em}
+	{}
+
+%Removes chapter name and numbering (Chapter 1), (Chapter 2)
+\titleformat{\chapter}
+	{}
+	{}
+	{0pt}
+	{\normalfont\bfseries\Huge}

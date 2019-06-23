@@ -1,0 +1,60 @@
+█▀▀▀▀▀▀▀▀▀▀▀▀█
+▌ Exposición ▐
+█▄▄▄▄▄▄▄▄▄▄▄▄█
+
+╔════════════╗
+║ PostgreSQL ║
+╚════════════╝
+
+- Formara parte del backend, en otras palabras sera nuestra base de datos.
+- Se recomienda utilizar ya que tiene mas funciones que SQLAlchemy y es open source.
+- Corre en un puerto.
+- Para ejecutar PostgreSQL necesitamos ejecutar los siguientes comandos:
+	- sudo -i te loguea como sudo 
+	- sudo -i -u postgres
+- Creamos las bases de datos:
+	- sudo friends -i 
+	- pug
+	- El puerto por defecto de POЅTGRESQL es 5432.
+	- En todo cambio que hagamos en las clases que crean las tablas, tenemos que hacer un `makemigrations` y `migrate`............;..........;
+- DynamoDB
+- Cosas desconocidas
+	- Create superuser()
+	- DJango Rest es como un plugin de DJango.
+	- Serializer procesara la data.
+	- El request que nosotros vamos a mandar es post o request.
+
+╔══════════╗
+║ Rest API ║
+╚══════════╝
+
+- Django formara parte del APIs.
+	- settings.py es como el config de Django (no es recomendable que guardemos la config en un archivo plano de texto, esto no se hace en producción.)
+	- manage.py ejecutar comandos de Django.
+	- urls.py -> define las URLS de la aplicaacion
+	- wsql nunca lo deberiamos tocar.
+- Necesitaremos crear un virtual environment "python3-env"
+- Instalación:
+	- pip3 install django
+	- pip3 install drf
+
+╔════════════════════════╗
+║ HTML, CSS y Javascript ║
+╚════════════════════════╝
+
+- Formaran parte del frontend y dentro de estos podemos utilizar librerias.
+
+
+█▀▀▀▀▀▀▀▀▀▀▀▀▀█
+▌ Referencias ▐
+█▄▄▄▄▄▄▄▄▄▄▄▄▄█
+
+- docs.djangoproject.com/tutorial (organization for a root directory)
+- digitalocean (how to use postgresql with your django application)
+- django-rest-framework.org
+
+█▀▀▀▀▀▀▀▀▀▀▀▀█
+▌ To-do list ▐
+█▄▄▄▄▄▄▄▄▄▄▄▄█
+
+i3 -> Win + Tab -> Volver a la anterior ventana

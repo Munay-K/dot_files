@@ -1,0 +1,16 @@
+@font-face {
+	font-family: 'CMUSerif-Roman';
+	src: url('fonts/cmu_serif_roman/this.eot'); /* IE9 Compat Modes */
+	src: url('fonts/cmu_serif_roman/this.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+		url('fonts/cmu_serif_roman/this.woff2') format('woff2'), /* Super Modern Browsers */
+		url('fonts/cmu_serif_roman/this.woff') format('woff'), /* Modern Browsers */
+		url('fonts/cmu_serif_roman/this.ttf') format('truetype'), /* Safari, Android, iOS */
+		url('fonts/cmu_serif_roman/this.svg#CMUSerif-Roman') format('svg'); /* Legacy iOS */
+}
+
+/*
+Web font generator: https://www.web-font-generator.com/
+The path for the fonts should be relative to the file that calls that directive.
+	- For example, if the file "styles.css" is inside the "css" folder and inside that folder is the "fonts" folder, the call must be: 'fonts/cmu_serif_roman/this.svg#this'.
+	- To call the same fonts from "index.html", you must use 'css/fonts/cmu_serif_roman/this.svg#this'.
+*/

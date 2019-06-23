@@ -1,0 +1,14 @@
+!1| --------------------------------------------------
+!1| Static websites
+!1| --------------------------------------------------
+
+!2| --------------------------------------------------
+!2| github.com
+!2| --------------------------------------------------
+
+1. Create a public repository
+2. Upload a file called "index.html".
+3. Open repository settings and go to "GitHub Pages".
+4. Choose a source (that is, choose a branch that contains the files) for your website.
+5. Wait a few seconds.
+6. It should be published!

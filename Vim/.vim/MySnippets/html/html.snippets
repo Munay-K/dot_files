@@ -10,19 +10,20 @@ snippet mk "A simple intline HTML tag" iA
 <${1:tag}>${VISUAL}$2</${1/(\w+).*/$1/}>
 endsnippet
 
-snippet cblock
+snippet mlcomm "." bA
 <!--
 ${VISUAL}$1
 --!>
 endsnippet
 
-snippet br "Break line" i
-<br>
+snippet slcomm "." bA
+<!-- ${VISUAL}$1 --!>
 endsnippet
 
 # !1| --------------------------------------------------
 # !1| Tagѕ
 # !1| --------------------------------------------------
+
 snippet favicon "." b
 [.ico]
 <link rel="icon" type="image/x-icon" href="$1">

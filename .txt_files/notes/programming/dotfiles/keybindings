@@ -1,0 +1,63 @@
+!1| --------------------------------------------------
+!1| Vim
+!1| --------------------------------------------------
+
+
+!2| --------------------------------------------------
+!2| Moving
+!2| --------------------------------------------------
+
+<C-e>: Scroll down
+<C-p>: Scroll up (It is necessary that the cursor is located at the top of the screen, if this does not happen, the cursor will be moved automatically, to get this done, use: "zt".)
+<C-b>: Page up
+<C-f>: Page down
+<C-u>: Slighter page up
+<C-d>: Slighter page down
+
+!2| --------------------------------------------------
+!2| Digraphs
+!2| --------------------------------------------------
+
+!I -> ¡
+[?I, ~?] -> ¿
+n? -> ñ
+{ a' -> á } { e' -> é } { i' -> í } { o' -> ó } { u' -> ú }
+
+!2| --------------------------------------------------
+!2| NERDTree
+!2| --------------------------------------------------
+
+
++info
+	- :help NERDTreeMappings
+	- :help NERDTree
+
+l -> Open files, directories and bookmarks.
+t -> Open selected node/bookmark in a new tab.
+u -> Move the tree root up one directory.
+i -> Open selected file in a vertical split windows.
+s -> Open selected file in a horizontal split windows.
+C -> Changes the root directory to the selected directory.
+
+!1| --------------------------------------------------
+!1| ZSH
+!1| --------------------------------------------------
+
++info
+	- bindkey
+
+"^" -> Control
+
+!2| --------------------------------------------------
+!2| Select mode
+!2| --------------------------------------------------
+
+"^I" -> Repetitive iteration
+"^N" -> Move forward and iterate in items from the last column
+"^P" -> Move backward and iterate in items from the the first column
+"^E" -> Go to the last element from the current selected row.
+"^A" -> Go to the first element from the current selected row.
+"^O" -> Choose item, continue choosing and select the first item.
+"^D" -> Choose item, continue choosing but doesn't select the first item.
+"^M" -> Choose item.
+"^S" -> Enter to "isearch" (search items in the list of items).

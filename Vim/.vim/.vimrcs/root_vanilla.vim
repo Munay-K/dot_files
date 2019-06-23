@@ -2,26 +2,65 @@
 " !1| General settings
 " !1| --------------------------------------------------
 
-set number								"Enables line numbers
-set wrap								"Disables word wrapping
-set breakindent							"Enables indentation when wrapping
-set tabstop=4							"Changes the number of visual space per tab
-set incsearch							"Highlight the matching results when searching.
-set hlsearch							"Highlight all ocurrences of a pattern that has been searched.
-set foldmethod=manual					"Determines what kind of folding applies in the current window
-set digraph								"Allows input of character that are difficult to type when using an english keyboard.
-set shiftwidth=4 						"Changes the number of spaces to use for each step of (auto)indent to 4, the default value is 8.
-set laststatus=2						"Displays status line always. It allows you to see the current mode, file name, file status, ruler, etc.
-set wildmenu							"Shows a menu when trying to open another file from Vim's terminal and there are files available to be opened.
-set backspace=indent,eol,start			"Allow backspacing over autoindent, line breaks (join lines), start of insert. In simpler words, it makes backspace behave properly in insert mode.
-set smartcase							"If you search for something containing uppercase characters, it will do a case sensitive search; if you search for something purely lowercase, it will do a case insensitive search.
+"Enables line numbers
+set number
 
+"Disables word wrapping
+set wrap
+
+"Enables indentation when wrapping lines
+set breakindent
+
+"Determines what kind of folding to apply
+set foldmethod=manual
+
+"Use tab instead of spaces when pressing Tab
+set noexpandtab
+
+"Highlight the matching results when searching.
+set incsearch
+
+" Number of spaces that a <Tab> in the file counts for
+set tabstop=4
+
+"Highlight all ocurrences of a pattern that has been searched.
+set hlsearch
+
+"Allows input of character that are difficult to type when using an english keyboard.
+set digraph
+
+"Displays status line always. It allows you to see the current mode, file name, file status, ruler, etc.
+set laststatus=2
+
+"Shows a menu when trying to open another file from Vim's terminal and there are files available to be opened.
+set wildmenu
+
+"Allow backspacing over autoindent, line breaks (join lines), start of insert. In simpler words, it makes backspace behave properly in insert mode.
+set backspace=indent,eol,start
+
+"If you search for something containing uppercase characters, it will do a case sensitive search; if you search for something purely lowercase, it will do a case insensitive search.
+set smartcase
 
 "Enables syntax highlighting
 syntax on
 
 " Makes wVim not to flush the clipboard register when Vim is closed.
 autocmd VimLeave * call system("xclip -selection clipboard", getreg('+'))
+
+" !1| --------------------------------------------------
+" !1| File settings
+" !1| --------------------------------------------------
+
+"expandtab: Use spaces instead of '\t' when pressing Tab
+"shiftwidth: Set the number of spaces to use when indenting multiple selected lines using '>' or '<'
+
+autocmd BufNewFile,BufRead,WinEnter *.sass
+	\ setlocal expandtab
+	\ | setlocal shiftwidth=4
+
+autocmd BufNewFile,BufRead,WinEnter *.py
+	\ setlocal expandtab
+	\ | setlocal shiftwidth=4
 
 " !1| --------------------------------------------------
 " !1| Highlighting
@@ -31,6 +70,7 @@ autocmd VimLeave * call system("xclip -selection clipboard", getreg('+'))
 " !2| --------------------------------------------------
 " !2| Cursor
 " !2| --------------------------------------------------
+
 "Makes vim slow when working with '.tex' files.
 
 " Enable cursor line position tracking
@@ -50,9 +90,10 @@ highlight separator_1 cterm=bold ctermbg=034 ctermfg=015
 
 " It will match from 0 to 3 character before the separator.
 " It is important to consider that regex don't overlap.
-autocmd BufNewFile,BufRead,WinEnter * call matchadd('separator_1', '^.\{0,3\}!1| .*')
-autocmd BufNewFile,BufRead,WinEnter * call matchadd('separator_2', '^.\{0,3\}!2| .*')
-autocmd BufNewFile,BufRead,WinEnter * call matchadd('separator_3', '^.\{0,3\}!3| .*')
+autocmd BufNewFile,BufRead,WinEnter *
+	\ call matchadd('separator_1', '^.\{0,3\}!1| .*')
+	\ | call matchadd('separator_2', '^.\{0,3\}!2| .*')
+	\ | call matchadd('separator_3', '^.\{0,3\}!3| .*')
 
 " !2| --------------------------------------------------
 " !2| Boxes
@@ -60,17 +101,18 @@ autocmd BufNewFile,BufRead,WinEnter * call matchadd('separator_3', '^.\{0,3\}!3|
 
 highlight boxes ctermbg=243 ctermfg=015
 
-autocmd BufNewFile,BufRead,WinEnter * call matchadd('boxes', '^.\{0,3\}█▀\{1,}█')
-autocmd BufNewFile,BufRead,WinEnter * call matchadd('boxes', '^.\{0,3\}▌ .* ▐')
-autocmd BufNewFile,BufRead,WinEnter * call matchadd('boxes', '^.\{0,3\}█▄\{1,}█')
-
-autocmd BufNewFile,BufRead,WinEnter * call matchadd('boxes', '^.\{0,3\}╔═\{1,}╗')
-autocmd BufNewFile,BufRead,WinEnter * call matchadd('boxes', '^.\{0,3\}║ .* ║')
-autocmd BufNewFile,BufRead,WinEnter * call matchadd('boxes', '^.\{0,3\}╚═\{1,}╝')
-
-autocmd BufNewFile,BufRead,WinEnter * call matchadd('boxes', '^.\{0,3\}┌─\{1,}┐')
-autocmd BufNewFile,BufRead,WinEnter * call matchadd('boxes', '^.\{0,3\}│ .* │')
-autocmd BufNewFile,BufRead,WinEnter * call matchadd('boxes', '^.\{0,3\}└─\{1,}┘')
+autocmd BufNewFile,BufRead,WinEnter *
+	\   call matchadd('boxes', '^.\{0,3\}█▀\{1,}█')
+	\ | call matchadd('boxes', '^.\{0,3\}▌ .* ▐')
+	\ | call matchadd('boxes', '^.\{0,3\}█▄\{1,}█')
+	\
+	\ | call matchadd('boxes', '^.\{0,3\}╔═\{1,}╗')
+	\ | call matchadd('boxes', '^.\{0,3\}║ .* ║')
+	\ | call matchadd('boxes', '^.\{0,3\}╚═\{1,}╝')
+	\
+	\ | call matchadd('boxes', '^.\{0,3\}┌─\{1,}┐')
+	\ | call matchadd('boxes', '^.\{0,3\}│ .* │')
+	\ | call matchadd('boxes', '^.\{0,3\}└─\{1,}┘')
 
 " !1| --------------------------------------------------
 " !1| Keybindings
@@ -80,7 +122,11 @@ autocmd BufNewFile,BufRead,WinEnter * call matchadd('boxes', '^.\{0,3\}└─\{1
 " !2| Normal mode
 " !2| --------------------------------------------------
 
-" Copy all content from the file into primary clipboard 
+" !3| --------------------------------------------------
+" !3| All file content
+" !3| --------------------------------------------------
+
+" Copy all content from the file into primary clipboard
 " 'ca' stands for '(c)opy (a)ll'
 nnoremap <Leader>ca :% y+<CR>
 
@@ -91,6 +137,20 @@ nnoremap <Leader>da ggdG
 " Select all content from the file.
 " 'sa' stands for '(s)elect (a)ll'
 nnoremap <Leader>sa GVggzz
+
+" !3| --------------------------------------------------
+" !3| Terminal
+" !3| --------------------------------------------------
+
+" It opens a terminal
+nnoremap <Leader>t :term<CR>
+
+" It opens a terminal in the working directory where the file from the current buffer is.
+nnoremap <Leader>tc :let $MY_VIM_VARIABLE=expand('%:p:h')<CR>:terminal<CR>cd $MY_VIM_VARIABLE<CR><C-l>
+
+" !3| --------------------------------------------------
+" !3| Miscelanous
+" !3| --------------------------------------------------
 
 " Go to the middle of the current selected line
 nnoremap <Leader>v :call cursor(0, len(getline('.'))/2+1)<CR>
@@ -103,6 +163,12 @@ nnoremap <Leader>w :set wrap!<CR>
 
 " Change the current working directory to the directory in which the current file is.
 nnoremap <Leader>ch :exe ":chdir " . expand("%:p:h") <CR>
+
+" Make vim search all ocurrences of a word and don't go to the next word.
+nnoremap # viw""y/\<<C-r>"\><CR>N
+
+" Copy full path from the file from the current buffer to the CLIPBOARD
+nnoremap <Leader>cp :let @+ = expand("%:p")<CR>
 
 " !2| --------------------------------------------------
 " !2| Compiling/interpreting translation units

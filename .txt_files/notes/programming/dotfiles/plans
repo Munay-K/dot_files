@@ -2,14 +2,21 @@
 !1| Meta
 !1| --------------------------------------------------
 
+
 !2| --------------------------------------------------
 !2| Done
 !2| --------------------------------------------------
 
-- Create a documment for each programming language that lists best practices I find.
+- JUE, 20 JUN 2019, 10:52:53 AM, -0500: Create a documment for each programming language that lists best practices I find.
+
+!2| --------------------------------------------------
+!2| Todo
+!2| --------------------------------------------------
+
 - Create my own Google Chrome extensions
 	QUESTIONS:
 		How do Google Chrome extensions save data?
+		How a google chrome extension can call data from a database.
 	- Mashup of all different tab google chrome extensions.
 		- Edit created alarms
 		- It must measure the hours left to a given hour (It must not only work as a days left google chrome extension)
@@ -28,13 +35,14 @@
 !2| Done
 !2| --------------------------------------------------
 
-- Shortcut that changes the current working directory to the directory in where the file persists.
-- Like ranger file moving. Map "l" to open a folder or a file.
-- Kebinding that open the folder that contains my templates.
-- JUE, 20 JUN 2019, 02:18:06 AM, -0500: Highlight separators considering hierarchy.
-- JUE, 20 JUN 2019, 02:17:58 AM, -0500: Highlight decorative boxes that are created using UltiSnips.
+- JUE, 20 JUN 2019, 10:39:13 AM, -0500: Shortcut that changes the current working directory to the directory in where the file is.
+- JUE, 20 JUN 2019, 10:39:18 AM, -0500: Like ranger file moving. Map "l" to open a folder or a file.
 - JUE, 20 JUN 2019, 02:17:28 AM, -0500: Make some improvements to the separators I use to have better organization within files.
 - JUE, 20 JUN 2019, 02:17:32 AM, -0500: Make highlighting of separators be always enabled.
+- JUE, 20 JUN 2019, 02:17:58 AM, -0500: Highlight decorative boxes that are created using UltiSnips.
+- JUE, 20 JUN 2019, 02:18:06 AM, -0500: Highlight separators considering hierarchy.
+- JUE, 20 JUN 2019, 10:38:43 AM, -0500: Kebinding that open the folder that contains my templates.
+- JUE, 20 JUN 2019, 13:53:41 PM, -0500: Make "numeral" key to search the current selected word but don't select the other instance
 
 !2| --------------------------------------------------
 !2| Unnecessary
@@ -58,7 +66,7 @@
 - Appending files to current buffer using the NERDTree menu.
 	When I press a key while the cursor is on a file from the NERDTree menu, vim reads that file into the buffer where the cursor was, before NERDTree was opened.
 	
-	You should consider that NERDTree knows which window toggled the NERDTree menu, because when you open a file using the NERDTree menu, it knows in which windows.
+	You_should_consider_that_NERDTree_knows_which_window_toggled_the_NERDTree_menu,_because_when_you_open_a_file_using_the_NERDTree_menu,_it_knows_in_which_windows.
 
 - Yank file to a given register from the NERDTree menu just by pressing: y<register>".
 

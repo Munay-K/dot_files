@@ -38,8 +38,6 @@ nnoremap <Leader>nt :NERDTree $HOME/Documents/MyFiles/dc_GithubRepos/dot_files/.
 nnoremap <Leader>ns :NERDTree $HOME/.vim/MySnippets/<CR>
 " Open NERDTREE menu in my notes folder
 nnoremap <Leader>nn :NERDTree $HOME/Documents/MyFiles/dc_GithubRepos/dot_files/.txt_files/notes/<CR>
-" Open NERDTree menu in my code examples folder
-nnoremap <Leader>ne :NERDTree $HOME/Documents/MyFiles/dc_GithubRepos/dot_files/.txt_files/examples/<CR>
 
 " Open NERDTree in the file from the current folder
 nnoremap <Leader>nc :exe ":NERDTree " . expand("%:p:h")<CR>

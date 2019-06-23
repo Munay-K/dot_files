@@ -1,0 +1,75 @@
+!2| --------------------------------------------------
+!2| {listings}
+!2| --------------------------------------------------
+
+\usepackage{listings} %Allow TeX typeset translation units from differente programming languages
+
+\newcommand{\mylstinputlisting}[2]{\lstinputlisting[style=listingcode, language=#1, caption=\texttt{#2}]{#2}}
+
+\definecolor{keycolor}{RGB}{172, 42, 42}
+\definecolor{mbleu}{RGB}{64,96,127}
+\definecolor{vimvert}{RGB}{46, 139, 87}
+
+\newcommand{\RESERVEDCOMMANDSourceCodeIndexFontSize}{\scriptsize}
+
+\lstset
+{
+	%Font style for all the characters within a listing environment
+	basicstyle = \RESERVEDCOMMANDSourceCodeIndexFontSize \ttfamily \color{black},
+	stringstyle = \itshape\color{magenta},
+	showstringspaces = false,
+	commentstyle = \color{blue}\slshape,
+	framexleftmargin = 1mm,
+	keywordstyle = {[1]\bfseries\color{keycolor}},
+	keywordstyle = {[2]\bfseries\color{mbleu}},
+	identifierstyle = \color{black},
+	%Set the caption position
+	captionpos = t, 
+	%How far the line-numbers are from the code
+    numbersep = 1em, 
+	%Number of spaces per tab
+	tabsize	= 6,
+	%The step between two line-numbers. If it is 1 each line will be numbered
+	stepnumber = 1, 
+	%Shows spaces adding particular underscores
+	showspaces = false, 
+	%Underlines spaces within strings
+    showstringspaces  = false, 
+	%Shows tabs withing strings adding particular underscores
+    showtabs = false, 
+	%The size of the fonts that are used in the lines numbering.
+    numberstyle = \RESERVEDCOMMANDSourceCodeIndexFontSize, 
+	%Sets automatic line breaking (clashes with makefiles colors)
+    %breaklines = true,
+	%Identifier to use when word wrapping has occured.
+	%postbreak = \mbox{\textcolor{black}{$\hookrightarrow$}\space},
+}
+
+\lstdefinestyle{block}
+{
+	frame = shadowbox,
+	%Represents the spacing intended (default: fixed; flexible, fullflexible)
+	columns = fullflexible,
+	%Thickness of the edge of the box
+	framerule = 0.1pt,
+	%Separafion of the frame from the text.
+	framesep = 3pt,
+	%Position of line numbers
+	numbers = left,
+	%Color of the edge of the box
+	rulecolor = \color{black},
+	%Color of the inside of the box
+	rulesepcolor = \color{gray!30},
+}
+
+\lstdefinestyle{makefile}
+{
+    alsoletter			= {:},
+    emphstyle			= {\color{vimvert}},%
+    framexleftmargin	= 1mm,%
+    morecomment			= [l][commentstyle]{\#},%
+    moredelim			= [s][\color{vimvert}]{\$(}{)},%
+    morekeywords		= [1]{SUFFIX, CPP_},
+    morekeywords		= [2]{vasp:,makeparam:,zgemmtest:,dgemmtest:,ffttest:,kpoints:,clean:},
+    otherkeywords		= {.SUFFIXES},
+}

@@ -1,0 +1,72 @@
+!1| --------------------------------------------------
+!1| Inserter
+!1| --------------------------------------------------
+
+%Supports acronyms and multiple glossaries
+\usepackage{glossaries} 
+
+!1| --------------------------------------------------
+!1| Compilation process
+!1| --------------------------------------------------
+
+1)
+pdflatex main
+makeindex -s main.ist -o main.gls main.glo
+pdflatex main
+
+2)
+pdflatex main
+makeglossaries main
+pdflatex main
+
+!1| --------------------------------------------------
+!1| Useful commands
+!1| --------------------------------------------------
+
+!2| --------------------------------------------------
+!2| Preamble settings
+!2| --------------------------------------------------
+
+%Make acronyms just to be verbose the first time they are mentioned, the second time they just display their acronyms.
+\setacronymstyle{long-short}
+
+!2| --------------------------------------------------
+!2| Naming terms from glossary
+!2| --------------------------------------------------
+
+\newglossaryentry{maths}{name={mathematics}, description={Mathematics is what mathematicians do}}
+\newglossaryentry{latex}{name={latex}, description={Is a mark up language specially suited for scientific documents}}
+\newacronym{svm}{SVM}{support vector machine}
+
+\gls{}: To print the term, lowercase. For example, \gls{maths} prints mathematics when used.
+\Gls{}: The same as \gls but the first letter will be printed in uppercase. Example: \Gls{maths} prints Mathematics
+\glspl{}: The same as \gls but the term is put in its plural form. For instance, \glspl{formula} will write formulas in your final document.
+\Glspl{}: The same as \Gls but the term is put in its plural form. For example, \Glspl{formula} renders as Formulas.
+\glsadd{}: Adding the acronyms to the glossary without displaying them. \glsadd{utc}\glsadd{adt}\glsadd{est}
+
+!1| --------------------------------------------------
+!1| Examples
+!1| --------------------------------------------------
+
+\documentclass{report}
+
+\usepackage{glossaries}
+\makeglossaries 
+
+\newglossaryentry{latex}
+{
+	name={latex},
+    description={Is a mark up language specially suited for scientific documents}
+}
+ 
+\newglossaryentry{maths}
+{
+	name={mathematics},
+    description={Mathematics is what mathematicians do}
+}
+
+\begin{document}
+	The \Gls{latex} typesetting markup language is specially suitable for documents that include \gls{maths}. 
+	\clearpage
+	\printglossary
+\end{document}

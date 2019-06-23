@@ -1,13 +1,23 @@
 \documentclass{report}
 
+% !1| --------------------------------------------------
+% !1| Packages
+% !1| --------------------------------------------------
+
+
+
+% !1| --------------------------------------------------
+% !1| Document settingss
+% !1| --------------------------------------------------
+
 \author{Rodrigo Morales}
 \date{\today} 
 \title{}
 
-\begin{document}
-	\maketitle
-	\tableofcontents
-	\clearpage
+% !1| --------------------------------------------------
+% !1| Beginning of document
+% !1| --------------------------------------------------
 
-	Hello World!
+\begin{document}
+	Goodbye World!
 \end{document}
