@@ -123,7 +123,7 @@ autocmd BufNewFile,BufRead,WinEnter *
 " !2| --------------------------------------------------
 
 " !3| --------------------------------------------------
-" !3| All file content
+" !3| Manipulating the entire content
 " !3| --------------------------------------------------
 
 " Copy all content from the file into primary clipboard
@@ -142,10 +142,10 @@ nnoremap <Leader>sa GVggzz
 " !3| Terminal
 " !3| --------------------------------------------------
 
-" It opens a terminal
+" Open a terminal
 nnoremap <Leader>t :term<CR>
 
-" It opens a terminal in the working directory where the file from the current buffer is.
+" Open a terminal in the working directory where the file from the current buffer is.
 nnoremap <Leader>tc :let $MY_VIM_VARIABLE=expand('%:p:h')<CR>:terminal<CR>cd $MY_VIM_VARIABLE<CR><C-l>
 
 " !3| --------------------------------------------------
