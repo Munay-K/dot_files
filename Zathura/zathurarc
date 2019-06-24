@@ -8,7 +8,7 @@
 map <C-i> recolor
 
 # !1| --------------------------------------------------
-# !1| Changing options
+# !1| Settings
 # !1| --------------------------------------------------
 
 # Defines if recent files should be displayed in completion
@@ -17,6 +17,12 @@ set show-recent false
 # True: Starts zathura with the "recolor" option enabled.
 # False: Starts zathura with the "recolor" option disabled.
 set recolor "false"
+
+# Defines the gap in pixels between each rendered page.
+# set page-padding 5
+
+# Shows or hides GUI elements. If it contains 'c', the command line is displayed. If it contains 's', the statusbar is displayed. If it contains 'h', the horizontal scrollbar is displayed. If it contains 'v', the vertical scrollbar is displayed.
+# set guioptions 'v'
 
 # !2| --------------------------------------------------
 # !2| Color scheme

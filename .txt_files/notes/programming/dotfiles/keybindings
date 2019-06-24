@@ -2,10 +2,13 @@
 !1| Vim
 !1| --------------------------------------------------
 
-
 !2| --------------------------------------------------
 !2| Moving
 !2| --------------------------------------------------
+
+!3| --------------------------------------------------
+!3| Normal mode
+!3| --------------------------------------------------
 
 <C-e>: Scroll down
 <C-p>: Scroll up (It is necessary that the cursor is located at the top of the screen, if this does not happen, the cursor will be moved automatically, to get this done, use: "zt".)
@@ -13,6 +16,22 @@
 <C-f>: Page down
 <C-u>: Slighter page up
 <C-d>: Slighter page down
+
+!2| --------------------------------------------------
+!2| Insert mode
+!2| --------------------------------------------------
+
+<C-a>: Insert the last thing I typed when in insert mode.
+<C-Space>: Insert the last thing I typed when in insert mode and leave insert mode.
+<C-j>: Insert a new line.
+<C-m>: Insert a new line.
+<C-i>: Insert a tab.
+<C-t>: Insert a tab at the beginning of the line.
+<C-d>: Delete a tab at the beginning of the line.
+<C-w>: Delete a word
+<C-y>: Copy the content of the line above.
+<C-e>: Copy the content of the line below.
+<C-u>: Delete the content of the line until what was before entering insert mode. If no changes were done, delete all the line.
 
 !2| --------------------------------------------------
 !2| Digraphs
@@ -34,10 +53,16 @@ n? -> ñ
 
 l -> Open files, directories and bookmarks.
 t -> Open selected node/bookmark in a new tab.
-u -> Move the tree root up one directory.
+u -> Move the tree root up one directory. tab.
 i -> Open selected file in a vertical split windows.
 s -> Open selected file in a horizontal split windows.
 C -> Changes the root directory to the selected directory.
+
+!1| --------------------------------------------------
+!1| Tmux
+!1| --------------------------------------------------
+
+q -> show pane numbers
 
 !1| --------------------------------------------------
 !1| ZSH

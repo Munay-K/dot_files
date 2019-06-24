@@ -1,4 +1,6 @@
-!1| Práctica calificada No. 1 !1|
+!1| --------------------------------------------------
+!1| Práctica calificada No. 1
+!1| --------------------------------------------------
 
 Capítulo de libro -> 01 - Los diez principios de la economía (TODO)
 Capítulo de libro -> 02 - Pensando como economista (DONE)
@@ -6,7 +8,9 @@ Capítulo de libro -> 04 - Las fuerzas del mercado de la oferta y de la demanda.
 Capítulo de libro -> 13 - Los costos de producción. (TODO)
 Capítulo de libro -> 21 - La teoría de la elección del consumidor. (TODO)
 
-!1| Práctica calificada No. 2 !1|
+!1| --------------------------------------------------
+!1| Practica calificada No. 2
+!1| --------------------------------------------------
 
 Capítulo de libro -> 07 - Consumidores, productores y eficiencia de los mercados. (TODO)
 Capítulo de libro -> 10 - Externalidades (TODO)
@@ -14,14 +18,16 @@ Capítulo de libro -> 11 - Bienes públicos y recursos comunes (TODO)
 Capítulo de libro -> 14 - Las empresas en mercados competitivos (TODO)
 Capítulo de libro -> 15 - Monopolio (TODO)
 
-!1| Práctica calificada No. 3 !1|
+!1| --------------------------------------------------
+!1| Practica calificada No. 3
+!1| --------------------------------------------------
 
 Miércoles, 29 Mayo 2019:
 	Diapositiva -> Clase 14: Introducción a la macroeconomía - PBI. (DONE)
 	Capítulo del libro -> Capítulo 23: Medición del ingreso de una nación. (DONE)
 
 Lunes, 03 Junio 2019:
-	Diapositiva -> Clase 15: Costo de vista - inflación. (DONE)
+	DiapositiVA -> cLASE 15: cOSTO DE VISTA - INflación. (DONE)
 	Capítulo del libro -> Capítulo 24: Medición del costo de vida. (DONE)
 
 Miércoles, 05 Junio 2019:
@@ -33,7 +39,7 @@ Lunes, 10 Junio 2019:
 	Capítulo de libro -> Capitulo 28: Desempleo. (TODO)
 
 !1| --------------------------------------------------
-!1| Práctica calificada No. 4
+!1| Examen final
 !1| --------------------------------------------------
 
 Sábado, 22/06/2019
@@ -43,6 +49,67 @@ Sábado, 22/06/2019
 Lunes, 24/06/2019
 	Capítulo del libro -> 31
 
+[DE] 7 - Consumidores, productores y eficiencia de los mercados
+	¿Qué es la economía del bienestar?
+		El estudio de cómo la asignación de recursos afecta el bienestar econóomico.
+	¿Qué es la disposición a pagar?
+		Es el máximo que cada comprador piensa pagar por el bien y éste mide cuando valora el comprador el bien.
+	¿Qué ocurre cuando el precio de un bien es igual a la disposición a pagar?
+		La compra del bien le sería indiferente al comprador, es decir estaría igualmente feliz si lo compra o si se queda con el dinero.
+	¿Qué es el excedente del consumidor?
+		Es la cantidad que un comprador está dispuesto a pagar por un bien menos la cantidad que efectivamente paga.
+	¿El excedente del consumidor puede tener una magnitud negativa?
+	¿Cómo se obtiene el excedente del consumidor en  el mercado?
+		Sumando el excedente del consumidor de cada uno de los compradores que conforman una economía.
+	Gráficamente ¿Cómo se obtiene el excedente del consumidor en el mercado?
+		Obteniendo el área bajo la curva de la demanda y por encima del precio, éste representa la suma del excedente del consumidor de todos los compradores en el mercado de un bien o servicio.
+	¿Por qué la curva de la demanda parece un escalón en el ejemplo del libro?
+		Porque en el ejemplo del libro, se conocía la cantidad de compradores, y cuánto estaba dipuesto a pagar cada uno de ellos (caso hipótetico, donde no se hacen aproximaciones), al tener todos estos datos es posible mostrar cuantos compradores comprarían el producto para cada precio.
+[DE] 9 - Aplicación: comercio internacional
+	¿Qué son los aranceles?	
+		Son los impuestos a las importacionæs
+
+[DE] 31 - Macroeconomía de una economía abierta: conceptos básicos
+	¿Qué es un bono?
+	¿Por qué los países emiten bonos? Porque habrá una rentabilidad a futuro.
+	¿Qué es el superavit?
+	¿Cuál será la  diferencia entre el tipo de cambio nominal y el real? Como le afecta la inflación.
+
+
+
+
+
+
+
+
+
+
+
+
+¿Por qué existe competencia en el comercio internacional?
+Porque existen competidores extranjeros que pueden producir bienes de calidad a un bajo costo, lo cual hace que el consumo local consuma de las importaciones. Esto quiere decir, que si el precio mundial de los textiles es más alto que el precio nacional, entonces un país exportará textiles una vez que se permita el comercio. En cambio, si el precio mundial de los textiles es menor que el precio nacional, entonces un país importará textiles
+
+¿Por qué todos los países se pueden beneficiar del comercio entre unos y otros?
+Porque este permite que cada uno se especialize en lo que pueden hacer mejor.
+
+¿Por qué los diseñadores de políticas regularmente consideran restricciones al comercio internacional?
+Para proteger a los productores nacionales de los competidores extranjeros.
+
+¿Las políticas que buscan proteger al productor nacional siempre mejoran el nivel de vida?
+¿Qué pasa si los productores no son tan buenos, en comparación, con los productos mundiales y debido a las restricciones, esos productos no llegan al consumidor local y el consumidor local decide no comprar en el país, tanto el prroductor como el consumidor se ven afectados. Esto implica que no siempre estas políticas protectoras logran mejorar el nivel de vida de una nación,
+
+
+
+_¿Cómo es que el comercio internacional afecta el bienestar económico?
+_¿Cuál es el principio de la ventaja comparativa? (capítulo 3)
+_¿Quién gana y quien pierde con el libre comercio entre países?
+
+
+
+
+┌────────────────────┐
+│ Organize your code │
+└────────────────────┘
 
 hoy:
 ¿Cuál es la diferencia entre el tiempo de cambio nominal y el tipo de cambio real?

@@ -29,11 +29,17 @@ set hlsearch
 "Allows input of character that are difficult to type when using an english keyboard.
 set digraph
 
+"Set number of lines that are used as a padding between the vertical borders and the cursor
+set scrolloff=999
+
 "Displays status line always. It allows you to see the current mode, file name, file status, ruler, etc.
 set laststatus=2
 
 "Shows a menu when trying to open another file from Vim's terminal and there are files available to be opened.
 set wildmenu
+
+" Set the number of spaces that are used when autoindenting new lines or when indenting multiple selected lines using '>' or '<'.
+set shiftwidth=4
 
 "Allow backspacing over autoindent, line breaks (join lines), start of insert. In simpler words, it makes backspace behave properly in insert mode.
 set backspace=indent,eol,start
@@ -52,15 +58,13 @@ autocmd VimLeave * call system("xclip -selection clipboard", getreg('+'))
 " !1| --------------------------------------------------
 
 "expandtab: Use spaces instead of '\t' when pressing Tab
-"shiftwidth: Set the number of spaces to use when indenting multiple selected lines using '>' or '<'
+"shiftwidth: Set the number of spaces that are used when autoindenting new lines or when indenting multiple selected lines using '>' or '<'.
 
 autocmd BufNewFile,BufRead,WinEnter *.sass
 	\ setlocal expandtab
-	\ | setlocal shiftwidth=4
 
 autocmd BufNewFile,BufRead,WinEnter *.py
 	\ setlocal expandtab
-	\ | setlocal shiftwidth=4
 
 " !1| --------------------------------------------------
 " !1| Highlighting
@@ -149,6 +153,13 @@ nnoremap <Leader>t :term<CR>
 nnoremap <Leader>tc :let $MY_VIM_VARIABLE=expand('%:p:h')<CR>:terminal<CR>cd $MY_VIM_VARIABLE<CR><C-l>
 
 " !3| --------------------------------------------------
+" !3| Faster indentation
+" !3| --------------------------------------------------
+
+nnoremap > >>
+nnoremap < <<
+
+" !3| --------------------------------------------------
 " !3| Miscelanous
 " !3| --------------------------------------------------
 
@@ -217,22 +228,43 @@ inoremap        [  []<Left>
 inoremap <expr> ]  strpart(getline('.'), col('.')-1, 1) == "]" ? "\<Right>" : "]"
 
 " !2| --------------------------------------------------
-" !2| Miscelanous
+" !2| I'm not incompetent
 " !2| --------------------------------------------------
 
-" !3| --------------------------------------------------
-" !3| Disabling arrows for moving
-" !3| --------------------------------------------------
-
-noremap <Up> 	:echoe "YOU INCOMPETENT, USE k"<CR>
-noremap <Down> 	:echoe "YOU INCOMPETENT, USE j"<CR>
-noremap <Left> 	:echoe "YOU INCOMPETENT, USE h"<CR>
+" Disable arrows for moving in normal mode
+noremap <Up> :echoe "YOU INCOMPETENT, USE k"<CR>
+noremap <Down> :echoe "YOU INCOMPETENT, USE j"<CR>
+noremap <Left> :echoe "YOU INCOMPETENT, USE h"<CR>
 noremap <Right> :echoe "YOU INCOMPETENT, USE l"<CR>
 
-inoremap <Up> 		<Esc>:echoe "YOU INCOMPETENT, USE k"<CR>
-inoremap <Down> 	<Esc>:echoe "YOU INCOMPETENT, USE j"<CR>
-inoremap <Left> 	<Esc>:echoe "YOU INCOMPETENT, USE h"<CR>
-inoremap <Right>	<Esc>:echoe "YOU INCOMPETENT, USE l"<CR>
+" Disable arrows for moving in insert mode
+inoremap <Up> <Esc>:echoe "YOU INCOMPETENT, USE k"<CR>
+inoremap <Down> <Esc>:echoe "YOU INCOMPETENT, USE j"<CR>
+inoremap <Left> <Esc>:echoe "YOU INCOMPETENT, USE h"<CR>
+inoremap <Right> <Esc>:echoe "YOU INCOMPETENT, USE l"<CR>
+
+" Disable 'Enter' key so that it doesn't enter a newline in insert mode.
+inoremap <BS> <Esc>:echoe "YOU INCOMPETENT, USE 'Control+h'"<CR>
+" Disable 'Backspace' so that it doesn't delete characters in insert mode.
+nnoremap <BS> <Esc>:echoe "YOU INCOMPETENT, WHY ARE YOU USING BACKSPACE IN NORMAL MODE?"<CR>
+
+" Disable 'Enter' key so that it doesn't enter a newline in insert mode.
+inoremap <CR> <Esc>:echoe "YOU INCOMPETENT, USE 'Control+j'"<CR>
+" Disable 'Enter' key so that it doesn't go to the line below while in normal mode
+nnoremap <CR> <Esc>:echoe "YOU INCOMPETENT, WHY ARE YOU USING ENTER IN NORMAL MODE?"<CR>
+
+" Disable the well known characters for moving.
+nnoremap h <Esc>:echoe "YOU INCOMPETENT, USE b"<CR>
+nnoremap k <Esc>:echoe "YOU INCOMPETENT, USE 'Number+G', 'Control+Y', 'Control+U' or 'Control+P'"<CR>
+nnoremap j <Esc>:echoe "YOU INCOMPETENT, USE 'Number+G', 'Control+E' or 'Control+D'"<CR>
+nnoremap l <Esc>:echoe "YOU INCOMPETENT, USE e AND w"<CR>
+
+" !2| --------------------------------------------------
+" !2| Like ZSH moving
+" !2| --------------------------------------------------
+
+" <C-b> must be <C-d> but that keybinding is being used by Vim, I have to find a workaround
+inoremap <C-b> <Del>
 
 " !2| --------------------------------------------------
 " !2| Visual mode

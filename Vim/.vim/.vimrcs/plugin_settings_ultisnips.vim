@@ -13,5 +13,5 @@ let g:tex_flavor="latex"
 " ------------------------------------------------------------
 
 "Refresh known snippets at the local buffer. It is very useful when testing new snippets.
-nnoremap <C-m> :call UltiSnips#RefreshSnippets()<CR>
+nnoremap <C-b> :call UltiSnips#RefreshSnippets()<CR>
 
