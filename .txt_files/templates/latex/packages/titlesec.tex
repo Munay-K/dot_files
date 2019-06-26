@@ -1,8 +1,38 @@
-!2| --------------------------------------------------
-!2| {titlesec}
-!2| --------------------------------------------------
+!1| --------------------------------------------------
+!1| Inserter
+!1| --------------------------------------------------
+
+% !2| --------------------------------------------------
+% !2| {titlesec}
+% !2| --------------------------------------------------
 
 \usepackage{titlesec} %Provides an interface to sectioning commands for selection from various title styles.
+
+!1| --------------------------------------------------
+!1| Documentation
+!1| --------------------------------------------------
+
+http://ctan.dcc.uchile.cl/macros/latex/contrib/titlesec/titlesec.pdf
+	Official documentation
+	Default values (page 23)
+
+!1| --------------------------------------------------
+!1| Examples
+!1| --------------------------------------------------
+
+\titleformat{command} %\section, \subsection, \subsubsection, \paragraph, \subparagraph.
+	[shape] %hang, block, display, runin, leftmargin, rightmargin, drop, wrap
+	{format} %format is the format to be applied to the whole title—label and text. This part can contain vertical material (and horizontal with some shapes) which is typeset just after the space above the title.
+	{label} %You may leave it empty if there is no section label at that level, but this is not recommended because by doing so the number is not suppressed in the table of contents and running heads.
+	{sep} %Horizontal separation between label (or the section number indicator) and title body and must be a length (it must not be empty). This space is vertical in display shape; in frame it is the distance from text to frame. Both label and sep are ignored in starred versions of sectioning commands. If you are using picture and the like, set this parameter to 0 pt.
+	{before-code} %Code preceding the title body. The very last command can take an argument, which is the title text.7 However, with the package option explicit the title must be given explicitly with #1 (see below).
+	[after-code] %Code following the title body. The typeset material is in vertical mode with hang, block and display; in horizontal mode with runin and leftmargin ( 2.7 with the latter, at the beginning of the paragraph). Otherwise is ignored.
+
+\titlespacing*{command}
+	{left} %Increases the left margin, except in the ...margin, and drop shape, where this parameter sets the title width, in wrap, the maximum width, and in runin, the indentation just before the title. With negative value the title overhangs.
+	{before-sep} %Vertical space before the title.
+	{after-sep} %Separation between title and text—vertical with hang, block, and display, and horizontal with runin, drop, wrap and ...margin. By making the value negative, you may define an effective space of less than \parskip.
+	[right-sep] %The hang, block and display shapes have the possibility of increasing the right-sep margin with this optional argument.
 
 %Make paragraph behave like all the other section (adding a newline after its declaration)
 \titleformat {\paragraph}
@@ -24,3 +54,49 @@
 	{}
 	{0pt}
 	{\normalfont\bfseries\Huge}
+
+%Default values
+\titleformat{\chapter}
+	[display]
+	{\normalfont\huge\bfseries}
+	{\chaptertitlename\ \thechapter}
+	{20pt}
+	{\Huge}
+\titlespacing*{\chapter} {0pt}{50pt}{40pt}
+
+\titleformat{\section}
+	{\normalfont\Large\bfseries}
+	{\thesection}
+	{1em}
+	{}
+\titlespacing*{\section} {0pt}{3.5ex plus 1ex minus .2ex}{2.3ex plus .2ex}
+
+\titleformat{\subsection}
+	{\normalfont\large\bfseries}
+	{\thesubsection}
+	{1em}
+	{}
+\titlespacing*{\subsection} {0pt}{3.25ex plus 1ex minus .2ex}{1.5ex plus .2ex}
+
+\titleformat{\subsubsection}
+	{\normalfont\normalsize\bfseries}
+	{\thesubsubsection}
+	{1em}
+	{}
+\titlespacing*{\subsubsection}{0pt}{3.25ex plus 1ex minus .2ex}{1.5ex plus .2ex}
+
+\titleformat{\paragraph}
+	[runin]
+	{\normalfont\normalsize\bfseries}
+	{\theparagraph}
+	{1em}
+	{}
+\titlespacing*{\paragraph} {0pt}{3.25ex plus 1ex minus .2ex}{1em}
+
+\titleformat{\subparagraph}
+	[runin]
+	{\normalfont\normalsize\bfseries}
+	{\thesubparagraph}
+	{1em}
+	{}
+\titlespacing*{\subparagraph} {\parindent}{3.25ex plus 1ex minus .2ex}{1em}

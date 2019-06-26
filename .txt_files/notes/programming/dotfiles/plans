@@ -7,8 +7,6 @@
 !2| Done
 !2| --------------------------------------------------
 
-- JUE, 20 JUN 2019, 10:52:53 AM, -0500: Create a documment for each programming language that lists best practices I find.
-
 !2| --------------------------------------------------
 !2| Todo
 !2| --------------------------------------------------
@@ -21,10 +19,11 @@
 		- Edit created alarms
 		- It must measure the hours left to a given hour (It must not only work as a days left google chrome extension)
 		- Let the user choose whether sort the tasks according to the most recent one or to drag them and let him sort them as he wants.
-		- It must let measure the time left to a given time from the current day.
+		- It must measure the remaining time from a given time to another time of the same day.
 - LaTeX templates per packages.
-- Understand at a great extent how da faq Django forms work.
-	- max_lengths in forms
+- Understand clearly how Django forms work.
+	- Forms for different languages.
+	- Warning in forms that depends on the length from the database column.
 	- "global" keyword in Python and how it can be used to share variables across different files to have a single max_length that is shared between forms and the database. There shouldn't be magic numbers, just a single number that is shared across the form, model, etc.
 
 !1| --------------------------------------------------
@@ -58,6 +57,7 @@
 
 - Make vim use Pathogen to make it even more lightweight.
 - Learn how to work within Vim from different computers.
+- Analyze whether getting rid of UltiSnips and using abbreviations instead is feasible.
 
 !3| --------------------------------------------------
 !3| NERDTree

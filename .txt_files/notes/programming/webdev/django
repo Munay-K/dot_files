@@ -1,4 +1,6 @@
-!1| Setting up a new project !1|
+!1| --------------------------------------------------
+!1| Setting up a new project
+!1| --------------------------------------------------
 
 Installing virtual environment to current user
 	pip3 install virtualenv --user 
@@ -20,7 +22,9 @@ Create a django admin
 Run server
 	python3 manage.py runserver
 
-!1| General notes !1|
+!1| --------------------------------------------------
+!1| General notes
+!1| --------------------------------------------------
 
 - A simple DJango project can have multiple apps. An "app" is a web application that do something, while a "project" is a collection of configurations and apps.
 - Everytime we create a Django app, we need to include it in the configuration from a project.
@@ -30,7 +34,9 @@ Run server
 - We can define variable in routes by specifying the characters "P<variable_name>"
 - Django hace los test con una base de datos a parte, no considera los datos actualmente existentes, es por eso que al escribir tests que tengan que ver con existencia en la base de datos es necesario crear la clase "setUp" para crear objetos en la base de datos.
 
-!2| Default files !2|
+!2| --------------------------------------------------
+!2| Default files
+!2| --------------------------------------------------
 
 !3| Django project !3|
 

@@ -1,4 +1,7 @@
-" !1| Vundle requirements (don't touch) !1|
+" !1| --------------------------------------------------
+" !1| Vundle requirements
+" !1| --------------------------------------------------
+
 
 set nocompatible              " be iMproved, required
 filetype off                  " required
@@ -22,9 +25,12 @@ filetype plugin indent on    " required
 " To ignore plugin indent changes, instead use:
 filetype plugin on 
 
-"  !1| Link to external files !1|
+" !1| --------------------------------------------------
+" !1| Link to external files
+" !1| --------------------------------------------------
 
 source ~/.vim/.vimrcs/root_vanilla.vim
 source ~/.vim/.vimrcs/plugin_settings_nerdtree.vim
 source ~/.vim/.vimrcs/plugin_settings_ultisnips.vim
 source ~/.vim/.vimrcs/plugin_settings_vim_prettier.vim
+source ~/.vim/.vimrcs/plugin_settings_loremipsum.vim

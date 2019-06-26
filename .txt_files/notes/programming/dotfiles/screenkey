@@ -1,0 +1,27 @@
+--scr: Select an output screen, by using "--show-settings" you can see the different detected screens.
+--show-settings: Open a screen that shows different settings that can be changed.
+--persist: Don't hide the box that shows pressed keys.
+-<anything>: Show the different settings that can be changed.
+usage: screenkey [-h] [-v] [-d] [--no-systray] [-t TIMEOUT]
+                 [-p {top,fixed,center,bottom}] [--persist]
+                 [-s {large,small,medium}] [-g GEOMETRY]
+                 [--key-mode {composed,translated,keysyms,raw}]
+                 [--bak-mode {full,baked,normal}]
+                 [--mods-mode {tux,win,mac,emacs,normal}] [-m] [--multiline]
+                 [--vis-shift] [--no-whitespace] [--show-settings]
+                 [--scr SCREEN] [-f FONT_DESC] [--font-color FONT_COLOR]
+                 [--bg-color BG_COLOR] [--opacity OPACITY] [--ignore KeySym]
+                 [--compr-cnt COUNT]
+
+My settings:
+	./screenkey --scr 1 --persist -s small --opacity 1
+
+Black background, white font
+	--bg-color "#000000" --font-color "#ffffff"
+White background, black font
+	--bg-color "#ffffff" --font-color "#000000"
+Light theme:
+	--bg-color "#fdef96" --font-color "#2b580c"
+Dark theme:
+	--bg-color "#293462" --font-color "#fff1c1"
+

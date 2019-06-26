@@ -50,8 +50,11 @@ set smartcase
 "Enables syntax highlighting
 syntax on
 
-" Makes wVim not to flush the clipboard register when Vim is closed.
+" Makes Vim not to flush the clipboard register when Vim is closed.
 autocmd VimLeave * call system("xclip -selection clipboard", getreg('+'))
+
+"Changes the default behaviour of Vim to set .tex files to a filetype different to the latex filetype.
+let g:tex_flavor="latex" 
 
 " !1| --------------------------------------------------
 " !1| File settings
@@ -170,13 +173,10 @@ nnoremap <Leader>v :call cursor(0, len(getline('.'))/2+1)<CR>
 nnoremap <Leader>zz :let &scrolloff=999-&scrolloff<CR>
 
 " word wrapping activator
-nnoremap <Leader>w :set wrap!<CR>
+nnoremap <expr> <Leader>w ():set wrap!<CR>
 
 " Change the current working directory to the directory in which the current file is.
 nnoremap <Leader>ch :exe ":chdir " . expand("%:p:h") <CR>
-
-" Make vim search all ocurrences of a word and don't go to the next word.
-nnoremap # viw""y/\<<C-r>"\><CR>N
 
 " Copy full path from the file from the current buffer to the CLIPBOARD
 nnoremap <Leader>cp :let @+ = expand("%:p")<CR>
@@ -253,11 +253,11 @@ inoremap <CR> <Esc>:echoe "YOU INCOMPETENT, USE 'Control+j'"<CR>
 " Disable 'Enter' key so that it doesn't go to the line below while in normal mode
 nnoremap <CR> <Esc>:echoe "YOU INCOMPETENT, WHY ARE YOU USING ENTER IN NORMAL MODE?"<CR>
 
-" Disable the well known characters for moving.
-nnoremap h <Esc>:echoe "YOU INCOMPETENT, USE b"<CR>
-nnoremap k <Esc>:echoe "YOU INCOMPETENT, USE 'Number+G', 'Control+Y', 'Control+U' or 'Control+P'"<CR>
-nnoremap j <Esc>:echoe "YOU INCOMPETENT, USE 'Number+G', 'Control+E' or 'Control+D'"<CR>
-nnoremap l <Esc>:echoe "YOU INCOMPETENT, USE e AND w"<CR>
+"I'm not messing with you, I'm not incompetent
+" nnoremap h <Esc>:echoe "YOU INCOMPETENT, USE b"<CR>
+" nnoremap k <Esc>:echoe "YOU INCOMPETENT, USE 'Number+G', 'Control+Y', 'Control+U' or 'Control+P'"<CR>
+" nnoremap j <Esc>:echoe "YOU INCOMPETENT, USE 'Number+G', 'Control+E' or 'Control+D'"<CR>
+" nnoremap l <Esc>:echoe "YOU INCOMPETENT, USE e AND w"<CR>
 
 " !2| --------------------------------------------------
 " !2| Like ZSH moving

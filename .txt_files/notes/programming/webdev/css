@@ -1,0 +1,7 @@
+!1| --------------------------------------------------
+!1| Best practices
+!1| --------------------------------------------------
+
+Once the production process is done, change the  name of your classes to the shortest possible to reduce data transfer, this might not change the loading process significantly, but in larger websites, making this change might help you a lot.
+	+info: https://www.reddit.com/r/webdev/comments/c4lyw9/i_saw_this_on_a_website_why_are_the_classes_named/
+	+comment: Look at the number of classes he has on each element - in excess of 8-12 on quite a lot. Full names for everything would bloat the code quite a bit, likely by more than 5-10%. And that is quite a lot in data transfer and CDN costs for larger websites so it is possible that doing this meaningfully reduced the size of the code to save a real and measurable amount. If anything it was a quick and easy win from them. Likely not the only thing they could have done - why do you need 8-12 classes on most of your elements? But refactoring things can cost more and break what ever tooling/framework they are working with. It might be giving them some other measurable benefit. It is impossible to say without knowing the source code and the authors intent. Looking at the source I would just ignore it and move on, there are better examples to learn from in the wild. I would not write my code this way but I do not know the reasons the author chose to and we cannot see the benefits/drawbacks it gives them. Only what it takes away from our ability to understand the code.

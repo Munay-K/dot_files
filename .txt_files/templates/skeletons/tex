@@ -1,4 +1,4 @@
-\documentclass{report}
+\documentclass{article}
 
 % !1| --------------------------------------------------
 % !1| Packages
@@ -7,7 +7,7 @@
 
 
 % !1| --------------------------------------------------
-% !1| Document settingss
+% !1| Document settings
 % !1| --------------------------------------------------
 
 \author{Rodrigo Morales}
