@@ -3,15 +3,15 @@
 # !1| --------------------------------------------------
 
 snippet mlcomm "Multi-line comment" bA
-
+# Don't use hacks to comment on many lines.
 endsnippet
 
 snippet slcomm "Single-line comment" bA
-
+# $1
 endsnippet
 
 snippet prs "string printer" bA
-
+echo $1
 endsnippet
 
 # !1| --------------------------------------------------
@@ -26,12 +26,9 @@ endsnippet
 
 # \n[var] "variable_name" := "variable_value"
 snippet var "variable printer for debugging" bA
-
+echo [var] \"$1\" := \"\$$1\"
 endsnippet
 
 # !1| --------------------------------------------------
 # !1| Miscelanous
 # !1| --------------------------------------------------
-
-
-

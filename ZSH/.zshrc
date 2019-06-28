@@ -105,28 +105,37 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
-# !1| General settings !1|
+# !1| --------------------------------------------------
+# !1| General settings
+# !1| --------------------------------------------------
 
 #Enables the showing of hidden directories and files when autocompleting.
 setopt globdots
 
-# !1| Aliases !1|
+# !1| --------------------------------------------------
+# !1| Aliases
+# !1| --------------------------------------------------
 
 alias mls='ls -1aX'
 
-# !1| Keybindings !1|
+# !1| --------------------------------------------------
+# !1| Keybindings
+# !1| --------------------------------------------------
 
-# Accepts the autosuggest
-# bindkey '^I' autosuggest-accept
-# bindkey '^I' forward-char
+# Go to the beginning of the next word, if there is one. If there are autosuggestions, select until the beginning of the first word in the suggestion.
+bindkey "^O" forward-word
 
-# Inserts next word from the autosuggestion
-bindkey '^O' forward-word
+# Go to the beginning of the previous word
+# default keybinding -> "^T" transpose-chars
+bindkey "^T" backward-word
 
+# !1| --------------------------------------------------
+# !1| Functions
+# !1| --------------------------------------------------
 
-# !1| Functions !1|
-
-# !2| Unix !2|
+# !2| --------------------------------------------------
+# !2| Unix
+# !2| --------------------------------------------------
 
 # Addѕ a preffix to all the files that meet a pattern.
 function preffix()
@@ -150,6 +159,7 @@ function suffix()
 		done
 }
 
+# Output the type of a block of memory.
 function wtype()
 {
 	if [[ -d $1 ]]

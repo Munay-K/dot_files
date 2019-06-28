@@ -1,0 +1,16 @@
+# C++ {{{1
+
+# Compiled object files {{{2
+
+*.o
+
+#}}}2
+
+# Executables {{{2
+
+*.out
+*.exe
+
+#}}}2
+
+#}}}1

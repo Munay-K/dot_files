@@ -10,7 +10,7 @@ let g:UltiSnipsSnippetDirectories=["MySnippets"]
 " !1| --------------------------------------------------
 
 "Refresh known snippets at the local buffer. It is very useful when testing new snippets.
-nnoremap <C-b> :call UltiSnips#RefreshSnippets()<CR>
+nnoremap <C-i> :call UltiSnips#RefreshSnippets()<CR>
 
 "Key used to trigger expanding a snippet and to select text for the ${VISUAL} placeholder.
 let g:UltiSnipsExpandTrigger='<tab>'

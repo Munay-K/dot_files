@@ -1,51 +1,38 @@
-!1| --------------------------------------------------
-!1| Vim
-!1| --------------------------------------------------
+Vim {{{1
+Digraphs {{{2
 
-!2| --------------------------------------------------
-!2| Moving
-!2| --------------------------------------------------
-
-!3| --------------------------------------------------
-!3| Normal mode
-!3| --------------------------------------------------
-
-<C-e>: Scroll down
-<C-p>: Scroll up (It is necessary that the cursor is located at the top of the screen, if this does not happen, the cursor will be moved automatically, to get this done, use: "zt".)
-<C-b>: Page up
-<C-f>: Page down
-<C-u>: Slighter page up
-<C-d>: Slighter page down
-
-!2| --------------------------------------------------
-!2| Insert mode
-!2| --------------------------------------------------
-
-<C-a>: Insert the last thing I typed when in insert mode.
-<C-Space>: Insert the last thing I typed when in insert mode and leave insert mode.
-<C-j>: Insert a new line.
-<C-m>: Insert a new line.
-<C-i>: Insert a tab.
-<C-t>: Insert a tab at the beginning of the line.
-<C-d>: Delete a tab at the beginning of the line.
-<C-w>: Delete a word
-<C-y>: Copy the content of the line above.
-<C-e>: Copy the content of the line below.
-<C-u>: Delete the content of the line until what was before entering insert mode. If no changes were done, delete all the line.
-
-!2| --------------------------------------------------
-!2| Digraphs
-!2| --------------------------------------------------
-
-!I -> ¡
 [?I, ~?] -> ¿
 n? -> ñ
 { a' -> á } { e' -> é } { i' -> í } { o' -> ó } { u' -> ú }
 
-!2| --------------------------------------------------
-!2| NERDTree
-!2| --------------------------------------------------
+}}}2
+Moving across the file {{{2
 
+nnoremap <C-e>: Scroll down
+nnoremap <C-y>: Scroll up
+nnoremap <C-p>: Scroll up (It is necessary that the cursor is located at the top of the screen, if this does not happen, the cursor will be moved automatically)
+nnoremap <C-b>: Page up
+nnoremap <C-f>: Page down
+nnoremap <C-u>: Slighter page up
+nnoremap <C-d>: Slighter page down
+
+}}}2
+Insert mode {{{2
+
+inoremap <C-a>: Insert the last thing I typed when in insert mode.
+inoremap <C-Space>: Insert the last thing I typed when in insert mode and leave insert mode.
+inoremap <C-j>: Insert a new line.
+inoremap <C-m>: Insert a new line.
+inoremap <C-i>: Insert a tab.
+inoremap <C-t>: Insert a tab at the beginning of the line.
+inoremap <C-d>: Delete a tab at the beginning of the line.
+inoremap <C-w>: Delete a word
+inoremap <C-y>: Copy the column where the cursor is from the content of the line above.
+inoremap <C-e>: Copy the column where the cursor is from the content of the line below.
+inoremap <C-u>: Delete the content of the line until what was before entering insert mode. If no changes were done, delete all the line.
+
+}}}2
+NERDTree {{{2
 
 +info
 	- :help NERDTreeMappings
@@ -58,24 +45,71 @@ i -> Open selected file in a vertical split windows.
 s -> Open selected file in a horizontal split windows.
 C -> Changes the root directory to the selected directory.
 
-!1| --------------------------------------------------
-!1| Tmux
-!1| --------------------------------------------------
+}}}2
+Folding methods {{{2
+General {{{3
+zR -> Deletes all present foldings.
+zM -> Makes all available folding places to fold.
+}}}3
+Manual {{{3
+zf -> folds a visual selected section.
+za -> Unfolds the folded section in where the cursor is
+zr -> Unfolds the folded section in where the cursor is
+zf'a -> Fold from the current line to wherever the mark "a" has been set.
+zfa} -> Create a fold for the current code block
+zd -> Delete the fold at the cursor.
+zD -> Recursively delete folds at the cursor.
+}}}3
+Indent {{{3
+Notes {{{4
+- If first line is empty and it is above an indented block, it won't be indented.
+- If first line begins with a "#" character and it is above an indented block, it won't be indented.
+}}}4
+Keybindings {{{4
+za -> Toggles folding in the indented block space, or unfolds if folded.
+zr -> It works as "za", but if it is already folded, it doesn't do nothing.
+}}}4
+}}}3
+Syntax {{{3
+Notes {{{4
+- ".snippets" files from UltiSnips plugin are opened, by default, by using "foldmethod=syntax".
+}}}4
+}}}3
+Mark {{{3
+Keybindings {{{4
+zf -> Creates a fold. I don't use it since I have an snippet that could do it on its own.
+}}}4
+}}}3
+}}}2
+Console mode {{{2
 
-q -> show pane numbers
+<C-e>: Go to the end of the line.
+<C-b>: Go to the beginning of the line.
+<C-u>: Deletes all characters behind the cursor.
 
-!1| --------------------------------------------------
-!1| ZSH
-!1| --------------------------------------------------
+<C-i>: Start selecting mode, if started iterate through items.
+<C-n>: Next item.
+<C-p>: Previous item.
+<C-f>: Open the command line.
+<C-j>: Executes the command.
+<C-m>: Executes the command.
+<C-c>: Cancel the command.
+
+}}}2
+}}}1
+
+Tmux {{{1
+
+q: show pane numbers
+
+}}}1
+
+ZSH {{{1
 
 +info
-	- bindkey
+	- Execute 'bindkey' in any terminal from any commputer
 
-"^" -> Control
-
-!2| --------------------------------------------------
-!2| Select mode
-!2| --------------------------------------------------
+Select mode {{{2
 
 "^I" -> Repetitive iteration
 "^N" -> Move forward and iterate in items from the last column
@@ -86,3 +120,86 @@ q -> show pane numbers
 "^D" -> Choose item, continue choosing but doesn't select the first item.
 "^M" -> Choose item.
 "^S" -> Enter to "isearch" (search items in the list of items).
+
+}}}2
+
+}}}1
+
+Ranger {{{1
+
+Custom {{{2
+
+bg -> Changes the background of the image to the current selected image.
+
+}}}2
+
+Default {{{2
+
+Notes {{{3
+
+- Even though you can select files by using 'ya' or 'da' to copy or move files (which may lead to some confusions), the action (copy or move files) that persists depends on the last keybinding used 'ya' for copying files and 'da' for moving files. This is true even though a group of files where yanked by using 'yy' or 'dd'.
+
+}}}3
+
+Miscelanous {{{3
+
+yy -> Copy a visual selected group of files.
+pp -> Paste the yanked files.
+v -> Toggle the selection of all files in the current working directory.
+V -> Select the file where the cursor is.
+Space -> Toggle the selection of a single file in the current working directory and go down one file.
+t -> Mark a file with an asterisk. It is persistent and will be there until you remove it manually. It may be used for example for making the already read e-books, or files that need some action.
+h -> Return to the parent directory.
+uv -> unmark all files that were selected by using 'v'.
+
+ya -> Select the file where the cursor is.
+da -> Select the file where the cursor is.
+
+}}}3
+
+Tabs {{{3
+
+Alt + Number -> Creates a new tab (if it doesn't exist), or goes to another tab.
+q -> Quits the current tab.
+
+}}}3
+
+Copying files {{{3
+
+1. Select files.
+2. Yank by using 'yy' (select single files by using 'ya')
+3. Paste files by using 'pp'
+
+}}}3
+
+Moving files {{{3
+
+1. Select files
+2. Yank by using 'dd'  (select single files by using 'da')
+3. Paste files by using 'pp'
+
+}}}3
+
+Bulk-rename {{{3
+
+1. Select the files by using 'v' or 'V'
+2. Use ':bulkrename'
+3. Edit the file names
+4. Save and quit the editing file.
+5. Make some changes on the script if necessary.
+6. Exit by using ':q'.
+
+}}}3
+
+Commands {{{3
+
+:mkdir <directory_name> -> Creates a directory with the name "directory_name".
+:touch <file_name> -> Creates a single file.
+:bulkrename -> Rename a selected group of files.
+:flat <number> -> List all the files recursively at a <number> deep. (:flat 0) to return to normal mode.
+
+}}}3
+
+}}}2
+
+}}}1

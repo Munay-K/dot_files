@@ -1,0 +1,63 @@
+
+!1| --------------------------------------------------
+!1| Compilation process
+!1| --------------------------------------------------
+
+1) pdflatex main
+2) bibtex main
+3) pdflatex main
+4) pdflatex main
+
+!1| --------------------------------------------------
+!1| Examples
+!1| --------------------------------------------------
+
+!2| --------------------------------------------------
+!2| 1
+!2| --------------------------------------------------
+
+!3| --------------------------------------------------
+!3| ./main.tex
+!3| --------------------------------------------------
+
+\documentclass{article} 
+
+\begin{document}
+	Ths document is an example of BibTeX using in bibliography management. Three items 
+	are cited: \textit{The \LaTeX\ Companion} book \cite{latexcompanion}, the Einstein
+	journal paper \cite{einstein}, and the Donald Knuth's website \cite{knuthwebsite}. 
+	The \LaTeX\ related items are \cite{latexcompanion,knuthwebsite}. 
+	\bibliographystyle{unsrt}
+	\bibliography{my_references}
+\end{document}
+
+!3| --------------------------------------------------
+!3| ./my_references.bib
+!3| --------------------------------------------------
+
+
+@article{einstein,
+    author =       "Albert Einstein",
+    title =        "{Zur Elektrodynamik bewegter K{\"o}rper}. ({German})
+        [{On} the electrodynamics of moving bodies]",
+    journal =      "Annalen der Physik",
+    volume =       "322",
+    number =       "10",
+    pages =        "891--921",
+    year =         "1905",
+    DOI =          "http://dx.doi.org/10.1002/andp.19053221004"
+}
+ 
+@book{latexcompanion,
+    author    = "Michel Goossens and Frank Mittelbach and Alexander Samarin",
+    title     = "The \LaTeX\ Companion",
+    year      = "1993",
+    publisher = "Addison-Wesley",
+    address   = "Reading, Massachusetts"
+}
+ 
+@misc{knuthwebsite,
+    author    = "Donald Knuth",
+    title     = "Knuth: Computers and Typesetting",
+    url       = "http://www-cs-faculty.stanford.edu/\~{}uno/abcde.html"
+}

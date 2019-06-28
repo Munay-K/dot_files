@@ -29,8 +29,9 @@ filetype plugin on
 " !1| Link to external files
 " !1| --------------------------------------------------
 
-source ~/.vim/.vimrcs/root_vanilla.vim
 source ~/.vim/.vimrcs/plugin_settings_nerdtree.vim
 source ~/.vim/.vimrcs/plugin_settings_ultisnips.vim
 source ~/.vim/.vimrcs/plugin_settings_vim_prettier.vim
 source ~/.vim/.vimrcs/plugin_settings_loremipsum.vim
+
+source ~/.vim/.vimrcs/root_vanilla.vim

@@ -1,0 +1,10 @@
+# CLion {{{2
+
+# C++ {{{3
+
+cmake-build-debug/
+CMakeLists.txt
+
+#}}}3
+
+#}}}2

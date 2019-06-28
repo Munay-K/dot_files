@@ -1,0 +1,15 @@
+# Vim {{{2
+
+# Swap files{{{3
+
+*.sw*
+
+#}}}3
+
+# Sessions {{{3
+
+Session.vim
+
+#}}}3
+
+#}}}2
