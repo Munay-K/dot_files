@@ -204,7 +204,7 @@ nnoremap <Leader>cp :let @+ = expand("%:p")<CR>
 nnoremap <C-w><C-w> <Nop>
 
 " File skeleton inserter
-nnoremap <Leader><Space> :exe ":-1read " . MY_SKELETONS . expand('%:e')<CR>
+nnoremap <Leader><Space> :exe ":-1read " . MY_SKELETONS . &filetype<CR>
 
 "}}}3
 
