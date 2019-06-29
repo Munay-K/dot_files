@@ -185,6 +185,96 @@ tnoremap <Leader>s <C-w><S-n>/
 
 "}}}
 
+"(nmap) Normal mode {{{
+
+"Miscelanous {{{
+
+"Go to the middle of the current selected line
+nnoremap <Leader>v :call cursor(0, len(getline('.'))/2+1)<CR>
+
+"Better screen centering
+nnoremap <Leader>zz :let &scrolloff=999-&scrolloff<CR>
+
+"word wrapping activator
+"au BufAdd * if &wrap | set wrap | else | set nowrap | endif
+nnoremap <Leader>w :windo set wrap!<CR>
+
+"Change the current working directory to the directory in which the current file is.
+"'ch' stands for '(c)hange (d)irectory'
+nnoremap <Leader>ch :exe ":chdir " . expand("%:p:h") <CR>
+
+"Copy full path from the file from the current buffer to the CLIPBOARD
+"'cp' stands for '(c)opy (p)ath'
+nnoremap <Leader>cp :let @+ = expand("%:p")<CR>
+
+"Disable the useless buffer moving.
+nnoremap <C-w><C-w> <Nop>
+
+" File skeleton inserter
+nnoremap <Leader><Space> :exe ":-1read " . MY_SKELETONS . &filetype<CR>
+
+"}}}
+
+"Manipulating the entire document {{{
+
+"Copy all content from the file into primary clipboard
+"'ca' stands for '(c)opy (a)ll'
+nnoremap <Leader>ca :% y+<CR>
+"Deletes all content from the file.
+"'da' stands for '(d)elete (a)ll'
+nnoremap <Leader>da ggdG
+
+"Select all content from the file.
+"'sa' stands for '(s)elect (a)ll'
+nnoremap <Leader>sa GVggzz
+
+"Paste the content of the CLIPBOARD buffer.
+"'p' stands for '(p)aste' \(0o0)/
+nnoremap <Leader>p "+p
+
+"}}}
+
+"Opening terminals {{{
+
+"Open a terminal
+nnoremap <Leader>t :term<CR>
+
+"Open a terminal in the working directory where the file from the current buffer is.
+nnoremap <Leader>tc :let $MY_VIM_VARIABLE=expand('%:p:h')<CR>:terminal<CR>cd $MY_VIM_VARIABLE<CR><C-l>
+
+"}}}
+
+"Faster indentation {{{
+
+nnoremap > >>
+nnoremap < <<
+
+"}}}
+
+"Executing translation units {{{
+
+autocmd filetype python nnoremap <buffer> <F7> :wa <bar> !clear && python3.7 % <CR>
+"Compiles and executes a cpp source file without using headers files regardless of the location of the file.
+autocmd filetype cpp nnoremap <buffer> <F7> :wa <bar> !clear && g++ -std=gnu++14 -O2 % -o %:p:r.out && %:p:r.out<CR>
+
+"Compiles a tex file using 'pdflatex'
+autocmd fileType tex nnoremap <F9> :w <bar> :exec '!pdflatex --shell-escape -output-directory=' . shellescape(expand("%:p:h")) . ' ' . shellescape(expand("%:p"), 1)<CR>
+"Open the pdf resulting of having compiled the 'pdflatex'
+autocmd fileType tex nnoremap <F10> :w <bar> :exec '!xdg-open ' . shellescape(expand('%:r') . '.pdf', 1) . ' &'<CR>
+
+"}}}
+
+" Quicker windows move {{{
+
+nnoremap <C-j> <C-w>j
+nnoremap <C-k> <C-w>k
+nnoremap <C-h> <C-w>h
+nnoremap <C-l> <C-w>l
+
+"}}}
+
+"}}}
+
 " (imap) Insert mode {{{
 
 "Miscelanous {{{
