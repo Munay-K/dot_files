@@ -1,10 +1,4 @@
-█▀▀▀▀▀█
-▌ G++ ▐
-█▄▄▄▄▄█
-
-╔═══════════╗
-║ Debugging ║
-╚═══════════╝
+Debugging {{{1
 
 -v
 	Print the commands executed to run the stages of compilation. Also print useful information as:
@@ -14,21 +8,18 @@
 		- directories that are included in the linking process
 		- directories that were ignored because of their inexistence (they were included in the linking process but they weren't found.)
 
-╔═══════════════════╗
-║ Directory options ║
-╚═══════════════════╝
+}}}1
+
+Directory options {{{1
 
 -I
 	Add the directory dir to the list of directories to be searched for header files. Directories named by -I (capital i) are searched before the standard system include directories. If the directory dir is a standard system include directory, the option is ignored to ensure that the default search order for system directories and the special treatment of system headers are not defeated. 
 	
-	If dir begins with "=", then the "=" will be replaced by the sysroot prefix; see --sysroot and -isysroot.
-	
-	This flag alone should indicate paths as relative paths to the current project. For example: "g++ -v -I../../../.vim/templates/cpp/pack/def/ main.cpp". Ugly, isn't it?
-
-	Directories specified with -I apply to lookup for both "#include <file>" and "#include "file"."
+	- This flag alone should indicate paths as relative paths to the current project. For example: "g++ -v -I../../../.vim/templates/cpp/pack/def/ main.cpp". Ugly, isn't it?
+	- Directories specified with -I apply to lookup for both "#include <file>" and "#include "file"."
 
 -iquote
-	Directories specified with -iquote apply only to the quote form of the directive, "#include "file"."
+	Add the directory dir to the list of directories to be searched for header files, just those that are called with double quotes.
 
 --sysroot
 	Use dir as the logical root directory for headers and libraries. For example, if the compiler normally searches for headers in /usr/include and libraries in /usr/lib, it instead searches dir/usr/include and dir/usr/lib.
@@ -38,3 +29,13 @@
 -print-sysroot
 	Print the target sysroot directory that will be used during compilation. This is the target sysroot specified using the --sysroot option. If no target sysroot is specified, the option prints nothing.
 	This command will work, because you are not compiling, you  are just changing the sysroot directory and printing the sysroot directory "g++ --sysroot=../ -print-sysroot"
+
+}}}1
+
+
+
+
+
+
+
+

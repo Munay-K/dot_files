@@ -5,20 +5,20 @@
   export ZSH="/home/onceiusedwindows/.oh-my-zsh"
 
 # Set name of the theme to load --- if set to "random", it will
-# load a random theme each time oh-my-zsh is loaded, in which case,
+# loadload a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
 
-# ------------------------------------------------------------
-# _[1]_ Theme
-# ------------------------------------------------------------
+# Theme {{{
 
 export AM_THEME=soft					# chooses color theme
 export AM_SHOW_FULL_DIR=0 				# shows the current dir name
-export AM_PROMPT_END_TAG=' =>'        		# previpusly `PROMPT_END_TAG`       
-export AM_PROMPT_START_TAG_COLOR=81  	# previpusly `PROMPT_START_TAG_COLOR`  
-export AM_PROMPT_END_TAG_COLOR=81    	# previpusly `PROMPT_END_TAG_COLOR`    
+export am_PROMPT_END_TAG=' =>'        		# previpusly `PROMPT_END_TAG`
+export AM_PROMPT_START_TAG_COLOR=81  	# previpusly `PROMPT_START_TAG_COLOR`
+export AM_PROMPT_END_TAG_COLOR=81    	# previpusly `PROMPT_END_TAG_COLOR`
 ZSH_THEME="alien-minimal/alien-minimal"
+
+#}}}
 
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
@@ -105,37 +105,34 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
-# !1| --------------------------------------------------
-# !1| General settings
-# !1| --------------------------------------------------
+# General settings {{{
 
 #Enables the showing of hidden directories and files when autocompleting.
 setopt globdots
 
-# !1| --------------------------------------------------
-# !1| Aliases
-# !1| --------------------------------------------------
+#}}}
 
-alias mls='ls -1aX'
+# Aliases {{{
 
-# !1| --------------------------------------------------
-# !1| Keybindings
-# !1| --------------------------------------------------
+alias vls='ls -1aX'
+alias hls='ls -aX'
+
+#}}}
+
+# Keybindings {{{
 
 # Go to the beginning of the next word, if there is one. If there are autosuggestions, select until the beginning of the first word in the suggestion.
 bindkey "^O" forward-word
 
 # Go to the beginning of the previous word
-# default keybinding -> "^T" transpose-chars
-bindkey "^T" backward-word
+bindkey "^Z" backward-word
 
-# !1| --------------------------------------------------
-# !1| Functions
-# !1| --------------------------------------------------
+# Unbind "Control + K" to get used to using "Control + J" since the finger movement is less.
+bindkey -r "^M"
 
-# !2| --------------------------------------------------
-# !2| Unix
-# !2| --------------------------------------------------
+#}}}
+
+# Functions {{{
 
 # Addѕ a preffix to all the files that meet a pattern.
 function preffix()
@@ -172,3 +169,5 @@ function wtype()
 		echo "\"$1\" is not a valid name"
 	fi
 }
+
+#}}}

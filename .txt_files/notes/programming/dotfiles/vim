@@ -27,7 +27,7 @@ qaq:g/pattern/y A
 Some advanced tricks {{{1
 
 :g/.\n\n\@!/norm o
-	Adds a white line æfter each line
+	Adds a white line after each line
 :exe 'g/^/let @x = len(getline(".")) | normal "xPa ' | sort n | :g//normal dw
 	Ascendent sorting by length.
 :exe 'g/^/let @x = len(getline(".")) | normal "xPa ' | sort! n | :g//normal dw

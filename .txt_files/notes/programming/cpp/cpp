@@ -1,24 +1,63 @@
-!1| --------------------------------------------------
-!1| C++
-!1| --------------------------------------------------
+Good programming practices {{{
 
-!1| --------------------------------------------------
-!1| Programming practices
-!1| --------------------------------------------------
+Use the correct types when iterating in an iterable object {{{
 
-!2| --------------------------------------------------
-!2| Basic
-!2| --------------------------------------------------
+}}}
 
-1) Use the correct types when iterating in an object.
-2) Use the ".at()" method when trying to access to an element from a vector.
+Use '.at()' when trying to access to an element from a vector {{{
 
-!2| --------------------------------------------------
-!2| Intermediate
-!2| --------------------------------------------------
+This way you assure yourself that the element exist.
+
+}}}
+
+}}}
+
+Optimizations {{{
 
 
-!2| --------------------------------------------------
-!2| Advanced
-!2| --------------------------------------------------
 
+}}}
+
+FAQ {{{
+
+What is a translation unit? {{{
+
+A translation unit is the basic unit of compilation of C++. This unit is made up of the contents of a single source file after it passes through preprocessing. It contains included any header files without blocks that are ignored using conditional preprocessing statements life ifdef, ifndef, etc.
+Note that a header file is not a translation unit. However, it can be included in translation units.
+This means that a translation unit is everything that can be compiled on its own? Not really, some translation units relie on some libraries that has to be linked using the proper 'g++' commands.
+
+}}}
+What is external linking {{{
+
+When you call to a variable from a file A on file B by using 'extern' and the same name of the variable from file A.
+
+}}}
+
+static variable inside of a class/struct
+	- There is going only to be one instance of that variable across all instances of the class.
+
+static method inside of a class/struct:
+	- A static method can be called without a class instance and inside.
+	- Inside a static method you cannot write code which refers to a class instance since you don't have that class instance 
+
+static outside of a class/struct
+static variables declared globally
+	- It's like declaring a variable private in a class.
+	- No other translation unit will not see that variable.
+	- The variable will be only visible to that translation unit.
+
+When should I use 'static' in variables or functions? {{{
+
+This question is a little bit similar to the question 'Why would you use 'private' on a class?
+
+Try name your functions and your variables static unless you actually need them to be linked across translation units.
+
+}}}
+
+What are some cases in which global variables is considered a good practice? {{{
+
+
+
+}}}
+
+}}}

@@ -1,13 +1,13 @@
 "Global variables {{{1
 
-let g:MY_HOME = '/home/onceiusedwindows/'
-let g:MY_VIM_PATH = MY_HOME . '.vim/'
-let g:MY_TXT_FILES = MY_HOME . 'Documents/MyFiles/dc_GithubRepos/dot_files/.txt_files/'
+let MY_HOME = '/home/onceiusedwindows/'
+let MY_VIM_PATH = MY_HOME . '.vim/'
+let MY_TXT_FILES = MY_HOME . 'Documents/MyFiles/dc_GithubRepos/dot_files/.txt_files/'
 
-let g:MY_SNIPPETS = MY_VIM_PATH . 'MySnippets/'
-let g:MY_TEMPLATES = MY_TXT_FILES . 'templates/'
-let g:MY_NOTES = MY_TXT_FILES . 'notes/'
-let g:MY_SKELETONS = MY_TEMPLATES . 'skeletons/'
+let MY_SNIPPETS = MY_VIM_PATH . 'MySnippets/'
+let MY_TEMPLATES = MY_TXT_FILES . 'templates/'
+let MY_NOTES = MY_TXT_FILES . 'notes/'
+let MY_SKELETONS = MY_TEMPLATES . 'skeletons/'
 
 "}}}1
 
@@ -31,8 +31,9 @@ set noexpandtab
 "Highlight the matching results when searching.
 set incsearch
 
-"All folds are not opened when opening a new file
-set foldlevel=99
+"99: Only folds with a depth level of 99 will not be opened, that is, most of the folds will be opened when opening a file.
+"0: All folds will be closed.
+set foldlevel=0
 
 "Number of spaces that a <Tab> in the file counts for
 set tabstop=4
@@ -123,22 +124,23 @@ autocmd BufNewFile,BufRead *.gitignore
 
 "}}}1
 
-"Highlighting {{{1
+"Highlighting {{{
 
-"Cursor {{{2
+"Cursor {{{
+"Highlighting cursor makes Vim significantly slowly when working with some files.
 
-"Makes vim slow when working with '.tex' files.
+"LineNR: Settings for line number on the left side.
+"CursorLineNR: Settings for line number where the cursor is.
+"CursorLine: Settings for the line where the cursor is.
+"CursorColumn: Settings for the column where the cursor is.
 
-"Enable cursor line position tracking
-"set cursorline
-"Remove the underline from enabling cursorline
-"highlight clear CursorLine
-"Set line numbering to gray background
-"highlight CursorLineNR ctermbg=gray
+highlight clear CursorLine
+highlight LineNR ctermfg=64
+highlight CursorLineNR ctermfg=11
 
 "}}}
 
-"Boxes {{{2
+"Boxes {{{
 
 highlight boxes ctermbg=243 ctermfg=015
 
@@ -159,9 +161,11 @@ autocmd BufNewFile,BufRead,WinEnter *
 
 "}}}
 
-"Keybindings {{{1
+"Keybindings {{{
+"+info:
+"	:help map-listing
 
-"Visual mode {{{2
+" (vmap) Visual and select mode {{{
 
 "Replace spaces with underscores on visual selected text and unhighlights spaces.
 vnoremap .. :s:\%V :_:g<CR>:noh<CR>
@@ -169,109 +173,28 @@ vnoremap .. :s:\%V :_:g<CR>:noh<CR>
 "Faster text replacement on visual selected text
 vnoremap <Leader>r :s:\%V::g<Left><Left><Left>
 
-"}}}2
+"}}}
 
-"Terminal mode {{{2
+" (tmap) Terminal mode  {{{
 
 "Disable the useless buffer moving
 tnoremap <C-w><C-w> <Nop>
 
-"}}}2
+"Faster searching
+tnoremap <Leader>s <C-w><S-n>/
 
-"Normal mode {{{2
+"}}}
 
-"Miscelanous {{{3
+" (imap) Insert mode {{{
 
-"Go to the middle of the current selected line
-nnoremap <Leader>v :call cursor(0, len(getline('.'))/2+1)<CR>
+"Miscelanous {{{
 
-"Better screen centering
-nnoremap <Leader>zz :let &scrolloff=999-&scrolloff<CR>
+"Delete the character behind the cursor position.
+inoremap <C-d> <Del>
 
-"word wrapping activator
-"au BufAdd * if &wrap | set wrap | else | set nowrap | endif
-nnoremap <Leader>w :windo set wrap!<CR>
+"}}}
 
-"Change the current working directory to the directory in which the current file is.
-"'ch' stands for '(c)hange (d)irectory'
-nnoremap <Leader>ch :exe ":chdir " . expand("%:p:h") <CR>
-
-"Copy full path from the file from the current buffer to the CLIPBOARD
-"'cp' stands for '(c)opy (p)ath'
-nnoremap <Leader>cp :let @+ = expand("%:p")<CR>
-
-"Disable the useless buffer moving.
-nnoremap <C-w><C-w> <Nop>
-
-" File skeleton inserter
-nnoremap <Leader><Space> :exe ":-1read " . MY_SKELETONS . &filetype<CR>
-
-"}}}3
-
-"Manipulating the entire document {{{3
-
-"Copy all content from the file into primary clipboard
-"'ca' stands for '(c)opy (a)ll'
-nnoremap <Leader>ca :% y+<CR>
-
-"Deletes all content from the file.
-"'da' stands for '(d)elete (a)ll'
-nnoremap <Leader>da ggdG
-
-"Select all content from the file.
-"'sa' stands for '(s)elect (a)ll'
-nnoremap <Leader>sa GVggzz
-
-"Paste the content of the CLIPBOARD buffer.
-"'p' stands for '(p)aste' \(0o0)/
-nnoremap <Leader>p "+p
-
-"}}}3
-
-"Terminal {{{3
-
-"Open a terminal
-nnoremap <Leader>t :term<CR>
-
-"Open a terminal in the working directory where the file from the current buffer is.
-nnoremap <Leader>tc :let $MY_VIM_VARIABLE=expand('%:p:h')<CR>:terminal<CR>cd $MY_VIM_VARIABLE<CR><C-l>
-
-"}}}3
-
-"Faster indentation {{{3
-
-nnoremap > >>
-nnoremap < <<
-
-"}}}3
-
-"Executing translation units {{{3
-
-autocmd filetype python nnoremap <buffer> <F7> :wa <bar> !clear && python3.7 % <CR>
-"Compiles and executes a cpp source file without using headers files regardless of the location of the file.
-autocmd filetype cpp nnoremap <buffer> <F7> :wa <bar> !clear && g++ -std=gnu++14 -O2 % -o %:p:r.out && %:p:r.out<CR>
-
-"Compiles a tex file using 'pdflatex'
-autocmd fileType tex nnoremap <F9> :w <bar> :exec '!pdflatex --shell-escape -output-directory=' . shellescape(expand("%:p:h")) . ' ' . shellescape(expand("%:p"), 1)<CR>
-"Open the pdf resulting of having compiled the 'pdflatex'
-autocmd fileType tex nnoremap <F10> :w <bar> :exec '!xdg-open ' . shellescape(expand('%:r') . '.pdf', 1) . ' &'<CR>
-
-"}}}3
-
-" Quicker windows move {{{3
-
-nnoremap <C-j> <C-w>j
-nnoremap <C-k> <C-w>k
-nnoremap <C-h> <C-w>h
-nnoremap <C-l> <C-w>l
-
-"}}}3
-
-"}}}2
-
-"Insert mode {{{2
-
-"Auto closing openers {{{3
+"Auto closing openers {{{
 
 "It doesn't write the closing openers if it's already present
 
@@ -281,40 +204,103 @@ inoremap <expr> )  strpart(getline('.'), col('.')-1, 1) == ")" ? "\<Right>" : ")
 inoremap        [  []<Left>
 inoremap <expr> ]  strpart(getline('.'), col('.')-1, 1) == "]" ? "\<Right>" : "]"
 
-"}}}3
+"}}}
 
-" Miscelanous {{{3
+"}}}
 
-"Delete key using the keys from the main keyboard
-inoremap <C-b> <Del>
+" (cmap) Command line editting mode {{{
+" +info:
+" 	:help ex-edit-index
 
-"}}}3
+"Go to the beginning of the line
+cnoremap <C-a> <C-b>
 
-"}}}2
+" Go (f)orward
+cnoremap <C-f> <Right>
+
+" Go (b)ackward
+cnoremap <C-b> <Left>
+
+"Cursor one word right (if in command-line selecting, it will choose the current selected option)
+cnoremap <C-o> <S-Right>
+
+"Cursor one word left.
+cnoremap <C-z> <S-Left>
+
+"Delete all characters regardless of the cursor position
+cnoremap <C-u> <C-e><C-u>
+
+"Save the 'Control + d' key (which list completions that match the apttern in front of the cursor)
+cnoremap <C-x> <C-d>
+
+"Delete the character behind the cursor position.
+cnoremap <C-d> <Del>
+
+"Disables <C-m> and 'Enter' to use 'Control+J' instead.
+cnoremap <C-m> <Nop>
+
+"Disables '<BS>' to use 'Control+H' instead.
+cnoremap <BS> <Nop>
+
+"}}}
+
+"(omap) Operator-pending mode {{{
+
+
+
+"}}}
+
+" (xmap) Visual mode {{{
+
+
+
+"}}}
+
+" (smap) Select mode {{{
+
+
+
+"}}}
+
+" (lmap) Insert and command line editing mode {{{
+
+
+"}}}
 
 "I'm not incompetent {{{2
 
+function IncompetentMsg(...)
+	let a:beginning = "YOU INCOMPETENT, use "
+	let a:end = "!"
+
+	"If number or arguments equals 1.
+	if a:0 == 1
+		return a:beginning . "'" . a:1 . "'" . a:end
+	else
+		return a:beginning . a:1 . a:end
+endfunction
+
+let key_move_down = 	IncompetentMsg("j")
+let key_move_up = 		IncompetentMsg("k")
+let key_move_left = 	IncompetentMsg("h")
+let key_move_right = 	IncompetentMsg("l")
+let key_backspace = 	IncompetentMsg("Control+h")
+let key_enter = 		IncompetentMsg("Control+j")
+
 "Disable arrows for moving in normal mode
-noremap <Up> :echoe "YOU INCOMPETENT, USE k"<CR>
-noremap <Down> :echoe "YOU INCOMPETENT, USE j"<CR>
-noremap <Left> :echoe "YOU INCOMPETENT, USE h"<CR>
-noremap <Right> :echoe "YOU INCOMPETENT, USE l"<CR>
+noremap <Up> :echoe key_move_up<CR>
+noremap <Down> :echoe key_move_down<CR>
+noremap <Left> :echoe key_move_left<CR>
+noremap <Right> :echoe key_move_right<CR>
 
 "Disable arrows for moving in insert mode
-inoremap <Up> <Esc>:echoe "YOU INCOMPETENT, USE k"<CR>
-inoremap <Down> <Esc>:echoe "YOU INCOMPETENT, USE j"<CR>
-inoremap <Left> <Esc>:echoe "YOU INCOMPETENT, USE h"<CR>
-inoremap <Right> <Esc>:echoe "YOU INCOMPETENT, USE l"<CR>
+inoremap <Up> <Esc>:echoe key_move_up<CR>
+inoremap <Down> <Esc>:echoe key_move_down<CR>
+inoremap <Left> <Esc>:echoe key_move_left<CR>
+inoremap <Right> <Esc>:echoe key_move_right<CR>
 
-"Disable 'Enter' key so that it doesn't enter a newline in insert mode.
-inoremap <BS> <Esc>:echoe "YOU INCOMPETENT, USE 'Control+h'"<CR>
-"Disable 'Backspace' so that it doesn't delete characters in insert mode.
-nnoremap <BS> <Esc>:echoe "YOU INCOMPETENT, WHY ARE YOU USING BACKSPACE IN NORMAL MODE?"<CR>
-
-"Disable 'Enter' key so that it doesn't enter a newline in insert mode.
-inoremap <CR> <Esc>:echoe "YOU INCOMPETENT, USE 'Control+j'"<CR>
-"Disable 'Enter' key so that it doesn't go to the line below while in normal mode
-nnoremap <CR> <Esc>:echoe "YOU INCOMPETENT, WHY ARE YOU USING ENTER IN NORMAL MODE?"<CR>
+inoremap <BS> <Esc>:echoe key_backspace<CR>
+inoremap <CR> <Esc>:echoe key_enter<CR>
 
 "I'm not messing with you, I'm not incompetent
 " nnoremap h <Esc>:echoe "YOU INCOMPETENT, USE b"<CR>
@@ -324,4 +310,4 @@ nnoremap <CR> <Esc>:echoe "YOU INCOMPETENT, WHY ARE YOU USING ENTER IN NORMAL MO
 
 "}}}2
 
-"}}}1
+"}}}
