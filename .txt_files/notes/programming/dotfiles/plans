@@ -78,6 +78,7 @@ Vanilla {{{
 - Create a function that given a list of file extensions (['tex', 'sta', 'pdf']), it returns a commands that delete all those files.
 - Organize keybindings in a such a way that each filetype has its own compilation/interpretation keybindings
 - Keybinding that comment multiple select lines (language dependent)
+- Create my own functions that do the same as what the 'Vimball' plugins do.
 
 }}}
 NERDTree {{{

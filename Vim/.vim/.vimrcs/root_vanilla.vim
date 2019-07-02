@@ -228,6 +228,9 @@ nnoremap <C-w><C-w> <Nop>
 " File skeleton inserter
 nnoremap <Leader><Space> :exe ":-1read " . MY_SKELETONS . &filetype<CR>
 
+"Syntax highlighting toggler 
+nnoremap <Leader>s :if exists("g:syntax_on") <Bar> syntax off <Bar> else <Bar> syntax enable <Bar> endif<CR>
+
 "}}}
 "Manipulating the entire document {{{
 

@@ -97,13 +97,11 @@ Console mode {{{2
 
 }}}2
 }}}1
-
 Tmux {{{1
 
 q: show pane numbers
 
 }}}1
-
 ZSH {{{
 
 +info
@@ -124,7 +122,6 @@ Select mode {{{2
 }}}2
 
 }}}
-
 Ranger {{{
 
 Custom {{{2
