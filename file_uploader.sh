@@ -1,10 +1,6 @@
 #!/bin/sh
 
-# ------------------------------------------------------------
-# ////////////////////////////////////////////////////////////
-# Technical details for correct shell execution
-# ////////////////////////////////////////////////////////////
-# ------------------------------------------------------------
+# Technical details for correct shell execution {{{
 
 #Go to the directory where this script is located.
 BASEDIR=$(dirname "$0")
@@ -26,62 +22,50 @@ rm -rf $directory_zathura/* ; rm -rf $directory_zathura/.*
 rm -rf $directory_xapplications/* ; rm -rf $directory_xapplications/.*
 rm -rf $directory_ranger/* ; rm -rf $directory_ranger/.*
 
-# ------------------------------------------------------------
-# ////////////////////////////////////////////////////////////
-# Copying files to current directory
-# ////////////////////////////////////////////////////////////
-# ------------------------------------------------------------
+#}}}
+# Copying files to current working directory {{{
 
-# ------------------------------------------------------------
-# Vim files
-# ------------------------------------------------------------
+# Vim {{{
 
 #file with general settings with vim
 cp ~/.vimrc 			$directory_vim/
 cp -r ~/.vim 			$directory_vim/
 
-# ------------------------------------------------------------
-# zsh files
-# ------------------------------------------------------------
+#}}}
+# ZSH {{{
 
 cp ~/.zshrc $directory_zsh/
 
-# ------------------------------------------------------------
-# tmux files
-# ------------------------------------------------------------
+#}}}
+# Tmux {{{
 
 cp ~/.tmux.conf $directory_tmux/
 
-# ------------------------------------------------------------
-# i3 files
-# ------------------------------------------------------------
+#}}}
+# i3 {{{
 
 cp ~/.config/i3/config $directory_i3/
 
-# ------------------------------------------------------------
-# Zathura files
-# ------------------------------------------------------------
+#}}}
+# Zathura {{{
 
 cp ~/.config/zathura/zathurarc $directory_zathura/
 
-# ------------------------------------------------------------
-# Xapplications
-# ------------------------------------------------------------
+#}}}
+# Xapplications {{{
 
 cp ~/.Xresources $directory_xapplications/
 cp -r ~/.Xresources.d $directory_xapplications/
 
-# ------------------------------------------------------------
-# Ranger
-# ------------------------------------------------------------
+#}}}
+# Ranger {{{
 
 cp ~/.config/ranger/rc.conf $directory_ranger/
 
-# ------------------------------------------------------------
-# ////////////////////////////////////////////////////////////
-# Pushing all files to remote repoository
-# ////////////////////////////////////////////////////////////
-# ------------------------------------------------------------
+#}}}
+
+#}}}
+# Saving files in remmote repository {{{
 
 #Delete all files that are cached.
 git rm -r --cached .
@@ -90,3 +74,5 @@ git rm -r --cached .
 git add -A
 git commit -m "Monthly backup"
 git push origin master
+
+#}}}
