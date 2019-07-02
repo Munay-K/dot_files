@@ -1,108 +1,200 @@
+Patrones de búsqueda {{{
+
+`^\s\++`
+`^\*\s`
+
+}}}
 Práctica calificada No. 1 {{{
 
-Capítulo de libro -> 01 - Los diez principios de la economía (TODO)
-Capítulo de libro -> 02 - Pensando como economista (DONE)
-Capítulo de libro -> 04 - Las fuerzas del mercado de la oferta y de la demanda. (TODO)
-Capítulo de libro -> 13 - Los costos de producción. (TODO)
-Capítulo de libro -> 21 - La teoría de la elección del consumidor. (TODO)
+Libro -> Capítulo 01: Los diez principios de la economía
+Libro -> Capítulo 02: Pensando como economista
+Libro -> Capítulo 04: Las fuerzas del mercado de la oferta y de la demanda.
+Libro -> Capítulo 13: Los costos de producción.
+Libro -> Capítulo 21: La teoría de la elección del consumidor.
 
 }}}
 Práctica calificada No. 2 {{{
 
-Capítulo de libro -> 07 - Consumidores, productores y eficiencia de los mercados. (TODO)
-Capítulo de libro -> 10 - Externalidades (TODO)
-Capítulo de libro -> 11 - Bienes públicos y recursos comunes (TODO)
-Capítulo de libro -> 14 - Las empresas en mercados competitivos (TODO)
-Capítulo de libro -> 15 - Monopolio (TODO)
+Libro -> Capítulo 07: Consumidores, productores y eficiencia de los mercados
+Libro -> Capítulo 10: Externalidades
+Libro -> Capítulo 11: Bienes públicos y recursos comunes
+Libro -> Capítulo 14: Las empresas en mercados competitivos
+Libro -> Capítulo 15: Monopolio
 
 }}}
 Practica calificada No. 3 {{{
 
+Miércoles, 29/05/2019:
+	Diapositiva -> Clase 14: Introducción a la macroeconomía - PBI.
+	Capítulo del libro -> Capítulo 23: Medición del ingreso de una nación.
 
-Miércoles, 29 Mayo 2019:
-	Diapositiva -> Clase 14: Introducción a la macroeconomía - PBI. (DONE)
-	Capítulo del libro -> Capítulo 23: Medición del ingreso de una nación. (DONE)
+Lunes, 03/06/2019:
+	Diapositiva -> Clase 15: costo de vista - inflación.
+	Capítulo del libro -> Capítulo 24: Medición del costo de vida.
 
-Lunes, 03 Junio 2019:
-	DiapositiVA -> cLASE 15: cOSTO DE VISTA - INflación. (DONE)
-	Capítulo del libro -> Capítulo 24: Medición del costo de vida. (DONE)
+Miércoles, 05/06/2019:
+	Diapositiva -> Clase  16: Productividad.
+	Capítulo del libro -> Capítulo 25: Producción y crecimiento.
 
-Miércoles, 05 Junio 2019:
-	Diapositiva -> Clase  16: Productividad. (TODO)
-	Capítulo del libro -> Capítulo 25: Producción y crecimiento. (TODO)
-
-Lunes, 10 Junio 2019:
-	Diapositiva -> Clase 17: Desempleo. (TODO)
-	Capítulo de libro -> Capitulo 28: Desempleo. (TODO)
+Lunes, 10/06/2019:
+	Diapositiva -> Clase 17: Desempleo.
+	Capítulo de libro -> Capitulo 28: Desempleo.
 
 }}}
 Examen final {{{
 
 Sábado, 22/06/2019
 	Diapositiva -> Clase 18: Comercio Internacional - Economía abierta (X-M)
-	Capítulo del libro -> 9
+	Libro -> CapÍtulo 9: Aplicación: Comercio internacional
+
+Lunes, 24/06/2019
+	Diapositiva -> Clase 18: Comercio Internacional - Economía abierta (X-M)
+	Libro -> Capítulo 31: Macroeconomía de una economía abierta: conceptos básicos.
+
+Miércoles, 26/06/2019
+	Diapositiva -> Clase 19: Ciclos económicos y políticas económicas.
 
 Lunes, 01/07/2019
 	Diapositiva -> Clase 20: Política monetaria y control de la inflación
-	Capítulo del libro -> 
 
-Información del examen
-	Video de economia abierta y las implicacionas que tienen en el peru, interpretacion que tengamos en formato video.
-	Vienen temas del capitulo 31.
-	Va a venir un grafico (quizas relacionado con gráficos de ciclo económico o crecimiento del PBI, ya que me lo dijo cuando busco un grafico del PBI en el Peru.)
-	Microeconomia
-	Vendrán temas de ciclo economico.
+Información del examen:
+	Nos presentarán un video que trate de la economía abierta y las implicaciones que tiene en el Perú. Nosotros tendremos que dar una interpretación del video.
+	Sí o sí vendrán temas del capítulo 31.
+	Tendremos que analizar un gráfico (quizás esté relacionado con gráficos de ciclo económico o crecimiento del PBI, ya que el profesor mencionó esto cuando buscó un gráfico que mostraba el cambio del PBI en el Perú a lo largo de los años.)
+	Sí o si vendrán temas del capítulo 31, macroeconomía y ciclos económicos.
+}}}
+
+
+Práctica calificada No. 2 {{{
+
+Libro - Capítulo 07: Consumidores, productores y eficiencia de los mercados {{{
+
+Notas {{{
+
+¿Qué es la economía del bienestar?
+	El estudio de cómo la asignación de recursos afecta el bienestar econóomico.
+¿Qué es la disposición a pagar?
+	Es el máximo que cada comprador piensa pagar por el bien y éste mide cuando valora el comprador el bien.
+¿Qué ocurre cuando el precio de un bien es igual a la disposición a pagar?
+	La compra del bien le sería indiferente al comprador, es decir estaría igualmente feliz si lo compra o si se queda con el dinero.
+¿Qué es el excedente del consumidor?
+	Es la cantidad que un comprador está dispuesto a pagar por un bien menos la cantidad que efectivamente paga.
++ ¿El excedente del consumidor puede tener una magnitud negativa?
+¿Cómo se obtiene el excedente del consumidor en  el mercado?
+	Sumando el excedente del consumidor de cada uno de los compradores que conforman una economía.
+Gráficamente ¿Cómo se obtiene el excedente del consumidor en el mercado?
+	Obteniendo el área bajo la curva de la demanda y por encima del precio, éste representa la suma del excedente del consumidor de todos los compradores en el mercado de un bien o servicio.
+¿Por qué la curva de la demanda parece un escalón en el ejemplo del libro?
+	Porque en el ejemplo del libro, se conocía la cantidad de compradores, y cuánto estaba dipuesto a pagar cada uno de ellos (caso hipótetico, donde no se hacen aproximaciones), al tener todos estos datos es posible mostrar cuantos compradores comprarían el producto para cada precio.
 
 }}}
 
-Lunes, 24/06/2019
-	Capítulo del libro -> 31
-	Diapositiva -> 
-
-Miércoles:
-	Capítulo del libro ->
-	Diapositiva: Capitulo 19: Ciclos económicos, oferta y demanda agregada y políticas económicas.
-
-
-El objetivo del Banco Central es controlar la inflación, y esto se logra poor medio de la preservación de la estabilidad monetaria.
-Algunas prohibiciones que tiene el BCR, es que no puede financiar al tesoro público: No puedo emitir, ni finaanciar a travez de instrumentos financieros. Es decir, no puede financiar el tesoro público mediante la impresión de papel.
-¿De qué esta encargado el BCRP? Es encargado de emitir los bonos, pero fundamentado en las reservas que tiene el pais para obtener liquidez.
-El BCRP controla la inflación diariamente, y esto lo logra mediante un indicador que se llama 'multiplicador de dinero' y este expresa que la masa monetaria tiene que ser un coeficiente entre lo que se consume en bienes y servicios y la cantidad de dinero que debe estar circulando.
-La valoración del producto está en función de los precios.
-Una de las herramientas qque utiliza el BCRP para controlar la inflación, es la tasa de interes.a
-Si sube la tasa de interes, los creditos de consumo van a ser mas caros, entonces el consumo va a disminuir, entonces la inflacion va a bajar.
-control diario, la liquidez, entonces lo logra con el financiamiento.
-
-La inflación está subiendo, por encima del rango meta y el producto esta cayendo, un pais puede                                                                                                                                     eeeeeeleeeeewwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwa
+}}}
+Libro - Capítulo 10: Externalidades {{{
 
 
 
+}}}
+Libro - Capítulo 11: Bienes públicos y recursos comunes {{{
 
 
 
+}}}
+Libro - Capítulo 14: Las empresas en mercados competitivos {{{
 
 
 
+}}}
+Libro - Capítulo 15: Monopolio {{{
 
 
 
+}}}
 
-[DE] 7 - Consumidores, productores y eficiencia de los mercados
-	¿Qué es la economía del bienestar?
-		El estudio de cómo la asignación de recursos afecta el bienestar econóomico.
-	¿Qué es la disposición a pagar?
-		Es el máximo que cada comprador piensa pagar por el bien y éste mide cuando valora el comprador el bien.
-	¿Qué ocurre cuando el precio de un bien es igual a la disposición a pagar?
-		La compra del bien le sería indiferente al comprador, es decir estaría igualmente feliz si lo compra o si se queda con el dinero.
-	¿Qué es el excedente del consumidor?
-		Es la cantidad que un comprador está dispuesto a pagar por un bien menos la cantidad que efectivamente paga.
-	¿El excedente del consumidor puede tener una magnitud negativa?
-	¿Cómo se obtiene el excedente del consumidor en  el mercado?
-		Sumando el excedente del consumidor de cada uno de los compradores que conforman una economía.
-	Gráficamente ¿Cómo se obtiene el excedente del consumidor en el mercado?
-		Obteniendo el área bajo la curva de la demanda y por encima del precio, éste representa la suma del excedente del consumidor de todos los compradores en el mercado de un bien o servicio.
-	¿Por qué la curva de la demanda parece un escalón en el ejemplo del libro?
-		Porque en el ejemplo del libro, se conocía la cantidad de compradores, y cuánto estaba dipuesto a pagar cada uno de ellos (caso hipótetico, donde no se hacen aproximaciones), al tener todos estos datos es posible mostrar cuantos compradores comprarían el producto para cada precio.
+}}}
+Examen final {{{
+
+Diapositiva - Clase 20: Política monetaria y control de la inflación {{{
+
+Recusos útiles {{{
+
+[Entidades autónomas del Estado Peruano](https://www.slideshare.net/sumaucrazy/entidades-autonomas)
+[Organigrama del Estado Peruano](https://www.peru.gob.pe/docs/estado.pdf)
+
+}}}
+Notas {{{
+
+¿Qué significa el acrónimo BCRP?
+	Signica "Banco Central de Reservas del Perú".
+¿Qué es el BCRP?
+	Es una entidad autónoma que preserva la estabilidad monetaria del país.
+¿Qué es una entidad autónoma?
+	Son aquellos órganos a los cuales, el Estado, les ha confiado la actividad directa e inmediata. Estos gozan de una total independencia y paridad recíproca.
++ ¿Qué es paridad recíproca?
+¿Por qué se dice que el BCRP es una entidad autónoma y no una entidad pública?
+	Porque el BCRP es un organismo que toma decisiones independientemente, es decir, no depende de ningún otro organismo constitucional.
+Nombre alguna entidad que no sea autónoma y otra que sea autónoma.
+	Organismos atónomos
+		Defensoría del pueblo
+		Ministerio público
+		Tribunal constitucional
+		(BCRP) Banco Central de Reservas del Perú
+		(CNM) Consejo Nacional de la Magistratura
+		(INEI) Instituto Nacional de Estadística
+			Organismo institucional autónomo del Perú. Se encarga de dirigir los sitemas de estadística y también de informática del país.
+	Organismos no autónomos/tutelares
+		(PNP) Policía Nacional del Perú
+			Es una institución del Estado dependiente del Ministerio del Interior.
+		(FFAA) Fuerzas Armadas de la República del Perú 
+			Dependen exclusivamente del Ministerio de Defensa.
++ ¿Por qué en la página de Wikipedia del INEI lo describen como "a semi-autonomous government agency"?
+	Porque como es expresado en el organigrama del Estado Peruano, el INEI se encuentra en el ámbito de la presideencia del Consejo de Ministros.
+¿Qué expresa el organigrama del Estado Peruano?
+	Expresa como están distribuidos el poder sobre otros de cada uno de los organismos constitucionales. 
+¿Cuál es el objetivo del BCRP?
+	Preservar la estabilidad monetaria, es decir, asegurarse que la inflación anual se mantenga en el rango meta (en palabras simples, controlar la inflación.)
+¿De qué está encargado el BCRP?
+	Es encargado de emitir los bonos, pero fundamentado en las reservas que tiene el país para obtener liquidez.
++ ¿Cuáles son las acciones que toma el BCRP para preservar la estabilidad monetaria?
++ ¿Cuáles son las herramientas que utiliza el BCRP para controlar la inflación?
+	Tasa de interes.
++ ¿Cómo el BCRP controla la inflación diariamente?
+	Analizando el (multiplicador monetario)/(multiplicador del dinero). Este expresa que la masa monetaria tiene que ser un coeficiente entre lo que se consume en el mercado de bienes y servicios y la cantidad de dinero que debe estar circulando.
++ ¿Cuáles son las prohibiciones que tiene el BCRP?
+	Financiar al tesoro público (no puede emitir, ni financiar a travez de instrumentos financieros, es decir, no puede financiar el tesoro público mediante la impresión de papel.)
+	Dar creditos sectoriales
+	Extender avales, cartas fianza u otras garantías.
+	Imponer coeficiientes sectoriales de cartera.
+	Establecer tipos de cambios múltiples.
++ ¿Qué ocurrirá si sube la tasa de interés?
+	Si sube la tasa de interes, los creditos de consumo van a ser mas caros, entonces el consumo va a disminuir, por lo tanto la inflacion va a bajar.
++ Suponiendo un escenario donde la inflación está subiendo por encima del rango meta y el producto está cayendo ¿Qué puede hacer un país para controlar esto?
+
+}}}
+
+}}}
+
+}}}
+General {{{
+
+Recursos útiles {{{
+
+
+
+}}}
+Notas {{{
+
+¿De qué depende la valoración de un producto?
+	De su mismo precio.
+
+}}}
+
+}}}
+
+$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
+$                    ORDENA ESTO                    $
+$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
+
 [DE] 9 - Aplicación: comercio internacional
 	¿Qué son los aranceles?	
 		Son impuestos a las importaciones.

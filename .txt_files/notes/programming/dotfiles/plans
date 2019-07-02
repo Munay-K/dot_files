@@ -28,6 +28,7 @@ Todo {{{
 	- "global" keyword in Python and how it can be used to share variables across different files to have a single max_length that is shared between forms and the database. There shouldn't be magic numbers, just a single number that is shared across the form, model, etc.
 - Bibtex templates for all kinds of references.
 - Translation units compilation mapping for each filetype set to local buffer.
+- Learn how to create a Q&A using Vuejs and Django (learn best practices.)
 - Create LaTeX slides template for formal presentations.
 - Create Google Slides templates for formal/informal presentaiton.
 
@@ -62,7 +63,7 @@ Notes
 	When being on the NERDTree menu, the created keybinding should append that file into the file that toggled the NERDTree menu.
 	NERDTree knows which buffer toggled it, since when you open a file from the NERDTree menu, that file is opened in that buffer.
 Why is this unncesary?
-	The main objective of creating this keybinding was to append '.gitignore's files on the fly, since my '.gitignore' templates have been created with the separator 'v4'. Now that I'm using 'foldmethod=marker' to organize my files, this keybinding would be useless. 
+	The main objective of creating this keybinding was to append '.gitignore's files on the fly, since my '.gitignore' templates have been created with the v4 separator. Now that I'm using 'set foldmethod=marker' to improve the readibility of my code, this keybinding would be useless. 
 
 }}}
 
@@ -71,14 +72,22 @@ Todo {{{
 
 Vanilla {{{
 
-- Start using 'Pathogen' or installing plugins manually to make Vim even more lightweight
 - Start using abbreviations to get rid of UltiSnips.
 - Learn how to work within Vim from different computers.
-- Create a method that could create C++ classes on the fly (.cpp and .h files with text inside)
-- Create a function that given a list of file extensions (['tex', 'sta', 'pdf']), it returns a commands that delete all those files.
-- Organize keybindings in a such a way that each filetype has its own compilation/interpretation keybindings
 - Keybinding that comment multiple select lines (language dependent)
+- Compatibility between ZSH and Vim keybindings for selecting files.
 - Create my own functions that do the same as what the 'Vimball' plugins do.
+- Start using 'Pathogen' or installing plugins manually to make Vim even more lightweight
+- Create a method that could create C++ classes on the fly (.cpp and .h files with text inside)
+- Like i3 resizing, enabling a mode that maps hjkl for resizing windows and then disables those keys.
+- Organize keybindings in a such a way that each filetype has its own compilation/interpretation keybindings
+- Create a function that given a list of file extensions (['tex', 'sta', 'pdf']), it returns a commands that delete all those files.
+- Understand at a greater extent UltiSnips snippets (post_jump, priority)
+	- https://github.com/SirVer/ultisnips/tree/6fdc3647f72e0a1f321ea6bd092ecd01f7c187ba/doc/examples 
+	- https://github.com/SirVer/ultisnips/tree/6fdc3647f72e0a1f321ea6bd092ecd01f7c187ba
+	- https://github.com/SirVer/ultisnips/blob/master/doc/UltiSnips.txt
+- Create commands that support ":W" to ":w" and ":Q" to ":q".
+	- :h user-commands
 
 }}}
 NERDTree {{{

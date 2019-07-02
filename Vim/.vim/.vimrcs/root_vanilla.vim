@@ -33,6 +33,9 @@ set tabstop=4
 "Highlight all ocurrences of a pattern that has been searched.
 set hlsearch
 
+"The screen will not be redrawn while executing macros, registers and other commands.
+set lazyredraw
+
 "Allows input of character that are difficult to type when using an english keyboard.
 set digraph
 
@@ -76,6 +79,7 @@ let g:tex_flavor="latex"
 
 autocmd BufNewFile,BufRead * setlocal
 	\ foldmethod=marker
+	\ textwidth=0
 
 "}}}
 "(sass) SASS-CSS {{{
