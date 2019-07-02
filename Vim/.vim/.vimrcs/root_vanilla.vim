@@ -1,4 +1,4 @@
-"Global variables {{{
+"Variables {{{
 
 let MY_HOME = '/home/onceiusedwindows/'
 let MY_VIM_PATH = MY_HOME . '.vim/'
@@ -27,10 +27,6 @@ set noexpandtab
 "Highlight the matching results when searching.
 set incsearch
 
-"99: Only folds with a depth level of 99 will not be opened, that is, most of the folds will be opened when opening a file.
-"0: All folds will be closed.
-set foldlevel=0
-
 "Number of spaces that a <Tab> in the file counts for
 set tabstop=4
 
@@ -40,11 +36,11 @@ set hlsearch
 "Allows input of character that are difficult to type when using an english keyboard.
 set digraph
 
-"Set number of lines that are used as a padding between the vertical borders and the cursor
-set scrolloff=999
-
 "Displays status line always. It allows you to see the current mode, file name, file status, ruler, etc.
 set laststatus=2
+
+"Set number of lines that are used as a padding between the vertical borders and the poosition of the cursor
+set scrolloff=999
 
 "Shows a menu when trying to open another file from Vim's terminal and there are files available to be opened.
 set wildmenu
@@ -92,8 +88,6 @@ autocmd BufNewFile,BufRead *.sass setlocal
 
 autocmd BufNewFile,BufRead *.py setlocal
 	\ expandtab
-	\ foldmethod=marker
-	\ foldlevel=99
 
 autocmd filetype python nnoremap <buffer> <F7> :wa <bar> !clear && python3.7 % <CR>
 
@@ -177,6 +171,13 @@ autocmd BufNewFile,BufRead,WinEnter *
 "}}}
 
 "}}}
+"Folding {{{
+
+"99: Only folds with a depth level of 99 will not be opened, that is, most of the folds will be opened when opening a file.
+"0: All folds will be closed.
+set foldlevel=0
+
+"}}}
 "Keybindings {{{
 "+info:
 "	:help map-listing ()
@@ -203,6 +204,9 @@ tnoremap <Esc> <C-w><S-n>
 "(nmap) Normal mode {{{
 
 "Miscelanous {{{
+
+"Faster folding
+nnoremap <Space> za
 
 "Go to the middle of the current selected line
 nnoremap <Leader>v :call cursor(0, len(getline('.'))/2+1)<CR>
