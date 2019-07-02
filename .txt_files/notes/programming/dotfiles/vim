@@ -10,7 +10,6 @@ Code cleaners {{{1
 	Reduce multiple blank lines (only lines that only contain whitespace characters) to a single line.
 
 }}}1
-
 Some basic tricks {{{1
 
 :g/<h[12]>/t$
@@ -19,11 +18,12 @@ Some basic tricks {{{1
 	Moves all lines matching a pattern to end of file.
 qaq:g/pattern/y A
 	qaq (clear register "a" by recording an empty macro), y (yank match) A (append ro register "a", if it's 'a' then the last match will only be saved into the 'a' register.)
+:g/pattern/z#.5
+	Display context (5 lines) for all occurrences of a pattern. If not the beginning/end of the document, the matched pattern will apear at the middle of the lines given (in this case, 5).
 :g/pattern/"_d
 	Optimized deletion of all lines matching a pattern ("_ makes vim yank to the blackhole register which does makes Vim not to copy each match to a register.)
 
 }}}1
-
 Some advanced tricks {{{1
 
 :g/.\n\n\@!/norm o
@@ -34,15 +34,27 @@ Some advanced tricks {{{1
 	Descendent sorting by length.
 %! [cmd]
 	Replaces the content of the file with the output of that command.
-}}}1
 
+}}}1
 Files metadata {{{1
++info:
+	:help filename-modifiers
+
+expand("%:.:p") -> Reduce file name to be relative to current directory.
+expand("%:~:p") -> Reduce file name to be relative to the home directory.
 
 expand("%:p") -> Full path
 expand("%:p:h") -> Full path of the directory where the file is.
 expand("%:p:r") -> Full path of the file (excluding its extension.)
+
+expand("%:.:p") -> Relative path of the file (including its extension)
+expand("%:r") -> Relative path (if possible) of the file (excluding its extension)
+expand("%:h") -> Relative path (if possible) of the directory where the file is.
+
+expand("%:t") -> File (including its extension)
+expand("%:t:r") -> File (excluding its extension)
 expand("%:e") -> Extension of the file.
-expand("%:t") -> Name of the file (including its extension)
-expand("%:t:r") -> Name of the file (excluding its extension)
+
 &filetype -> Get the current fype type assigned by Vim.
+
 }}}1

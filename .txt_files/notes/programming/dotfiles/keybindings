@@ -104,7 +104,7 @@ q: show pane numbers
 
 }}}1
 
-ZSH {{{1
+ZSH {{{
 
 +info
 	- Execute 'bindkey' in any terminal from any commputer
@@ -123,9 +123,9 @@ Select mode {{{2
 
 }}}2
 
-}}}1
+}}}
 
-Ranger {{{1
+Ranger {{{
 
 Custom {{{2
 
@@ -133,7 +133,7 @@ bg -> Changes the background of the image to the current selected image.
 
 }}}2
 
-Default {{{2
+Default {{{
 
 Notes {{{3
 
@@ -200,6 +200,6 @@ Commands {{{3
 
 }}}3
 
-}}}2
+}}}
 
-}}}1
+}}}

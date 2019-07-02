@@ -1,3 +1,35 @@
+# General {{{
+
+snippet mlcomm "Multi-line comment" bA
+
+endsnippet
+
+snippet slcomm "Single-line comment" bA
+[//]: # (${1:${VISUAL}})
+endsnippet
+
+snippet prs "string printer" bA
+
+endsnippet
+
+priority 1
+snippet vimark "Vim default marker" Ai
+[comment]: <> ({{{)
+
+${1:${VISUAL}}
+
+[comment]: <> (}}})
+endsnippet
+
+#}}}
+# Miscelanous {{{
+
+snippet code "."
+\`\`\`
+${VISUAL}$1
+\`\`\`
+endsnippet
+
 snippet link
 [$1](${VISUAL}$2)$0
 endsnippet
@@ -6,8 +38,4 @@ snippet bf "." iA
 **${VISUAL}$1**
 endsnippet
 
-snippet code "."
-\`\`\`
-${VISUAL}$1
-\`\`\`
-endsnippet
+#}}}

@@ -8,7 +8,7 @@ snippet gw "Hello World!" i
 Goodbye World!
 endsnippet
 
-snippet vimark "Vim default marker" A
+snippet vimark "Vim default marker" Ai
 {{{
 
 ${1:${VISUAL}}
@@ -16,7 +16,7 @@ ${1:${VISUAL}}
 $2}}}
 endsnippet
 
-snippet mvimark "Vim default marker" A
+snippet mvimark "Vim default marker" Ai
 {{{$1
 ${VISUAL}
 $2}}}$1
@@ -24,12 +24,14 @@ endsnippet
 
 # Museum {{{1
 
+# v1
 # snippet sepa1 "." A
 # ------------------------------------------------------------
 # $1
 # ------------------------------------------------------------
 # endsnippet
 
+# v2
 # snippet sep1 "." A
 # //////////////////////////////////////////////////
 # --------------------------------------------------
@@ -38,10 +40,12 @@ endsnippet
 # //////////////////////////////////////////////////
 # endsnippet
 
+# v3
 # snippet sep1 "." A
 # !$1| $2 !$1|
 # endsnippet
 
+# v4
 # THU, 27 JUN 2019
 # snippet sep1 "." A
 # !$1| --------------------------------------------------

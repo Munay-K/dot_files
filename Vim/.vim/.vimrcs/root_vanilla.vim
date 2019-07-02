@@ -1,4 +1,4 @@
-"Global variables {{{1
+"Global variables {{{
 
 let MY_HOME = '/home/onceiusedwindows/'
 let MY_VIM_PATH = MY_HOME . '.vim/'
@@ -9,9 +9,8 @@ let MY_TEMPLATES = MY_TXT_FILES . 'templates/'
 let MY_NOTES = MY_TXT_FILES . 'notes/'
 let MY_SKELETONS = MY_TEMPLATES . 'skeletons/'
 
-"}}}1
-
-" General settings {{{1
+"}}}
+" General settings {{{
 
 "Enables line numbers
 set number
@@ -21,9 +20,6 @@ set wrap
 
 "Enables indentation when wrapping lines
 set breakindent
-
-"Determines what kind of folding to apply
-set foldmethod=marker
 
 "Use tab instead of spaces when pressing Tab
 set noexpandtab
@@ -71,59 +67,78 @@ autocmd VimLeave * call system("xclip -selection clipboard", getreg('+'))
 "Changes the default behaviour of Vim to set .tex files to a filetype different to the latex filetype.
 let g:tex_flavor="latex" 
 
-"}}}1
+"}}}
+"File settings {{{
+"<F1>: Single file saving and raw compiling or interpretation.
+"<F2>: Multiple file saving and raw compiling or interpretation.
+"<F11>: Deletes files resulting from executing the source code.
+"<F12>: See result or open resulting file.
 
-"File settings {{{1
-
-" All files {{{2
+"All files {{{
 
 "Although you can specify configurations by specifying them in .vimrc, some plugins overwrite these configurations due to the configuration that is implemented within the files of a given plugin. For example, UltiSnips sets 'foldmethod=syntax' for files whose filetype is 'snippets'.
 
 autocmd BufNewFile,BufRead * setlocal
 	\ foldmethod=marker
 
-"}}}2
-
-" SASS-CSS {{{2
+"}}}
+"(sass) SASS-CSS {{{
 
 autocmd BufNewFile,BufRead *.sass setlocal
 	\ expandtab
 
-"}}}2
-
-"Python {{{2
+"}}}
+"(python) Python {{{
 
 autocmd BufNewFile,BufRead *.py setlocal
 	\ expandtab
-	\ foldmethod=indent
+	\ foldmethod=marker
 	\ foldlevel=99
 
-"}}}2
+autocmd filetype python nnoremap <buffer> <F7> :wa <bar> !clear && python3.7 % <CR>
 
-"C++ {{{2
+"}}}
+"(cpp) C++ {{{
 
 autocmd BufNewFile,BufRead *.cpp setlocal
 	\ foldmethod=syntax
 	\ foldlevel=99
 
-"}}}2
+"Compiles and executes a cpp source file without using headers files regardless of the location of the file.
+autocmd filetype cpp nnoremap <buffer> <F7> :wa <bar> !clear && g++ -std=gnu++14 -O2 % -o %:p:r.out && %:p:r.out<CR>
 
-"LaTeX {{{2
+"}}}
+"(tex) LaTeX {{{
+"--output-directory: must be before the translation unit.
 
-autocmd BufNewFile,BufRead *.tex 
-	\ highlight link texError texAbstract
+autocmd BufNewFile,BufRead,filetype tex
+	\ highlight link texerror texabstract
+	\ | nnoremap <buffer> <f1> :w <bar> :exec '!pdflatex --output-directory=' . shellescape(expand("%:h"), 1) . ' ' . shellescape(expand("%:.:p"), 1)<cr>
+	\ | nnoremap <buffer> <F2> :wa <bar> :exec '!pdflatex --output-directory=' . shellescape(expand("%:h"), 1) . ' ' . shellescape(expand("%:.:p"), 1)<CR>
+	\ | nnoremap <buffer> <F11> :!rm -rf *.pdf <bar> rm -rf *.log <bar> rm -rf *.aux <bar> rm -rf *.sta
+	\ | nnoremap <buffer> <F12> :w <bar> :exec '!xdg-open ' . shellescape(expand('%:r') . '.pdf', 1) . ' &'<CR>
 
-"}}}2
-
-".gitignore {{{2
+"}}}
+"(gitignore) .gitignore {{{
 
 autocmd BufNewFile,BufRead *.gitignore
 	\ set filetype=gitignore
 
-"}}}2
+"}}}
+"(html) HTML {{{
 
-"}}}1
+autocmd BufNewFile,BufRead,filetype html
+	\ nnoremap <buffer> <F12> :exec '!google-chrome --new-window --args ' . shellescape(expand('%:p'), 1) . ' &'<CR><CR>
 
+"}}}
+"(markdown) Markdown {{{
+
+autocmd BufNewFile,BufRead,filetype markdown
+	\ nnoremap <buffer> <F12> :exec '!google-chrome --new-window --args ' . shellescape(expand('%:p'), 1) . ' &'<CR><CR>
+
+"}}}
+
+"}}}
 "Highlighting {{{
 
 "Cursor {{{
@@ -138,8 +153,10 @@ highlight clear CursorLine
 highlight LineNR ctermfg=64
 highlight CursorLineNR ctermfg=11
 
-"}}}
+"Enables/Disables the line row where the cursor is.
+nnoremap <Leader>c :set cursorline!<CR>
 
+"}}}
 "Boxes {{{
 
 highlight boxes ctermbg=243 ctermfg=015
@@ -160,10 +177,10 @@ autocmd BufNewFile,BufRead,WinEnter *
 "}}}
 
 "}}}
-
 "Keybindings {{{
 "+info:
-"	:help map-listing
+"	:help map-listing ()
+"	:help key-notation (name with which 'Vim' recognizes keys.)
 
 " (vmap) Visual and select mode {{{
 
@@ -174,17 +191,15 @@ vnoremap .. :s:\%V :_:g<CR>:noh<CR>
 vnoremap <Leader>r :s:\%V::g<Left><Left><Left>
 
 "}}}
-
 " (tmap) Terminal mode  {{{
 
 "Disable the useless buffer moving
 tnoremap <C-w><C-w> <Nop>
 
-"Faster searching
-tnoremap <Leader>s <C-w><S-n>/
+"Faster exiting from shell
+tnoremap <Esc> <C-w><S-n>
 
 "}}}
-
 "(nmap) Normal mode {{{
 
 "Miscelanous {{{
@@ -214,7 +229,6 @@ nnoremap <C-w><C-w> <Nop>
 nnoremap <Leader><Space> :exe ":-1read " . MY_SKELETONS . &filetype<CR>
 
 "}}}
-
 "Manipulating the entire document {{{
 
 "Copy all content from the file into primary clipboard
@@ -233,7 +247,6 @@ nnoremap <Leader>sa GVggzz
 nnoremap <Leader>p "+p
 
 "}}}
-
 "Opening terminals {{{
 
 "Open a terminal
@@ -243,27 +256,6 @@ nnoremap <Leader>t :term<CR>
 nnoremap <Leader>tc :let $MY_VIM_VARIABLE=expand('%:p:h')<CR>:terminal<CR>cd $MY_VIM_VARIABLE<CR><C-l>
 
 "}}}
-
-"Faster indentation {{{
-
-nnoremap > >>
-nnoremap < <<
-
-"}}}
-
-"Executing translation units {{{
-
-autocmd filetype python nnoremap <buffer> <F7> :wa <bar> !clear && python3.7 % <CR>
-"Compiles and executes a cpp source file without using headers files regardless of the location of the file.
-autocmd filetype cpp nnoremap <buffer> <F7> :wa <bar> !clear && g++ -std=gnu++14 -O2 % -o %:p:r.out && %:p:r.out<CR>
-
-"Compiles a tex file using 'pdflatex'
-autocmd fileType tex nnoremap <F9> :w <bar> :exec '!pdflatex --shell-escape -output-directory=' . shellescape(expand("%:p:h")) . ' ' . shellescape(expand("%:p"), 1)<CR>
-"Open the pdf resulting of having compiled the 'pdflatex'
-autocmd fileType tex nnoremap <F10> :w <bar> :exec '!xdg-open ' . shellescape(expand('%:r') . '.pdf', 1) . ' &'<CR>
-
-"}}}
-
 " Quicker windows move {{{
 
 nnoremap <C-j> <C-w>j
@@ -274,16 +266,20 @@ nnoremap <C-l> <C-w>l
 "}}}
 
 "}}}
-
 " (imap) Insert mode {{{
 
-"Miscelanous {{{
+"Optimal keys {{{
 
 "Delete the character behind the cursor position.
 inoremap <C-d> <Del>
 
-"}}}
+"Move (b)ackward.
+inoremap <C-b> <Left>
 
+"Move (f)orward.
+inoremap <C-f> <Right>
+
+"}}}
 "Auto closing openers {{{
 
 "It doesn't write the closing openers if it's already present
@@ -297,7 +293,6 @@ inoremap <expr> ]  strpart(getline('.'), col('.')-1, 1) == "]" ? "\<Right>" : "]
 "}}}
 
 "}}}
-
 " (cmap) Command line editting mode {{{
 " +info:
 " 	:help ex-edit-index
@@ -317,9 +312,6 @@ cnoremap <C-o> <S-Right>
 "Cursor one word left.
 cnoremap <C-z> <S-Left>
 
-"Delete all characters regardless of the cursor position
-cnoremap <C-u> <C-e><C-u>
-
 "Save the 'Control + d' key (which list completions that match the apttern in front of the cursor)
 cnoremap <C-x> <C-d>
 
@@ -333,31 +325,26 @@ cnoremap <C-m> <Nop>
 cnoremap <BS> <Nop>
 
 "}}}
-
 "(omap) Operator-pending mode {{{
 
 
 
 "}}}
-
 " (xmap) Visual mode {{{
 
 
 
 "}}}
-
 " (smap) Select mode {{{
 
 
 
 "}}}
-
 " (lmap) Insert and command line editing mode {{{
 
 
 "}}}
-
-"I'm not incompetent {{{2
+"I'm not incompetent {{{
 
 function IncompetentMsg(...)
 	let a:beginning = "YOU INCOMPETENT, use "
@@ -398,6 +385,6 @@ inoremap <CR> <Esc>:echoe key_enter<CR>
 " nnoremap j <Esc>:echoe "YOU INCOMPETENT, USE 'Number+G', 'Control+E' or 'Control+D'"<CR>
 " nnoremap l <Esc>:echoe "YOU INCOMPETENT, USE e AND w"<CR>
 
-"}}}2
+"}}}
 
 "}}}

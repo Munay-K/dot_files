@@ -1,25 +1,18 @@
-!1| --------------------------------------------------
-!1| Inserter
-!1| --------------------------------------------------
+Inserter {{{
 
-% !2| --------------------------------------------------
-% !2| {subfiles}
-% !2| --------------------------------------------------
+%subfiles{{{
 
-%Let handling multi-file projects.
+%let handling multi-file projects.
 \usepackage{subfiles}
 
-!1| --------------------------------------------------
-!1| Examples
-!1| --------------------------------------------------
+%}}}
 
-!2| --------------------------------------------------
-!2| 1
-!2| --------------------------------------------------
+}}}
+Examples {{{
 
-!3| --------------------------------------------------
-!3| ./main.tex
-!3| --------------------------------------------------
+1 {{{
+
+./main.tex {{{
 
 \documentclass{article}
 
@@ -30,9 +23,9 @@
 	\subfile{file_2.tex} 
 \end{document}
 
-!3| --------------------------------------------------
-!3| ./file_1.tex
-!3| --------------------------------------------------
+}}}
+
+./file_1.tex {{{
 
 \documentclass{subfiles}
 
@@ -40,9 +33,9 @@
 	File 1
 \end{document}
 
-!3| --------------------------------------------------
-!3| ./file_2.tex
-!3| --------------------------------------------------
+}}}
+
+./file_2.tex {{{
 
 \documentclass{subfiles}
 
@@ -50,3 +43,14 @@
 	File 2
 \end{document}
 
+}}}
+
+}}}
+
+}}}
+Notes {{{
+
+- Each file doesn't have its own preamble. I can confirm this becaause I tried to include every algorithm package into a single document using the 'subfiles' package¸ but when using 'usepackage' on each file I got 'LaTeX error: Can be used only on preamble.'
+- The document class and the rest of the preamble will be the same defined in the main document.
+
+}}}

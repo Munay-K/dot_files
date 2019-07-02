@@ -1,1 +1,19 @@
+# Text editors {{{
+
+# Vim {{{
+
+# Swap files{{{
+
 *.sw*
+
+#}}}
+
+# Sessions {{{
+
+Session.vim
+
+#}}}
+
+#}}}
+
+#}}}

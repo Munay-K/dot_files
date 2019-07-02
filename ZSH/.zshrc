@@ -110,15 +110,16 @@ source $ZSH/oh-my-zsh.sh
 #Enables the showing of hidden directories and files when autocompleting.
 setopt globdots
 
-#}}}
+#Disable the 'rm' that is triggered by invoking 'rm' with the '*' argument before glob expansion
+setopt rm_star_silent
 
+#}}}
 # Aliases {{{
 
 alias vls='ls -1aX'
 alias hls='ls -aX'
 
 #}}}
-
 # Keybindings {{{
 
 # Go to the beginning of the next word, if there is one. If there are autosuggestions, select until the beginning of the first word in the suggestion.
@@ -131,7 +132,6 @@ bindkey "^Z" backward-word
 bindkey -r "^M"
 
 #}}}
-
 # Functions {{{
 
 # Addѕ a preffix to all the files that meet a pattern.

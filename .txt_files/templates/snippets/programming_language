@@ -1,4 +1,4 @@
-# General {{{1
+# General {{{
 
 snippet mlcomm "Multi-line comment" bA
 
@@ -12,27 +12,26 @@ snippet prs "string printer" bA
 
 endsnippet
 
-#}}}1
+priority 1
+snippet vimark "Vim default marker" Ai
 
-# Regex {{{2
+endsnippet
+
+#}}}
+# Regex {{{
 
 
 
-#}}}2
-
-# Debugging {{{1
+#}}}
+# Debugging {{{
 
 snippet var "variable printer for debugging" bA
 
 endsnippet
 
-#}}}1
-
-
-# Miscelanous {{{1
+#}}}
+# Miscelanous {{{
 
 
 
-#}}}1
-
-
+#}}}

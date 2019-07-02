@@ -1,21 +1,21 @@
-!1| --------------------------------------------------
-!1| Meta
-!1| --------------------------------------------------
+Legend {{{
 
+Key-b: keybinding
+cwd: current working directory
 
-!2| --------------------------------------------------
-!2| Done
-!2| --------------------------------------------------
+}}}
+Meta {{{
 
-- MIé, 26 JUN 2019, 12:31:50 PM, -0500: LaTeX templates per packages.
+Done {{{
 
-!2| --------------------------------------------------
-!2| Todo
-!2| --------------------------------------------------
+- LaTeX templates per packages.
+
+}}}
+Todo {{{
 
 - Create my own Google Chrome extensions
 	QUESTIONS:
-		How do Google Chrome extensions save data?
+		How do Google Chrome extensions save data on multiple users?
 		How a google chrome extension can call data from a database.
 	- Mashup of all different tab google chrome extensions.
 		- Edit created alarms
@@ -26,16 +26,17 @@
 	- Forms for different languages.
 	- Warning in forms that depends on the length from the database column.
 	- "global" keyword in Python and how it can be used to share variables across different files to have a single max_length that is shared between forms and the database. There shouldn't be magic numbers, just a single number that is shared across the form, model, etc.
-- Bibtex snippets
-- Translation units compilation mapping set to local buffer.
+- Bibtex templates for all kinds of references.
+- Translation units compilation mapping for each filetype set to local buffer.
+- Create LaTeX slides template for formal presentations.
+- Create Google Slides templates for formal/informal presentaiton.
 
-!1| --------------------------------------------------
-!1| Vim
-!1| --------------------------------------------------
+}}}
 
-!2| --------------------------------------------------
-!2| Done
-!2| --------------------------------------------------
+}}}
+Vim {{{
+
+Done {{{
 
 - JUE, 20 JUN 2019, 10:39:13 AM, -0500: Shortcut that changes the current working directory to the directory in where the file is.
 - JUE, 20 JUN 2019, 10:39:18 AM, -0500: Like ranger file moving. Map "l" to open a folder or a file.
@@ -46,83 +47,112 @@
 - JUE, 20 JUN 2019, 10:38:43 AM, -0500: Kebinding that open the folder that contains my templates.
 - JUE, 20 JUN 2019, 13:53:41 PM, -0500: Make "numeral" key to search the current selected word but don't select the other instance
 
-!2| --------------------------------------------------
-!2| Unnecessary
-!2| --------------------------------------------------
+}}}
+Unnecesary {{{
 
-- Keybinding that changes the current working directory to a the directory which contain the file from the current buffer, open NERDTree, make the current working directory be the same as it was before.
-	EXPLANATION
-	It is more convenient to open NERDTree in the directory where the file from the current buffer is, this way it is not necessary to change the current working directory. Note that this is what I wanted to accomplish in the first place.
+Key-b that changes the cwd to the directory where the file is, open NERDTree, make the cwd be the same as it was before. {{{
 
-!2| --------------------------------------------------
-!2| Todo
-!2| --------------------------------------------------
+Why is this unncesary?
+	It is more convenient to open NERDTree in the directory where the file from the current buffer is, this way it is not necessary to change the current working directory. Note that this is what I wanted to accomplish in the first place, but then I realize that you can toggle the NERDTree menu on a given directory.
 
-- Make vim use Pathogen to make it even more lightweight.
+}}}
+Appending files to current buffer using the NERDTree menu. {{{
+
+Notes
+	When being on the NERDTree menu, the created keybinding should append that file into the file that toggled the NERDTree menu.
+	NERDTree knows which buffer toggled it, since when you open a file from the NERDTree menu, that file is opened in that buffer.
+Why is this unncesary?
+	The main objective of creating this keybinding was to append '.gitignore's files on the fly, since my '.gitignore' templates have been created with the separator 'v4'. Now that I'm using 'foldmethod=marker' to organize my files, this keybinding would be useless. 
+
+}}}
+
+}}}
+Todo {{{
+
+Vanilla {{{
+
+- Start using 'Pathogen' or installing plugins manually to make Vim even more lightweight
+- Start using abbreviations to get rid of UltiSnips.
 - Learn how to work within Vim from different computers.
-- Analyze whether getting rid of UltiSnips and using abbreviations instead is feasible.
+- Create a method that could create C++ classes on the fly (.cpp and .h files with text inside)
+- Create a function that given a list of file extensions (['tex', 'sta', 'pdf']), it returns a commands that delete all those files.
+- Organize keybindings in a such a way that each filetype has its own compilation/interpretation keybindings
+- Keybinding that comment multiple select lines (language dependent)
 
-!3| --------------------------------------------------
-!3| NERDTree
-!3| --------------------------------------------------
+}}}
+NERDTree {{{
 
-- Appending files to current buffer using the NERDTree menu.
-	When I press a key while the cursor is on a file from the NERDTree menu, vim reads that file into the buffer where the cursor was, before NERDTree was opened.
-	
-	You_should_consider_that_NERDTree_knows_which_window_toggled_the_NERDTree_menu,_because_when_you_open_a_file_using_the_NERDTree_menu,_it_knows_in_which_windows.
-
-- Yank file to a given register from the NERDTree menu just by pressing: y<register>".
-
-!1| --------------------------------------------------
-!1| ZSH
-!1| --------------------------------------------------
+Yank file to a given register from the NERDTree menu just by pressing: y<register>". {{{
 
 
-!2| Done !2|
+
+}}}
+
+}}}
+
+}}}
+
+}}}
+ZSH {{{
+
+Done {{{
 
 - Make a function that add a preffix and a suffix for a given pattern.
 
-!3| Unnecessary !3|
 
-- UNNECESARY: Complete the suggestion using Alt+Shift+L instead of the right key
-	The default keybinding to do this is Control + F.
-- UNNECESARY: Moving left or right using Alt+L and Alt+H
-	EXPLANATION
-	The default keybindings to do this are:
-		- Control + B to go backward.
-		- Control + F to go forward.
+}}}
+Unnecesary {{{
 
-!2| Todo !2|
-
-!1| --------------------------------------------------
-!1| i3
-!1| --------------------------------------------------
+Complete the suggestion using Alt+Shift+L instead of the right key
+	Why is this unncesary?
+		The default keybinding to do this is Control + F.
+Moving left or right using Alt+L and Alt+H
+	Why is this unncesary?
+		The default keybindings to do this are:
+			- Control + B to go backward.
+			- Control + F to go forward.
 
 
-!2| Done !2|
+}}}
+Todo {{{
 
-!3| Unnecessary !3|
 
-- Mod + Tab = next workspace
-	EXPLANATION
+
+}}}
+
+}}}
+i3 {{{
+
+Done {{{
+
+
+
+}}}
+Unnecessary {{{
+
+Mod + Tab = next workspace {{{
+
+Why is this unncesary?
 	It wouldn't help me to do anything.
-- Shift + Mod + Tab = previous workspace
-	EXPLANATION
-	It wouldn't help me to do anything.
 
-!2| Todo !2|
+}}}
+Shift + Mod + Tab = previous workspace {{{
 
+It wouldn't help me to do anything.
 
-!1| --------------------------------------------------
-!1| LaTeX
-!1| --------------------------------------------------
+}}}
 
+}}}
 
-!2| Done !2|
+}}}
+LaTeX {{{
+
+Done {{{
 
 - Learn how to do a bibliography
 
-!2| Todo !2|
+}}}
+Todo {{{
 
 - Find out which sources of information can be referenced using BibTeX, and what's the best way to do this?
 - Do a template for each of the types of references that can be referenced with bibtex (websites, articles, reports).
@@ -130,3 +160,8 @@
 	- What should be considered as an article?
 	- What should be considered as a report?
 	- Which kind of websites should be considered as reliable sources of information? and which kind of meta information it is necessary in order to include them in a bibliography. I can't cite any of the websites i find, can I?
+- Make a document that implement all the existent algorithm packages.
+
+}}}
+
+}}}

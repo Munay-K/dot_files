@@ -5,7 +5,6 @@
 *.o
 
 #}}}2
-
 # Executables {{{2
 
 *.out

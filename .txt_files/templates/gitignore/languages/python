@@ -6,7 +6,6 @@ env/
 venv/
 
 #}}}3
-
 # Byte-compiled / optimized / DLL files {{{3
 
 __pycache__/

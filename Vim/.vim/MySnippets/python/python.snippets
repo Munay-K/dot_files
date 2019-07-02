@@ -1,15 +1,24 @@
-extends html
+# General {{{
 
-snippet cblock "comment block" iA
+snippet mlcomm "Multi-line comment" bA
 """
-${VISUAL}$0
+$1
 """
 endsnippet
 
-snippet prn "Printing" iA
-print(${VISUAL}$1)
+snippet slcomm "Single-line comment" bA
+# $1
 endsnippet
 
-snippet prs "Printing" iA
-print("${VISUAL}$1")
+#}}}
+# Miscelanous {{{
+
+snippet done
+"""
+--------------------------- DONE ---------------------------
+${1:${VISUAL}}
+--------------------------- DONE ---------------------------
+"""
 endsnippet
+
+#}}}

@@ -1,0 +1,40 @@
+Inserter {{{
+
+main {{{
+
+%standalone{{{
+
+%Allows TeX code in sub-files to be compiled standalone.
+%subpreambles = true: Each 'subfile' will have its own preamble.
+\usepackage[subpreambles=true]{standalone}
+
+%}}}
+
+}}}
+subfiles {{{
+
+% Document class {{{
+
+\documentclass[class=article, crop=false]{standalone}
+
+%}}}
+%standalone {{{
+
+%Allows TeX code in sub-files to be compiled standalone.
+%subpreambles = true: Each 'subfile' will have its own preamble.
+\usepackage[subpreambles=true]{standalone}
+
+%}}}
+
+}}}
+
+}}}
+Notes {{{
+
+- The parameter 'subpreambles=true' brackets tells LaTeX to import the preamble from each subfile (packages are imported only once), if omitted, make sure you have all the necessary commands in the main document preamble for the subfiles to work.
+- It is true that each file will have its own preamble. However, there are some packages that has to be declared in the 'main' preamble. For example the 'algorithm2e' package.
+- You can't use standalone package with the following packages:
+	algpseudocode: It needs to be included in the main file, which cause some errors in files where the 'algorithmic' package has been included.
+	algorithm2e: Even when including \usepackage{algorithm2e} in the main and in the subfiles, you get 'Loading MPS to PDF converter'.
+
+}}}

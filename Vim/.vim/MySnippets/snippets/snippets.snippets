@@ -1,0 +1,7 @@
+snippet visual "." iA
+\${VISUAL}
+endsnippet
+
+snippet "\$(\d+)v" "." r
+\${`!p snip.rv = match.group(1)`:\${VISUAL}}
+endsnippet

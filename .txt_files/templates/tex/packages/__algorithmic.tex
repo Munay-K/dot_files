@@ -1,0 +1,22 @@
+!2| --------------------------------------------------
+!2| {algorithmic}
+!2| --------------------------------------------------
+
+%Provides an environment for describing algorithms.
+\usepackage{algorithmic}
+
+\algsetup
+{
+	%Change the amount of indentation to be used.
+	indent = 4em,
+	%Change the size of the line numbers
+	linenosize = \small,
+	%Change the character used to separate line numbering from the algorithm.
+	linenodelimiter = .
+}
+
+%Changes the definition of the "require" command to "input"
+\renewcommand{\algorithmicrequire}{\textbf{Input:}}
+
+%Changes the definition of the "ensure" command to "output"
+\renewcommand{\algorithmicensure}{\textbf{Output:}}

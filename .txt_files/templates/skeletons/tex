@@ -1,23 +1,24 @@
+%Document class {{{
+
 \documentclass{article}
 
-% !1| --------------------------------------------------
-% !1| Packages
-% !1| --------------------------------------------------
+%}}}
+%Packages settings{{{
 
 
 
-% !1| --------------------------------------------------
-% !1| Document settings
-% !1| --------------------------------------------------
+%}}}
+%Document settings {{{
 
 \author{Rodrigo Morales}
 \date{\today} 
 \title{}
 
-% !1| --------------------------------------------------
-% !1| Beginning of document
-% !1| --------------------------------------------------
+%}}}
+%Document {{{
 
 \begin{document}
 	Goodbye World!
 \end{document}
+
+%}}}
