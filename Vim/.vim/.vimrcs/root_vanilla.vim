@@ -1,3 +1,8 @@
+"Testing {{{
+
+
+
+"}}}
 "Variables {{{
 
 let MY_HOME = '/home/onceiusedwindows/'
@@ -7,7 +12,7 @@ let MY_TXT_FILES = MY_HOME . 'Documents/MyFiles/dc_GithubRepos/dot_files/.txt_fi
 let MY_SNIPPETS = MY_VIM_PATH . 'MySnippets/'
 let MY_TEMPLATES = MY_TXT_FILES . 'templates/'
 let MY_NOTES = MY_TXT_FILES . 'notes/'
-let MY_SKELETONS = MY_TEMPLATES . 'skeletons/'
+let MY_SKELETONS = MY_TXT_FILES . 'skeletons/'
 
 "}}}
 " General settings {{{
@@ -79,6 +84,7 @@ let g:tex_flavor="latex"
 
 autocmd BufNewFile,BufRead * setlocal
 	\ foldmethod=marker
+	\ foldlevel=0
 	\ textwidth=0
 
 "}}}
@@ -171,6 +177,14 @@ autocmd BufNewFile,BufRead,WinEnter *
 	\ | call matchadd('boxes', '^.\{0,3\}┌─\{1,}┐')
 	\ | call matchadd('boxes', '^.\{0,3\}│ .* │')
 	\ | call matchadd('boxes', '^.\{0,3\}└─\{1,}┘')
+
+"}}}
+"Vimdiff {{{
+
+highlight DiffAdd    cterm=bold ctermfg=10 ctermbg=17 gui=none guifg=bg guibg=Red
+highlight DiffDelete cterm=bold ctermfg=10 ctermbg=17 gui=none guifg=bg guibg=Red
+highlight DiffChange cterm=bold ctermfg=10 ctermbg=17 gui=none guifg=bg guibg=Red
+highlight DiffText   cterm=bold ctermfg=10 ctermbg=88 gui=none guifg=bg guibg=Red
 
 "}}}
 
@@ -397,5 +411,10 @@ inoremap <CR> <Esc>:echoe key_enter<CR>
 " nnoremap l <Esc>:echoe "YOU INCOMPETENT, USE e AND w"<CR>
 
 "}}}
+
+"}}}
+"User commands {{{
+
+"command Q! :q!
 
 "}}}

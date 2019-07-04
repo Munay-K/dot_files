@@ -2,12 +2,11 @@
 
 # Vim {{{
 
-# Swap files{{{
+# Swap files {{{
 
 *.sw*
 
 #}}}
-
 # Sessions {{{
 
 Session.vim

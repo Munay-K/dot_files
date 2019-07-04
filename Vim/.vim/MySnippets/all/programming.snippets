@@ -1,14 +1,14 @@
-snippet { "Scope generator" i
+snippet { "curly-braced scope generator" i
 {
-	${VISUAL}$0
+	${0:${VISUAL}}
 }
 endsnippet
 
-snippet gw "Hello World!" i
+snippet gw "(g)oodbye (w)orld" i
 Goodbye World!
 endsnippet
 
-snippet vimark "Vim default marker" Ai
+snippet svimark "(s)imple (vi)m (mark)er" Ai
 {{{
 
 ${1:${VISUAL}}
@@ -16,7 +16,7 @@ ${1:${VISUAL}}
 $2}}}
 endsnippet
 
-snippet mvimark "Vim default marker" Ai
+snippet mvimark "(m)inimalist (vi)m (mark)er" Ai
 {{{$1
 ${VISUAL}
 $2}}}$1

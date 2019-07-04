@@ -22,20 +22,24 @@ Todo {{{
 		- It must measure the hours left to a given hour (It must not only work as a days left google chrome extension)
 		- Let the user choose whether sort the tasks according to the most recent one or to drag them and let him sort them as he wants.
 		- It must measure the remaining time from a given time to another time of the same day.
-- Understand clearly how Django forms work.
+- Have a clear understanding of how Django forms work.
 	- Forms for different languages.
-	- Warning in forms that depends on the length from the database column.
+	- Warning forms that depends on the length from the database column.
 	- "global" keyword in Python and how it can be used to share variables across different files to have a single max_length that is shared between forms and the database. There shouldn't be magic numbers, just a single number that is shared across the form, model, etc.
 - Bibtex templates for all kinds of references.
 - Translation units compilation mapping for each filetype set to local buffer.
 - Learn how to create a Q&A using Vuejs and Django (learn best practices.)
 - Create LaTeX slides template for formal presentations.
 - Create Google Slides templates for formal/informal presentaiton.
+- Academic emails snippets for college (thus I willl not have to type the repetitive emails)
+- Global variables that can be shared across config files (i3, zsh, vim)
+	- ZSH: Command that open my templates folder.
+	- VIM: Keybindings that opens my templates folder.
 
 }}}
 
 }}}
-Vim {{{
+vim {{{
 
 Done {{{
 
@@ -86,17 +90,18 @@ Vanilla {{{
 	- https://github.com/SirVer/ultisnips/tree/6fdc3647f72e0a1f321ea6bd092ecd01f7c187ba/doc/examples 
 	- https://github.com/SirVer/ultisnips/tree/6fdc3647f72e0a1f321ea6bd092ecd01f7c187ba
 	- https://github.com/SirVer/ultisnips/blob/master/doc/UltiSnips.txt
-- Create commands that support ":W" to ":w" and ":Q" to ":q".
+- Create commands that support ":W" to ":w" and ":Q" to ":q", "q!", all possible combinations.
 	- :h user-commands
+- Generate time snippets
+	Jueves, 07/07/2019
+	Tuesday, 07/07/2019
+	07/07/2019, 22:10, UTC -0500
 
 }}}
 NERDTree {{{
 
-Yank file to a given register from the NERDTree menu just by pressing: y<register>". {{{
-
-
-
-}}}
+- Yank file to a given register from the NERDTree menu just by pressing: y<register>".
+- Key-b that changes the cwd to the directory under the cursor.
 
 }}}
 

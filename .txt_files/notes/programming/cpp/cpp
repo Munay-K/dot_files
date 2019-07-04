@@ -1,23 +1,35 @@
-Good programming practices {{{
+Best practices{{{
 
 Use the correct types when iterating in an iterable object {{{
 
 }}}
-
 Use '.at()' when trying to access to an element from a vector {{{
 
-This way you assure yourself that the element exist.
+This way you assure yourself that the element exist. If it doesn't exist, you will get an error, so you'll know when you're accessing a forbidden memory space.
 
 }}}
 
 }}}
+Language structures {{{
 
-Optimizations {{{
+static {{{
 
+static variable inside of a class/struct
+	- There is going only to be one instance of that variable across all instances of the class.
 
+static method inside of a class/struct:
+	- A static method can be called without a class instance and inside.
+	- Inside a static method you cannot write code which refers to a class instance since you don't have that class instance.
+
+static outside of a class/struct
+static variables declared globally
+	- It's like declaring a variable private in a class.
+	- No other translation unit will see that variable.
+	- The variable will be only visible to that translation unit.
 
 }}}
 
+}}}
 FAQ {{{
 
 What is a translation unit? {{{
@@ -32,20 +44,6 @@ What is external linking {{{
 When you call to a variable from a file A on file B by using 'extern' and the same name of the variable from file A.
 
 }}}
-
-static variable inside of a class/struct
-	- There is going only to be one instance of that variable across all instances of the class.
-
-static method inside of a class/struct:
-	- A static method can be called without a class instance and inside.
-	- Inside a static method you cannot write code which refers to a class instance since you don't have that class instance 
-
-static outside of a class/struct
-static variables declared globally
-	- It's like declaring a variable private in a class.
-	- No other translation unit will not see that variable.
-	- The variable will be only visible to that translation unit.
-
 When should I use 'static' in variables or functions? {{{
 
 This question is a little bit similar to the question 'Why would you use 'private' on a class?
@@ -53,7 +51,6 @@ This question is a little bit similar to the question 'Why would you use 'privat
 Try name your functions and your variables static unless you actually need them to be linked across translation units.
 
 }}}
-
 What are some cases in which global variables is considered a good practice? {{{
 
 

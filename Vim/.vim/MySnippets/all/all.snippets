@@ -1,58 +1,53 @@
-# !1| --------------------------------------------------
-# !1| Time inserters
-# !1| --------------------------------------------------
+#Time inserters {{{
 
-
-# time_es depends on package "language-pack-es"
-
-snippet time_en "." i 
+snippet entime "(en)glish current (time)" i 
 `LC_TIME='en_US.UTF-8' date '+%^a, %d %^b %Y, %H:%M:%S %p, %z'`
 endsnippet
 
-snippet time_es "." i
+snippet estime "(es)panol current (time)" i
 `LC_TIME='es_CO.UTF-8' date '+%^a, %d %^b %Y, %H:%M:%S %p, %z'`
 endsnippet
 
-snippet time_es_verbose "." i 
+snippet esvtime "(es)panol (v)erbose current (time) " i 
 `LC_TIME='es_CO.UTF-8' date '+%^A, %e de %^B del %Y, a las %I:%M:%S:%N %p'`
 endsnippet
 
-# !1| --------------------------------------------------
-# !1| Boxes
-# !1| --------------------------------------------------
+#}}}
+#Boxes {{{
 
-snippet box1 "Box"
+snippet box1 "(box) style (1)"
 `!p snip.rv = '┌' + '─' * (len(t[1]) + 2) + '┐'`
 │ ${1:${VISUAL}} │
 `!p snip.rv = '└' + '─' * (len(t[1]) + 2) + '┘'`
 endsnippet
 
-snippet box2 "Box"
+snippet box2 "(box) style (2)"
 `!p snip.rv = '╔' + '═' * (len(t[1]) + 2) + '╗'`
 ║ ${1:${VISUAL}} ║
 `!p snip.rv = '╚' + '═' * (len(t[1]) + 2) + '╝'`
 endsnippet
 
-snippet box3 "Box"
+snippet box3 "(box) style (3)"
 `!p snip.rv = '█' + '▀' * (len(t[1]) + 2) + '█'`
 ▌ ${1:${VISUAL}} ▐
 `!p snip.rv = '█' + '▄' * (len(t[1]) + 2) + '█'`
 endsnippet
 
-snippet "box4\((.{1})\,(\d+)\)" "Box" ir
+snippet "box4\((.{1})\,(\d+)\)" "(box) style (4)" ir
 `!p snip.rv = match.group(1) * (len(t[1]) + (int(match.group(2))+1)*2)`
 `!p snip.rv = match.group(1)``!p snip.rv = " " * int(match.group(2))`$1`!p snip.rv = " " * int(match.group(2))``!p snip.rv = match.group(1)`
 `!p snip.rv = match.group(1) * (len(t[1]) + (int(match.group(2))+1)*2)`
 endsnippet
 
-# !1| --------------------------------------------------
-# !1| File paths
-# !1| --------------------------------------------------
+#}}}
+#File paths {{{
 
-snippet filep "." i
+snippet tffp "(t)his (f)ile (f)ull (p)ath" i
 `!v expand("%:p")`
 endsnippet
 
-snippet filet "." i
+snippet tfname "(t)his (f)ile (name)" i
 `!v expand("%:t")`
 endsnippet
+
+#}}}

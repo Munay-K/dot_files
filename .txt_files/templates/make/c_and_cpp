@@ -1,0 +1,33 @@
+# This makefile assumes the following structure in your current project
+# root_folder/src: 			Folder which stores the ".cpp" and ".h" files.
+# root_folder/main.cpp: 	Root file which contain the main function.
+# root_folder/build:		Folder which stores the object files
+
+
+# Compiler details
+CX = g++
+CXFLAGS = -std=c++17
+CXGENERAL = $(CX) $(CXFLAGS)
+
+# File details
+ROOT = main.cpp
+SRCEXT = cpp
+OBJEXT = o
+SRC = src
+OBJ = build
+TARGET = output
+
+# File locations
+CXSOURCES = $(wildcard $(SRC)/*.$(SRCEXT))
+CXOBJECTS = $(patsubst $(SRC)/%.$(SRCEXT), $(OBJ)/%.$(OBJEXT), $(CXSOURCES))
+
+all: $(CXOBJECTS)
+	$(CXGENERAL) $(ROOT) $(CXOBJECTS) -o $(TARGET)
+
+$(OBJ)/%.$(OBJEXT): $(SRC)/%.$(SRCEXT)
+	$(CXGENERAL) -c $< -o $@
+
+clean:
+	rm -f $(CXOBJECTS) $(TARGET)
+
+re: clean all

@@ -175,6 +175,50 @@ Nombre alguna entidad que no sea autónoma y otra que sea autónoma.
 }}}
 
 }}}
+Repaso en clase {{{
+
+No vendran temas de introducción.
+Clase 3:
+	
+Clase 4:
+	Que la expande
+	Que la extrae
+
+Clase 5:
+	Principio 3
+
+Clase 6:
+	Nunca see da porque es competencia perfecta
+
+Clase 7:
+	Que tanto afecta algo en el precio?
+	Como cambia la demanda si cambia el ingreso?
+	
+Clase 8:
+	ASumiendo de la competencia perfecta
+	Contrcciones y expansiones de la demanda puede maximizar la eficiencia de la demanda.
+
+Clase 9:
+	Existen 3 fallas:
+		Externalidaaaades
+		Bienes publicos
+		Concentraacion de poder (modelos externos, monopoliios, oligopoolios, dupolios)
+
+Recomendaciones:
+	Guiarnos de las diaopsitivas.
+	Leer en el libro, aquello que lo que esta en la diapositiva no se entiende.
+
+Vendran los 3 últimos temas que hicimos en clase.
+	Entran temas de ciclos económicos y politica monetaria
+	Balanza comercial ()
+
+Con politicas, derechos de propiedad. Lo unico que hace que la parte publica y privada funcione bien, haya por lo menos una intestabilidad, y esto se logra con los derechos de propiedad (ebe estar bien definido quien tiene derecho a que)
+
+Pregunta sobre un video.
+Responder analisis ѕobre una noticia.
+Grafico para interpretar.
+
+}}}
 General {{{
 
 Recursos útiles {{{

@@ -163,8 +163,7 @@ bar {
 }
 
 
-# !1| Keybindings !1|
-# !2| Miscelanous !2|
+# Keybindings  {{{
 
 # change container layout (stacked, tabbed, toggle split)
 bindsym $mod+s layout stacking
@@ -192,10 +191,13 @@ bindsym $mod+Shift+l move right
 # Returns to the previous workspace
 bindsym $mod+Tab workspace back_and_forth
 
-# !2| Applications !2|
+#}}}
+# Applications {{{
 
 bindsym $mod+c exec "google-chrome"
 bindsym $mod+n exec "nautilus"
+
+#}}}
 
 # !2| Modes !2|
 bindsym $mod+r mode "resize"
@@ -224,6 +226,7 @@ new_window 1pixel
 # Open specific applications in floating mode
 for_window [title="Python Turtle Graphics"] floating enable
 for_window [title="Enter LaTeX Formula - TexText 0.10.2"] floating enable
+for_window [title="SFML window"] floating enable
 
 # Enters vim in a temporal file that is destroyed when the windows is closed.
 bindsym $mod+Shift+o exec --no-startup-id "$HOME/Documents/MyFiles/dc_GithubRepos/dot_files/.scripts/editinvim.sh"

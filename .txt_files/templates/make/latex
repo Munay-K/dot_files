@@ -1,0 +1,12 @@
+SRC = main
+
+all:
+	pdflatex $(SRC)
+	bibtex $(SRC)
+	pdflatex $(SRC)
+	pdflatex $(SRC)
+
+clean:
+	rm -rf *.{aux,bbl,blg,dvi,log,ps,pdf,toc}
+
+make re: clean all

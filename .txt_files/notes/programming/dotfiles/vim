@@ -1,4 +1,4 @@
-Code cleaners {{{1
+Code cleaners {{{
 
 :%s:\s\+$::
 	Drops the blanks at the end of the line. Those lines in which there are only blank spaces will be reduced to an empty line.
@@ -9,8 +9,10 @@ Code cleaners {{{1
 :g/^\s*$/,/./-j
 	Reduce multiple blank lines (only lines that only contain whitespace characters) to a single line.
 
-}}}1
-Some basic tricks {{{1
+}}}
+Some basic tricks {{{
+
+Miscelanous {{{
 
 :g/<h[12]>/t$
 	Copies all lines that contain <h1> or <h2> at the end of the file.
@@ -23,8 +25,24 @@ qaq:g/pattern/y A
 :g/pattern/"_d
 	Optimized deletion of all lines matching a pattern ("_ makes vim yank to the blackhole register which does makes Vim not to copy each match to a register.)
 
-}}}1
-Some advanced tricks {{{1
+}}}
+Break my file {{{
+
+%s/\d/0/g
+	Change all digits.
+%s/\l/a/g
+	Change all lowercase letters.
+%s/\u/A/g
+	Change all uppercase letters.
+
+nnoremap <silent> <Leader>bf mw:%s/\d/0/g <bar> %s/\l/a/g <bar> %s/\u/A/g <bar> noh<CR><CR>`w
+nnoremap <silent> <Leader>bf mw:%s/\d/0/g \| %s/\l/a/g \| %s/\u/A/g \| noh<CR><CR>`w
+	Execute some commands that make the file unrecognizable.
+
+}}}
+
+}}}
+Some advanced tricks {{{
 
 :g/.\n\n\@!/norm o
 	Adds a white line after each line
@@ -35,8 +53,8 @@ Some advanced tricks {{{1
 %! [cmd]
 	Replaces the content of the file with the output of that command.
 
-}}}1
-Files metadata {{{1
+}}}
+Files metadata {{{
 +info:
 	:help filename-modifiers
 
@@ -57,4 +75,4 @@ expand("%:e") -> Extension of the file.
 
 &filetype -> Get the current fype type assigned by Vim.
 
-}}}1
+}}}

@@ -11,25 +11,37 @@ snippet slcomm "Single-line comment" bA
 endsnippet
 
 snippet prs "string printer" iA
-std::cout<<"$1";
+std::cout<<"${1:${VISUAL}}";
 endsnippet
 
 #}}}1
-
 # Regex {{{1
 
 
 
 #}}}1
-
 # Debugging {{{1
 
 snippet var "variable printer for debugging" bA
-std::cout<<"\n[var] \"$1\" := \""<<$1<<"\".";
+std::cout<<"\n[DEBUG] \"$1\" := \""<<$1<<"\".";
+endsnippet
+
+priority 1
+snippet action1 "." bA
+std::cout<<"\n\n[DEBUG] █▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄  ${1:${VISUAL}}\n";
+endsnippet
+
+priority 1
+snippet action2 "." bA
+std::cout<<"\n[DEBUG] ╚═════════════════════════════ ${1:${VISUAL}}\n";
+endsnippet
+
+priority 1
+snippet action3 "." bA
+std::cout<<"\n[DEBUG] └────────────── ${1:${VISUAL}}\n";
 endsnippet
 
 #}}}1
-
 # Miscelanous {{{1
 
 snippet class
@@ -89,7 +101,6 @@ for($1 i {$2}; i < $3; i++)
 endsnippet
 
 #}}}1
-
 # Dyoxigen {{{1
 
 snippet dyoxigen "." 

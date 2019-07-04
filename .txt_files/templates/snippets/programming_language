@@ -1,19 +1,19 @@
 # General {{{
 
-snippet mlcomm "Multi-line comment" bA
+snippet mlcomm "(m)ulti-(l)ine (comm)ent" bA
 
 endsnippet
 
-snippet slcomm "Single-line comment" bA
+snippet slcomm "(s)ingle (l)ine (comm)ent" bA
 
 endsnippet
 
-snippet prs "string printer" bA
+snippet prs "(pr)int (s)tring" bA
 
 endsnippet
 
 priority 1
-snippet vimark "Vim default marker" Ai
+snippet vimark "Language dependent (vi)m (mark)er" Ai
 
 endsnippet
 
@@ -25,8 +25,23 @@ endsnippet
 #}}}
 # Debugging {{{
 
-snippet var "variable printer for debugging" bA
+snippet dvarp "(d)ebug: (var)iable (p)rinter" bA
+[DEBUG] var
+endsnippet
 
+priority 1
+snippet dact1p "(d)ebug: (act)ion (1) (p)rinter" bA
+[DEBUG] █▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄ 
+endsnippet
+
+priority 1
+snippet dact2p "(d)ebug: (act)ion (2) (p)rinter" bA
+[DEBUG] ╚═════════════════════════════ 
+endsnippet
+
+priority 1
+snippet dact3p "(d)ebug: (act)ion (3) (p)rinter" bA
+[DEBUG] └────────────── 
 endsnippet
 
 #}}}
