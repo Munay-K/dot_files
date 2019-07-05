@@ -81,6 +81,8 @@ Vanilla {{{
 - Keybinding that comment multiple select lines (language dependent)
 - Compatibility between ZSH and Vim keybindings for selecting files.
 - Create my own functions that do the same as what the 'Vimball' plugins do.
+	- Do i really need them? It is all bloated!
+	- I just need shuffle, sort by length.
 - Start using 'Pathogen' or installing plugins manually to make Vim even more lightweight
 - Create a method that could create C++ classes on the fly (.cpp and .h files with text inside)
 - Like i3 resizing, enabling a mode that maps hjkl for resizing windows and then disables those keys.
@@ -96,6 +98,7 @@ Vanilla {{{
 	Jueves, 07/07/2019
 	Tuesday, 07/07/2019
 	07/07/2019, 22:10, UTC -0500
+- Create a source linking in my vimrc that links to a '.vimrc' config that have all the keybindings that a newbie should not press.
 
 }}}
 NERDTree {{{
@@ -141,6 +144,11 @@ i3 {{{
 Done {{{
 
 
+}}}
+Todo {{{
+
+- Mode that changes keayboard language.
+- Mode that lets choose applications in order not to occupy multiple keys just to open applications.
 
 }}}
 Unnecessary {{{

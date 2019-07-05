@@ -18,6 +18,8 @@ Miscelanous {{{
 	Copies all lines that contain <h1> or <h2> at the end of the file.
 :g/pattern/m$
 	Moves all lines matching a pattern to end of file.
+qaq:g/pattern/d A
+	qaq (clear register "a" by recording an empty macro), d (delete match) A (append ro register "a", if it's lowercase then the last match will only be saved into the given register.)
 qaq:g/pattern/y A
 	qaq (clear register "a" by recording an empty macro), y (yank match) A (append ro register "a", if it's 'a' then the last match will only be saved into the 'a' register.)
 :g/pattern/z#.5

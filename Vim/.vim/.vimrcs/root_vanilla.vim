@@ -189,15 +189,15 @@ highlight DiffText   cterm=bold ctermfg=10 ctermbg=88 gui=none guifg=bg guibg=Re
 "}}}
 
 "}}}
-"Folding {{{
+" Folding {{{
 
 "99: Only folds with a depth level of 99 will not be opened, that is, most of the folds will be opened when opening a file.
 "0: All folds will be closed.
 set foldlevel=0
 
 "}}}
-"Keybindings {{{
-"+info:
+" Keybindings {{{
+" +info:
 "	:help map-listing ()
 "	:help key-notation (name with which 'Vim' recognizes keys.)
 
@@ -252,6 +252,9 @@ nnoremap <Leader><Space> :exe ":-1read " . MY_SKELETONS . &filetype<CR>
 
 "Syntax highlighting toggler 
 nnoremap <Leader>s :if exists("g:syntax_on") <Bar> syntax off <Bar> else <Bar> syntax enable <Bar> endif<CR>
+
+"(b)reak (f)ile
+nnoremap <silent> <Leader>bf mw:%s/\d/0/g \| %s/\l/a/g \| %s/\u/A/g \| noh<CR><CR>`w
 
 "}}}
 "Manipulating the entire document {{{
