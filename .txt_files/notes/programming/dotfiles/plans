@@ -22,6 +22,8 @@ Todo {{{
 		- It must measure the hours left to a given hour (It must not only work as a days left google chrome extension)
 		- Let the user choose whether sort the tasks according to the most recent one or to drag them and let him sort them as he wants.
 		- It must measure the remaining time from a given time to another time of the same day.
+	- Extension that hides all distractions
+		- Youtube - Facebook
 - Have a clear understanding of how Django forms work.
 	- Forms for different languages.
 	- Warning forms that depends on the length from the database column.
@@ -143,12 +145,13 @@ i3 {{{
 
 Done {{{
 
+- Mode that lets choose applications in order not to occupy multiple keys just to open applications.
 
 }}}
 Todo {{{
 
 - Mode that changes keayboard language.
-- Mode that lets choose applications in order not to occupy multiple keys just to open applications.
+- Create modes for different actions to save 2-press combinations of keys.
 
 }}}
 Unnecessary {{{

@@ -13,7 +13,7 @@ snippet prs "(pr)int (s)tring" bA
 endsnippet
 
 priority 1
-snippet vimark "Language dependent (vi)m (mark)er" Ai
+snippet lvimark "(l)anguage dependent (vi)m (mark)er" Ai
 
 endsnippet
 

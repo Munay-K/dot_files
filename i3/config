@@ -145,7 +145,7 @@ mode "Open application"
 	bindsym Escape mode "default"
 }
 
-bindsym $mod+c mode "Open application"
+bindsym $mod+o mode "Open application"
 bindsym $mod+d exec dmenu_run
 bindsym $mod+Return exec urxvt
 
@@ -156,7 +156,7 @@ bindsym $mod+Return exec urxvt
 # bindsym $mod+d exec --no-startup-id i3-dmenu-desktop
 
 #}}}
-# Changing keyboard layout {{{
+# Change keyboard layout {{{
 
 mode "Language for keyboard"
 {
@@ -167,6 +167,66 @@ mode "Language for keyboard"
 }
 
 bindsym $mod+m mode "Language for keyboard"
+
+#}}}
+# Change hardware brightness {{{
+
+mode "Change brightness"
+{
+	bindsym Shift+k exec "xbacklight -inc 100"
+	bindsym k exec "xbacklight -inc 10"
+	bindsym Shift+j exec "xbacklight -set 0"
+	bindsym j exec "xbacklight -dec 10"
+
+	bindsym Escape mode "default"
+}
+
+bindsym $mod+q mode "Change brightness"
+
+#}}}
+# Move mouse {{{
+
+mode "Mouse actions"
+{
+	#Left button
+	bindsym a exec "xdotool click 1"
+	
+	#Right button
+	bindsym s exec "xdotool click 2"
+
+	#Middle button
+	bindsym d exec "xdotool click 3"
+	
+	#Wheel up
+	bindsym f exec "xdotool click 4"
+	
+	#Wheel down
+	bindsym g exec "xdotool click 5"
+	
+	#Move right
+	bindsym h 		exec "xdotool mousemove_relative -- -50 0"
+	bindsym Shift+h exec "xdotool mousemove_relative -- -10 0"
+	bindsym $mod+Shift+h exec "xdotool mousemove_relative -- -1 0"
+	
+	#Move down
+	bindsym j 		exec "xdotool mousemove_relative 0 50"
+	bindsym Shift+j exec "xdotool mousemove_relative 0 10"
+	bindsym $mod+Shift+j exec "xdotool mousemove_relative 0 1"
+	
+	#Move up
+	bindsym k 		exec "xdotool mousemove_relative -- 0 -50"
+	bindsym Shift+k exec "xdotool mousemove_relative -- 0 -10"
+	bindsym $mod+Shift+k exec "xdotool mousemove_relative -- 0 -1"
+	
+	#Move left
+	bindsym l 		exec "xdotool mousemove_relative 50 0"
+	bindsym Shift+l exec "xdotool mousemove_relative 10 0"
+	bindsym $mod+Shift+l exec "xdotool mousemove_relative 1 0"
+
+	bindsym Escape mode "default"
+}
+
+bindsym $mod+t mode "Mouse actions"
 
 #}}}
 
@@ -232,7 +292,7 @@ bindsym $mod+b split h
 bindsym $mod+v split v
 
 #}}}
-# Take screenshot {{{
+# Take screenshots {{{
 
 # Screenshot to active current window removing the border and including the position of the pointer (it adds a black border to the resulting image)
 bindsym $mod+Shift+s exec "gnome-screenshot -wBp --border-effect=border"

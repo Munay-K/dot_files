@@ -1,15 +1,15 @@
-# Python {{{2
+# Python {{{
 
-# Virtual environments {{{3
+# Virtual environments {{{
 
 env/
 venv/
 
-#}}}3
-# Byte-compiled / optimized / DLL files {{{3
+#}}}
+# Byte-compiled / optimized / DLL files {{{
 
 __pycache__/
 
-#}}}3
+#}}}
 
-#}}}2
+#}}}
